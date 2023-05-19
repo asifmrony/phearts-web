@@ -4,6 +4,7 @@ import aboutTwo from '@/data/about/about-2.jpg'
 import teamMemberOne from '@/data/about/team-member-1.jpg'
 import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
+import { poppins, poppinsBold } from '@/utils/fonts';
 import Link from 'next/link'
 import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
 
