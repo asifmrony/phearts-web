@@ -37,15 +37,15 @@ export default function HomeSlider() {
             onSwiper={(swiper) => console.log(swiper)}
         >
             <SwiperSlide className='hero-slide'>
-                <Image src={charityOne} />
+                <Image src={charityOne} alt='Image' />
                 <SliderContent />
             </SwiperSlide>
             <SwiperSlide className='hero-slide'>
-                <Image src={charityTwo} />
+                <Image src={charityTwo} alt='Image' />
                 <SliderContent />
             </SwiperSlide>
             <SwiperSlide className='hero-slide'>
-                <Image src={charityThree} />
+                <Image src={charityThree} alt='Image' />
                 <SliderContent />
             </SwiperSlide>
         </Swiper>

@@ -64,7 +64,7 @@ function causesSlide({ id, image, heading, details }) {
     return (
         <SwiperSlide key={id}>
             <div>
-                <Image src={image} />
+                <Image src={image} alt='Image' />
                 <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
                 <p className='text-blackshadow text-sm mt-2'>{details}</p>
             </div>
@@ -72,7 +72,7 @@ function causesSlide({ id, image, heading, details }) {
     )
 }
 
-export default function () {
+export default function HomeCauses() {
     return (
         <div className='bg-white mt-5 pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>

@@ -69,7 +69,7 @@ function causesSlide({ id, image, date, title, details }) {
     return (
         <SwiperSlide key={id} className='h-[300px]'>
             <div className='relative bg-[#F8F9F9]'>
-                <Image src={image} />
+                <Image src={image} alt='Image' />
                 <div className='p-3 bg-white w-[95%] mx-auto relative -mt-5'>
                     <p className='text-blackshadow mt-1 text-xs'>{date}</p>
                     <h4 className={`text-lg text-themeblue leading-snug font-extrabold ${poppinsBold.variable} font-poppins mt-2`}>{title}</h4>

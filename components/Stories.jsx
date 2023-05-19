@@ -17,7 +17,7 @@ function SliderContent({theme}) {
             <div className={`slider-texts__content text-center`}>
                 <span className={`${theme === 'dark' ? 'bg-themered' : 'bg-blackshadow' } text-white py-1 px-2 inline-block uppercase font-semibold mb-2 lg:mb-3 ${poppins.variable} font-poppins`}>Story About Us</span>
                 <p className={`font-heading ${theme === 'dark' ? 'text-white' : '' } font-bold mt-1 mb-5 lg:mb-9 tracking-wide uppercase`}>Rescue Stories</p>
-                <Image src={teamMemberOne} className='w-[50px] h-[50px] rounded-full mx-auto' />
+                <Image src={teamMemberOne} alt='Image' className='w-[50px] h-[50px] rounded-full mx-auto' />
                 <p className={`${theme === 'dark' ? 'text-white' : '' } font-medium mt-6 mb-2 lg:mb-4 tracking-wide max-w-[70%] mx-auto`}>
                     “I learned that men stand to gain from a violence-free environment…and
                     it inspired me to believe in myself as a man who can be a part of the solution

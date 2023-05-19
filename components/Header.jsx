@@ -29,7 +29,7 @@ export default function Header() {
                 </div>
 
                 <div className="w-full flex justify-between items-center bg-white px-5 py-4 lg:absolute z-10 lg:-bottom-14">
-                    <Image src={pheartsLogo} />
+                    <Image src={pheartsLogo} alt="Logo" />
                     {/* Mobile Menu toggle */}
                     <button
                         className="lg:hidden"
