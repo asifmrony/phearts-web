@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import '@/styles/homeslider.css'
-import Layout from '@/components/Layout'
+import Layout from '@/components/layout/Layout'
 
 export default function App({ Component, pageProps }) {
   return (

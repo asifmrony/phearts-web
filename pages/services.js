@@ -1,4 +1,4 @@
-import Stories from '@/components/Stories';
+import Stories from '@/components/reusable/Stories';
 import { poppins, poppinsBold } from '@/utils/fonts';
 import { IconContext } from 'react-icons';
 import { FaHandHoldingHeart, FaHandsHelping, FaLinkedin, FaRegFileAlt } from 'react-icons/fa';
@@ -27,11 +27,11 @@ export default function services() {
             </div>
             <div>
 
-              
+
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
-                <FaHandHoldingHeart  />
+                <FaHandHoldingHeart />
               </IconContext.Provider>
-              
+
 
               <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Choose Project</h3>
               <p className='mt-3 text-sm leading-relaxed'>Cum sociis natoque penatibus et magnis dis parturient
@@ -51,9 +51,7 @@ export default function services() {
           </div>
         </div>
       </div>
-      <div className='py-28 stories-slider-bg'>
       <Stories theme={"dark"} />
-      </div>
     </main>
   )
 }

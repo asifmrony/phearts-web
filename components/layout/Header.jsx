@@ -1,5 +1,5 @@
 import Image from "next/image";
-import pheartsLogo from '../assets/phearts_logo.png';
+import pheartsLogo from '@/assets/phearts_logo.png';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { useState } from "react";

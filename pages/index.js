@@ -1,10 +1,11 @@
-import Stories from '@/components/Stories'
+import Stories from '@/components/reusable/Stories'
 import HomeBlog from '@/components/home/HomeBlog'
 import HomeCauses from '@/components/home/HomeCauses'
 import HomeEvents from '@/components/home/HomeEvents'
 import HomeSlider from '@/components/home/HomeSlider'
 import Sponsors from '@/components/home/Sponsors'
 import Link from 'next/link'
+import Gallery from '@/components/reusable/Gallery'
 
 export default function Home() {
   return (
@@ -59,8 +60,36 @@ export default function Home() {
       </div>
       <HomeBlog />
       <HomeEvents />
-      <div className='py-28 bg-white'>
-        <Stories theme={"light"} />
+      <div className='py-8 bg-themered'>
+        <div className="hero-width w-full mx-auto flex justify-between items-center">
+          <div>
+            <h3 className='font-subheading text-white'>SUBSCRIBE TO NEWSLETTER</h3>
+            <p className='text-white text-sm'>Sign up with your email address to receive news and updates</p>
+          </div>
+          <div>
+            <form className='flex items-center'>
+              <input
+                type="text"
+                className='px-6 h-[45px] focus:border-none focus:ouline-none bg-transparent text-white placeholder:text-gray-200 placeholder:text-sm border-r-0 border-gray-300 border-2'
+                name="newsletter"
+                id="newsletter"
+                placeholder='Your Email Address*'
+              />
+              <button className='px-6 py-3 h-[45px] border bg-white text-themered border-white text-xs uppercase font-semibold tracking-wide'>Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <Gallery />
+      {/* Stories Component possible props: "light"/"dark" */}
+      <Stories theme={"dark"} />
+      <div className='py-8 bg-themegreen'>
+        <div className="hero-width mx-auto w-full">
+          <div className='flex justify-between items-center'>
+            <h3 className='font-subheading text-white'>YOUR DONATIONS SUPPORT OUR CRITICAL WORK</h3>
+            <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Today</button>
+          </div>
+        </div>
       </div>
       <Sponsors />
     </main>
