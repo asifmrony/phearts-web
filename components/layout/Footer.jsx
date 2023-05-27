@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <div>
             <div className='bg-[#1A252E]'>
-                <div className='c-width w-full mx-auto px-5 lg:px-0 py-8 lg:py-10 flex flex-col lg:flex-row gap-y-6 lg:gap-x-10 text-sm'>
+                <div className='c-width w-full mx-auto px-5 lg:px-0 py-12 lg:py-20 flex flex-col lg:flex-row gap-y-6 lg:gap-x-10 text-sm'>
                     <div className='flex-1'>
                         <h2 className='font-bold uppercase text-lg text-white'>About Us</h2>
                         <p className='text-blackshadow my-5'>Cum sociis natoque penatibus et magnis

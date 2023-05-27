@@ -27,13 +27,13 @@ export default function HomeEvents() {
             <div className="hero-width w-full mx-auto text-center py-20">
                 <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>Story About us</span>
                 <h2 className='uppercase font-mdheading text-white'>Upcoming Events</h2>
-                <div className='my-16 flex gap-x-5'>
+                <div className='my-16 flex flex-wrap space-y-2 px-6 sm:px-10 lg:px-0'>
                     {events.map(({ id, scheduled, duration, title }) => (
-                        <div className='flex space-x-4 items-center basis-1/3' key={id}>
+                        <div className='flex space-x-4 items-center basis-[45%] lg:basis-[31%] mr-4' key={id}>
                             <p className='text-blackshadow'>{scheduled}</p>
-                            <div className='text-left'>
+                            <div className='text-left spac-y-2'>
                                 <p className='text-sm text-blackshadow'>{duration}</p>
-                                <h3 className={`text-lg font-bold text-white ${poppinsBold.variable} font-poppins`}>{title}</h3>
+                                <h3 className={`font-subheading text-white ${poppinsBold.variable} font-poppins`}>{title}</h3>
                             </div>
                         </div>
                     ))}

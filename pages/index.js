@@ -60,8 +60,8 @@ export default function Home() {
       </div>
       <HomeBlog />
       <HomeEvents />
-      <div className='py-8 bg-themered'>
-        <div className="hero-width w-full mx-auto flex justify-between items-center">
+      <div className='py-10 bg-themered'>
+        <div className="hero-width w-full mx-auto flex flex-col justify-center text-center lg:text-left items-center lg:flex-row lg:justify-between space-y-4">
           <div>
             <h3 className='font-subheading text-white'>SUBSCRIBE TO NEWSLETTER</h3>
             <p className='text-white text-sm'>Sign up with your email address to receive news and updates</p>
@@ -85,7 +85,7 @@ export default function Home() {
       <Stories theme={"dark"} />
       <div className='py-8 bg-themegreen'>
         <div className="hero-width mx-auto w-full">
-          <div className='flex justify-between items-center'>
+          <div className='flex flex-col lg:flex-row justify-center lg:justify-between items-center space-y-2 text-center lg:space-y-0'>
             <h3 className='font-subheading text-white'>YOUR DONATIONS SUPPORT OUR CRITICAL WORK</h3>
             <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Today</button>
           </div>

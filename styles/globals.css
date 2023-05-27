@@ -59,6 +59,12 @@ h6 {
   font-weight: 700;
 }
 
+@media (min-width: 767.99px) {
+  .font-subheading {
+    font-size: 16px;
+  }  
+}
+
 @media (min-width: 1023.99px) {
   .font-heading {
     font-size: 42px;
@@ -142,6 +148,11 @@ h6 {
 /* Service Page */
 .stories-slider-bg {
   background-image: url('../data/stories-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-services__vacancies .bg-right-side {
+  background-image: url('../data/services/services_carrier-photo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
