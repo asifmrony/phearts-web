@@ -119,6 +119,14 @@ h6 {
   }
 }
 
+/* Page Headers */
+.page-header__bg {
+  background-image: url('../data/about/about-3.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+}
+
 /* Homepage */
 .bg-become-volunteer {
   background-image: url('../data/become-volunteer.png');
@@ -132,13 +140,6 @@ h6 {
 }
 
 /* About Page */
-.page-services__header {
-  background-image: url('../data/about/about-3.jpg');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: cover;
-}
-
 .page-about__story {
   background-image: url('../data/about/about-3.jpg');
   background-repeat: no-repeat;
@@ -146,6 +147,12 @@ h6 {
 }
 
 /* Service Page */
+.page-services__header {
+  background-image: url('../data/about/about-3.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+}
 .stories-slider-bg {
   background-image: url('../data/stories-bg.jpg');
   background-repeat: no-repeat;

@@ -13,33 +13,33 @@ export default function services() {
       <div className="py-20 lg:py-28">
         <div className="hero-width w-full mx-auto">
           <h2 className={`font-mdheading uppercase text-center mb-16 ${poppinsBold.variable} font-poppins`}>HOW IT works</h2>
+          <div className='text-center mb-10'>
+            At PHEARTS Clinic, we put <b>patients</b> at the <b>heart</b> of all aspects of health care.
+            Established in 2016, PHEARTS Clinic is a member of the <b>Population Health Research and Training Society</b>, which operates six outdoor units, a 10-bed hospital, and a well equipped laboratory.
+            Across our hospitals, residential settings, and community-based field programs, our team of expert clinicians, ,therapists, and field workers work together to provide holistic, person-centered care as part of a complete care pathway from home to hospital.
+            PHEARTS Clinic believes that patients are always our first priority and caring  Patients will put us in patient’s hearts.
+          </div>
           <div className='flex gap-x-8 flex-wrap px-6 sm:px-10 lg:px-0'>
             <div className='flex-1 lg:basis-[30%] basis-[40%]'>
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
                 <FaRegFileAlt />
               </IconContext.Provider>
-              <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Register Now</h3>
-              <p className='mt-3 text-sm leading-relaxed'>Cum sociis natoque penatibus et magnis dis parturient
-                montesmus. Pro vel nibh et elit mollis commodo et nec
-                augueiqueThe message of The Faithland</p>
+              <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>General Medicine</h3>
+              <p className='mt-3 text-sm leading-relaxed'>Outdoor service: A total 8 ours OPD services out of which 4 hours in the morning and 3 hours in the afternoon ( 1hour break) for all days in a week.</p>
             </div>
             <div className='flex-1 lg:basis-[30%] basis-[40%]'>
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
                 <FaHandHoldingHeart />
               </IconContext.Provider>
-              <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Choose Project</h3>
-              <p className='mt-3 text-sm leading-relaxed'>Cum sociis natoque penatibus et magnis dis parturient
-                montesmus. Pro vel nibh et elit mollis commodo et nec
-                augueiqueThe message of The Faithland</p>
+              <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Emergency Services</h3>
+              <p className='mt-3 text-sm leading-relaxed'>24 hours Emergency services providing for appropriate   management of injuries and accident, First Aid, stitching of wounds, incision and drainage of abscess and other emergency conditions lead by Emergency Medical Officer.</p>
             </div>
             <div className='flex-1 lg:basis-[30%] basis-[40%] mt-8 lg:mt-0'>
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
                 <FaHandsHelping />
               </IconContext.Provider>
-              <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Help Refugees</h3>
-              <p className='mt-3 text-sm leading-relaxed'>Cum sociis natoque penatibus et magnis dis parturient
-                montesmus. Pro vel nibh et elit mollis commodo et nec
-                augueiqueThe message of The Faithland</p>
+              <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>IPD Services</h3>
+              <p className='mt-3 text-sm leading-relaxed'>In-patient center   provide 24 hours wide range of curative care services including delivery care, post abortion care, immediate newborn care, communicable disease management and non-communicable disease management etc.</p>
             </div>
           </div>
         </div>

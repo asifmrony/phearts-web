@@ -4,6 +4,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
+import NavigationDesktop from "./NavigationDesktop";
+import navLinksData from '../../data/data.json'
 
 export default function Header() {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -38,7 +40,7 @@ export default function Header() {
                         <RxHamburgerMenu />
                     </button>
                     {/* Desktop Menu */}
-                    <nav className="hidden lg:block">
+                    {/* <nav className="hidden lg:block">
                         <ul className="flex space-x-4 items-center text-lg">
                             <li className="px-2 py-1">
                                 <Link href="/">
@@ -55,8 +57,14 @@ export default function Header() {
                                     Services
                                 </Link>
                             </li>
+                            <li className="px-2 py-1">
+                                <Link href="/events">
+                                    Events
+                                </Link>
+                            </li>
                         </ul>
-                    </nav>
+                    </nav> */}
+                    <NavigationDesktop navLinksData={navLinksData} />
                 </div>
                 {/* Mobile Menu */}
                 {mobileMenu && <div className="animate-slideIn flex flex-col w-full c-width mx-auto bg-white mt-2 space-y-1">
@@ -74,6 +82,11 @@ export default function Header() {
                         <li className="px-4 py-1">
                             <Link href="/services">
                                 Services
+                            </Link>
+                        </li>
+                        <li className="px-4 py-1">
+                            <Link href="/events">
+                                Events
                             </Link>
                         </li>
                     </ul>
