@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from '@/styles/navigation.module.css'
+import styles from '../../styles/Navigation.module.css'
 import Link from "next/link";
 
 const NavigationDesktop = (props) => {
