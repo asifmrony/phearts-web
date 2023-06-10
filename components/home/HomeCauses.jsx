@@ -16,7 +16,7 @@ const data = [
     {
         id: 1,
         image: causesOne,
-        heading: 'Refugees and Migrants in Serbia',
+        heading: 'General Medicine',
         details: `Cras dapibus ullamcorper dictum.
         Vivamus nec erat placerat felis
         scelerisque porttitor in ac turpis. In nec
@@ -25,7 +25,7 @@ const data = [
     {
         id: 2,
         image: causesTwo,
-        heading: 'Desperate for Shelter and Clean Water',
+        heading: 'Gynae and Obs',
         details: `Cras dapibus ullamcorper dictum.
         Vivamus nec erat placerat felis
         scelerisque porttitor in ac turpis. In nec
@@ -34,7 +34,7 @@ const data = [
     {
         id: 3,
         image: causesThree,
-        heading: 'Preparing to help American Refugees',
+        heading: 'Eye',
         details: `Cras dapibus ullamcorper dictum.
         Vivamus nec erat placerat felis
         scelerisque porttitor in ac turpis. In nec
@@ -43,7 +43,7 @@ const data = [
     {
         id: 4,
         image: causesFour,
-        heading: 'Burundian Refugees in the DR congo',
+        heading: 'Dental',
         details: `Cras dapibus ullamcorper dictum.
         Vivamus nec erat placerat felis
         scelerisque porttitor in ac turpis. In nec
@@ -52,7 +52,25 @@ const data = [
     {
         id: 5,
         image: causesOne,
-        heading: 'Refugees and Migrants in Serbia',
+        heading: 'Physiotherapy',
+        details: `Cras dapibus ullamcorper dictum.
+        Vivamus nec erat placerat felis
+        scelerisque porttitor in ac turpis. In nec
+        imperdiet turpis.`
+    },
+    {
+        id: 6,
+        image: causesTwo,
+        heading: 'Orthopadics',
+        details: `Cras dapibus ullamcorper dictum.
+        Vivamus nec erat placerat felis
+        scelerisque porttitor in ac turpis. In nec
+        imperdiet turpis.`
+    },
+    {
+        id: 7,
+        image: causesThree,
+        heading: 'Pediatrics',
         details: `Cras dapibus ullamcorper dictum.
         Vivamus nec erat placerat felis
         scelerisque porttitor in ac turpis. In nec
@@ -76,8 +94,8 @@ export default function HomeCauses() {
     return (
         <div className='bg-white mt-5 pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>
-                <span className='bg-themeblue text-white p-2 uppercase mb-4 inline-block text-xs'>Story About Us</span>
-                <h2 className='uppercase text-[32px] font-black leading-tight mb-14'>Our Causes</h2>
+                <span className='bg-themeblue text-white p-2 uppercase mb-4 inline-block text-xs'>Glimpse of what consists of</span>
+                <h2 className='uppercase text-[32px] font-black leading-tight mb-14'>Our Phearts Clinic</h2>
                 <div>
                     <Swiper
                         modules={[Autoplay]}
