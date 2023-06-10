@@ -5,15 +5,14 @@ import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
 import { poppins, poppinsBold } from '@/utils/fonts';
+import PageHeader from '@/components/reusable/PageHeader';
 
 export default function governance_body() {
     const gravatar = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=identicon&f=y";
     return (
         <main className='page-about'>
-            <div className='page-about__header text-center py-32 bg-themeblue'>
-                <p className='text-sm uppercase text-blackshadow mb-2'>We are Delighted To Share</p>
-                <h2 className='font-heading text-white uppercase'>About Us</h2>
-            </div>
+            <PageHeader title={'About Us'} subtitle={'We are Delighted to Share'} background={'blue'} />
+
             {/* Our Board */}
             <div className='pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
@@ -79,7 +78,7 @@ export default function governance_body() {
                     {/* Second Row */}
                     <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
-                            
+
                         </div>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
                             <Image src={teamMemberTwo} alt="Image" className='mx-auto h-[200px] w-[200px] rounded-full' />
@@ -91,7 +90,7 @@ export default function governance_body() {
                                 lacinia molestie velit.</p>
                         </div>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
-                            
+
                         </div>
                     </div>
                     {/* Third row */}

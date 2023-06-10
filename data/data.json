@@ -22,6 +22,11 @@
           "name": "Administrative Body",
           "id": 23,
           "link": "/about/administrative-body"
+        },
+        {
+          "name": "Empoyees list",
+          "id": 24,
+          "link": "/about/employee"
         }
       ]
     },

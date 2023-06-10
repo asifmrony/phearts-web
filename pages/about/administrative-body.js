@@ -4,14 +4,13 @@ import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import Image from 'next/image'
 import { poppins, poppinsBold } from '@/utils/fonts';
+import PageHeader from '@/components/reusable/PageHeader'
 
 export default function administrative_body() {
     return (
         <main className='page-about'>
-            <div className='page-about__header text-center py-32 bg-themeblue'>
-                <p className='text-sm uppercase text-blackshadow mb-2'>About / Administration</p>
-                <h2 className='font-heading text-white uppercase'>Administrative body</h2>
-            </div>
+            <PageHeader title={'Administrative body'} subtitle={'About / Administration'} background={'blue'} />
+            
             {/* Our Board of Directors */}
             <div className='pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
