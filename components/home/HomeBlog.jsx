@@ -81,7 +81,8 @@ function causesSlide({ id, image, date, title, details }) {
     )
 }
 
-export default function HomeBlog() {
+export default function HomeBlog({blogData}) {
+    console.log(blogData)
     return (
         <div className='pt-24 pb-32'>
             <div className='hero-width w-full mx-auto text-center'>
@@ -113,3 +114,18 @@ export default function HomeBlog() {
         </div>
     )
 }
+
+export const getStaticProps = async () => {
+    const token = `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/notices?populate=*`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': token
+      }
+    });
+    const blogData = await res.json();
+    return {
+      props: {blogData}
+    }
+  }
