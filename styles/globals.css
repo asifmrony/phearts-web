@@ -163,6 +163,11 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.bg-blog-single {
+  background-image: url('../data/blog-heading.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* Footer */
 .footer-icon path {

@@ -76,10 +76,6 @@ export default function events() {
           </div>
         </div>
       </div>
-      
-      <div className='flex justify-center items-center min-h-[400px]'>
-        <h1 className='font-smheading'>Coming Soon...</h1>
-      </div>
     </main>
   )
 }
