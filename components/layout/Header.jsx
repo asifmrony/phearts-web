@@ -27,7 +27,6 @@ export default function Header() {
 
     return (
         <div className="lg:bg-themeblue w-full">
-            {/* relative */}
             <div className="w-full c-width mx-auto relative lg:pb-[4.5rem]">
                 <div className="hidden lg:flex justify-between items-center px-4 text-white">
                     <div className="flex text-sm space-x-6">
@@ -46,68 +45,19 @@ export default function Header() {
                     </div>
                 </div>
 
-                {/* lg:absolute z-10 lg:-bottom-14 */}
                 <div className={`w-full flex justify-between items-center bg-white px-5 py-4 ${scrollPosition >= 180 ? 'lg:fixed top-0 left-15 shadow-lg max-w-[1140px] z-20' : 'lg:absolute z-10 lg:-bottom-14'} `}>
                     <Image src={pheartsLogo} alt="Logo" />
                     {/* Mobile Menu toggle */}
                     <button
-                        className="lg:hidden"
+                        className="md:hidden absolute right-16"
                         onClick={() => setMobileMenu(!mobileMenu)}
                     >
                         <RxHamburgerMenu />
                     </button>
-                    {/* Desktop Menu */}
-                    {/* <nav className="hidden lg:block">
-                        <ul className="flex space-x-4 items-center text-lg">
-                            <li className="px-2 py-1">
-                                <Link href="/">
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="px-2 py-1">
-                                <Link href="/about">
-                                    About
-                                </Link>
-                            </li>
-                            <li className="px-2 py-1">
-                                <Link href="/services">
-                                    Services
-                                </Link>
-                            </li>
-                            <li className="px-2 py-1">
-                                <Link href="/events">
-                                    Events
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav> */}
-                    <NavigationDesktop navLinksData={navLinksData} />
+                    <div className={`${mobileMenu ? 'hidden' : 'block'} md:block`}>
+                        <NavigationDesktop navLinksData={navLinksData} />
+                    </div>
                 </div>
-                {/* Mobile Menu */}
-                {mobileMenu && <div className="animate-slideIn flex flex-col w-full c-width mx-auto bg-white mt-2 space-y-1">
-                    <ul className="last: pb-2 first:pt-2">
-                        <li className="px-4 py-1">
-                            <Link href="/">
-                                Home
-                            </Link>
-                        </li>
-                        <li className="px-4 py-1">
-                            <Link href="/about">
-                                About
-                            </Link>
-                        </li>
-                        <li className="px-4 py-1">
-                            <Link href="/services">
-                                Services
-                            </Link>
-                        </li>
-                        <li className="px-4 py-1">
-                            <Link href="/events">
-                                Events
-                            </Link>
-                        </li>
-                    </ul>
-                </div>}
             </div>
         </div>
     )

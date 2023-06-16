@@ -14,10 +14,8 @@
   height: 40px;
 
   justify-content: center;
-  /* border: solid 1px #CDD1C4; */
   border-bottom: none;
   border-radius: 6px;
-  /* margin-top: 20px; */
 }
 
 .headerNavLink span {
@@ -44,6 +42,7 @@
   display: flex;
   width: 80px;
   justify-content: center;
+  column-gap: 5px;
   /* border: solid 1px #CDD1C4; */
   border-bottom: none;
 }
@@ -74,20 +73,24 @@
 .subMenuLink {
   display: flex;
   align-items: center;
-  border: solid 1px #0d1b2a;
-  border-bottom: none;
-  padding-left: 1rem;
+  border-bottom: solid 1px #0d1b2a;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 14px;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .subMenuLi:last-child {
-  border-bottom: solid 1px #cdd1c4;
+  border-bottom: solid 1px transparent;
+}
+.subMenuLi:last-child .subMenuLink {
+  border-bottom: none;
 }
 
 .headerNavUl {
   position: absolute;
-  top: 100%;
+  top: 178%;
   list-style: none;
   width: 187px;
 }
@@ -163,4 +166,28 @@
 .arrow {
   margin-left: auto;
   padding-right: 10px;
+}
+
+/* Responsive Menu: Device target <= 768 px  */
+@media (max-width: 767.99px) {
+  .mainNav {
+    flex-direction: column;
+    position: absolute;
+    width: 40%;
+    right: 0;
+    top: 100px;
+    z-index: 100;
+    background-color: #fff;
+  }
+  .headerNavLink,
+  .headerNavDiv {
+    width: 100%;
+  }
+  .headerNavUl {
+    right: 100%;
+    top: 0;
+  } 
+  .headerNavOptions {
+    justify-content: center;
+  }
 }
