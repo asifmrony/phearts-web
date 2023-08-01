@@ -35,13 +35,14 @@ function SliderContent({ theme }) {
 export default function Stories({ theme }) {
     return (
         <Swiper
-            modules={[Autoplay]}
+            modules={[Autoplay, Navigation]}
             autoplay={{
-                delay: 2500,
+                delay: 10000,
                 disableOnInteraction: true,
             }}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
+            navigation
         >
             <SwiperSlide className=''>
                 <SliderContent theme={theme} />

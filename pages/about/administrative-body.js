@@ -3,7 +3,7 @@ import teamMemberOne from '@/data/about/team-member-1.jpg'
 import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import Image from 'next/image'
-import { poppins, poppinsBold } from '@/utils/fonts';
+// import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader'
 
 export default function administrative_body() {

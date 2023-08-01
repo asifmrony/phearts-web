@@ -78,5 +78,9 @@
   }
 
 
-  /* Stories Slider */
+  /* Blog Slider */
+  .blog-slider .swiper-button-prev,
+  .blog-slider .swiper-button-next {
+    top: calc(50% - 50px);
+  }
   

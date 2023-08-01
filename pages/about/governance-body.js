@@ -4,7 +4,7 @@ import teamMemberOne from '@/data/about/team-member-1.jpg'
 import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
-import { poppins, poppinsBold } from '@/utils/fonts';
+// import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader';
 
 export default function governance_body() {

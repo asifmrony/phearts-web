@@ -1,10 +1,10 @@
 // Import Swiper React components
-import { Pagination, Autoplay } from 'swiper';
+import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Image from 'next/image';
 import homeBlogOne from '@/data/homeblog-1.png';
 import homeBlogTwo from '@/data/homeblog-2.png';
@@ -89,19 +89,20 @@ export default function HomeBlog() {
                 <h2 className='uppercase text-[32px] font-black leading-tight mb-14'>Latest News</h2>
                 <div>
                     <Swiper
-                        modules={[Pagination, Autoplay]}
+                        modules={[Navigation]}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: true,
                         }}
-                        pagination={{
-                            clickable: true
-                        }}
+                        // pagination={{
+                        //     clickable: true
+                        // }}
+                        navigation
                         slidesPerView={3}
                         spaceBetween={10}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
-                        className='causes-slider'
+                        className='blog-slider'
                     >
                         {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}
                         {data.map(({ id, image, date, title, details }) => (

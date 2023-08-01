@@ -28,7 +28,7 @@ const data = [
     {
         id: 3,
         image: causesThree,
-        heading: 'Safeguarding Individuals',
+        heading: 'Safeguarding',
         category: 'Hygiene'
     },
     {
@@ -49,7 +49,7 @@ function causesSlide({ id, image, heading, category }) {
     return (
         <SwiperSlide key={id}>
             <div className='bg-white px-5 py-8'>
-                <Image src={image} alt='Image' className='w-[150px] h-[150px] rounded-full' />
+                <Image src={image} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
                 <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
                     <span className='text-blackshadow'>in</span>
                     <span className='text-black ml-1 font-medium'>{category}</span>
@@ -77,7 +77,7 @@ export default function Gallery() {
                         spaceBetween={20}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
-                        className='causes-slider'
+                        
                     >
                         {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}
                         {data.map(({ id, image, heading, category }) => (

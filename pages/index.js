@@ -20,15 +20,13 @@ export default function Home() {
             <Link href='/services' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
           </div>
           <div className='md:basis-[33%] bg-themegreen p-10 pr-16 space-y-5'>
-            <h2 className='uppercase font-bold text-[21px]'>IPD Services</h2>
-            <p className='text-sm'>In Patient center we provide 24 hours wide range of curative care services including delivery care, post abortion care, immediate newborn care</p>
+            <h2 className='uppercase font-bold text-[21px]'>Research</h2>
+            <p className='text-sm'>Our motto is to develop knowledge behind every causes and provide research based health care services</p>
             <Link href='/services' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
           </div>
           <div className='md:basis-[33%] bg-themered p-10 pr-16 space-y-5'>
-            <h2 className='uppercase font-bold text-[21px] leading-tight'>Research & Training</h2>
-            <p className='text-sm'>Our motto is to provide research based
-              health care services, develop knowledge behind every causes and provide
-              life skill training as needed.</p>
+            <h2 className='uppercase font-bold text-[21px] leading-tight'>Training</h2>
+            <p className='text-sm'>We build awareness on current issues and continuously providing life skill training for the development of Digital Bangladesh.</p>
             <Link href='/services' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
           </div>
         </div>
@@ -47,47 +45,28 @@ export default function Home() {
       <HomeCauses />
       <div className={`bg-become-volunteer`}>
         <div className='hero-width w-full mx-auto text-center py-24 space-y-6'>
-          <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>BECOME A VOLUNTEER</span>
+          <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>BECOME A DONOR</span>
           <h2 className='uppercase font-mdheading text-white'>NO ONE HAS EVER BECOME POOR BY GIVING</h2>
-          <p className='text-blackshadow w-3/4 mx-auto'>The message of The Faithland is that Christ saves sinners. In light of
-            that, we steward a message that radically changes lives.</p>
-          <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Get Involved Now</button>
+          <p className='text-blackshadow w-3/4 mx-auto'>Empower change through small contributions; support our vital initiatives that improve lives and create a lasting impact in communities nationwide.</p>
+          <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</button>
         </div>
       </div>
       <HomeBlog />
 
       <HomeEvents />
       <div className='py-10 bg-themered'>
-        <div className="hero-width w-full mx-auto flex flex-col justify-center text-center lg:text-left items-center lg:flex-row lg:justify-between space-y-4">
+        <div className="hero-width w-full mx-auto flex flex-col justify-center text-center lg:text-left items-center lg:flex-row lg:justify-between space-y-4 lg:space-y-0">
           <div>
-            <h3 className='font-subheading text-white'>SUBSCRIBE TO NEWSLETTER</h3>
-            <p className='text-white text-sm'>Sign up with your email address to receive news and updates</p>
+            <h3 className='font-subheading text-white'>REQUEST FOR APPOINTMENT</h3>
+            <p className='text-white text-sm'>Provide us your details to visit a doctor as soon as possible</p>
           </div>
-          <div>
-            <form className='flex items-center'>
-              <input
-                type="text"
-                className='px-6 h-[45px] focus:border-none focus:ouline-none bg-transparent text-white placeholder:text-gray-200 placeholder:text-sm border-r-0 border-gray-300 border-2'
-                name="newsletter"
-                id="newsletter"
-                placeholder='Your Email Address*'
-              />
-              <button className='px-6 py-3 h-[45px] border bg-white text-themered border-white text-xs uppercase font-semibold tracking-wide'>Subscribe</button>
-            </form>
-          </div>
+          <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Book Appointment Today</button>
         </div>
       </div>
       <Gallery />
       {/* Stories Component possible props: "light"/"dark" */}
       <Stories theme={"dark"} />
-      <div className='py-8 bg-themegreen'>
-        <div className="hero-width mx-auto w-full">
-          <div className='flex flex-col lg:flex-row justify-center lg:justify-between items-center space-y-2 text-center lg:space-y-0'>
-            <h3 className='font-subheading text-white'>YOUR DONATIONS SUPPORT OUR CRITICAL WORK</h3>
-            <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Today</button>
-          </div>
-        </div>
-      </div>
+
       <Sponsors />
     </main>
   )
