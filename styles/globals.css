@@ -156,21 +156,42 @@ h6 {
   background-position: left center;
   background-size: cover;
 }
-.service-card {
+.service-card,
+.single-service {
   background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgba(238, 174, 202, 0.2) 0%,
+    rgba(148, 187, 233, 0.2) 100%
   );
 }
-.service-card2 {
-  background: rgb(0, 136, 69);
-  background: radial-gradient(
-    circle,
-    rgba(0, 136, 69, 1) 0%,
-    rgba(46, 49, 146, 1) 100%
-  );
+.single-service__heading {
+  position: relative;
+  display: inline-block;
+}
+.single-service__heading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  background-color: #2E3192;
+}
+.single-service__image-box {
+  height: 100px;
+  background-image: url('../data/become-volunteer.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+.single-service__image-box .single-service__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 .stories-slider-bg {
   background-image: url("../data/stories-bg.jpg");

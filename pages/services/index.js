@@ -21,7 +21,7 @@ export default function services() {
               </IconContext.Provider>
               <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Phearts Clinic</h3>
               <p className='mt-3 text-sm leading-relaxed'>PHEARTS Clinic believes that patients are always our first priority and caring  Patients will put us in patient’s hearts.</p>
-              <Link href="/about/history" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
+              <Link href="services/phearts-clinic" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
             </div>
             <div className='flex-1 lg:basis-[30%] basis-[40%] text-center mt-8 lg:mt-0 shadow-md service-card rounded-md p-4'>
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
@@ -30,7 +30,7 @@ export default function services() {
               <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>IPD Services</h3>
               <p className='mt-3 text-sm leading-relaxed'>In-patient center we provide 24 hours wide range of curative care services
                 including delivery care, post abortion care, immediate newborn care ...</p>
-              <Link href="/about/history" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
+              <Link href="services/ipd-services" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
             </div>
             <div className='flex-1 lg:basis-[30%] basis-[40%] text-center shadow-md service-card rounded-md p-4'>
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
