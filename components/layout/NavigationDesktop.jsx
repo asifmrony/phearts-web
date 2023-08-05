@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from '../../styles/Navigation.module.css'
 import Link from "next/link";
+import { BsChevronDown, BsChevronRight } from 'react-icons/bs';
 
 const NavigationDesktop = (props) => {
     const { navLinksData } = props;
@@ -46,6 +47,7 @@ const NavigationDesktop = (props) => {
                         >
                             <div className={styles.headerNavDiv}>
                                 <span>{el.name}</span>
+                                <span>{showSubMenu[el.id] ? <BsChevronDown size={13} /> : <BsChevronRight size={13} />}</span>
                             </div>
                             <ul
                                 className={styles.headerNavUl}

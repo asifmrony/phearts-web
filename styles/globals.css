@@ -18,9 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   background-repeat: no-repeat;
   min-height: 100vh;
   font-family: var(--font-inter);
@@ -34,14 +37,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .font-heading {
   font-size: 23px;
   line-height: 32px;
   font-weight: 900;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .font-mdheading {
@@ -62,7 +65,7 @@ h6 {
 @media (min-width: 767.99px) {
   .font-subheading {
     font-size: 16px;
-  }  
+  }
 }
 
 @media (min-width: 1023.99px) {
@@ -81,7 +84,7 @@ h6 {
     line-height: 35px;
   }
   .font-subheading {
-    font-size: 19px; 
+    font-size: 19px;
   }
 }
 
@@ -121,7 +124,7 @@ h6 {
 
 /* Page Headers */
 .page-header__bg {
-  background-image: url('../data/about/about-3.jpg');
+  background-image: url("../data/about/about-3.jpg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: cover;
@@ -129,42 +132,84 @@ h6 {
 
 /* Homepage */
 .bg-become-volunteer {
-  background-image: url('../data/become-volunteer.png');
+  background-image: url("../data/become-volunteer.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .bg-upcoming-events {
-  background-image: url('../data/bg-upcoming-events.jpg');
+  background-image: url("../data/bg-upcoming-events.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 /* About Page */
 .page-about__story {
-  background-image: url('../data/about/about-3.jpg');
+  background-image: url("../data/about/about-3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 /* Service Page */
 .page-services__header {
-  background-image: url('../data/about/about-3.jpg');
+  background-image: url("../data/about/about-3.jpg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: cover;
 }
+.service-card,
+.single-service {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 0.2) 0%,
+    rgba(148, 187, 233, 0.2) 100%
+  );
+}
+.single-service__heading {
+  position: relative;
+  display: inline-block;
+}
+.single-service__heading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  background-color: #2E3192;
+}
+.single-service__image-box {
+  height: 100px;
+  background-image: url('../data/become-volunteer.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+.single-service__image-box .single-service__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
 .stories-slider-bg {
-  background-image: url('../data/stories-bg.jpg');
+  background-image: url("../data/stories-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .page-services__vacancies .bg-right-side {
-  background-image: url('../data/services/services_carrier-photo.jpg');
+  background-image: url("../data/services/services_carrier-photo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-blog-single {
+  background-image: url("../data/blog-heading.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 /* Footer */
 .footer-icon path {
-  stroke: #76828A;
+  stroke: #76828a;
 }

@@ -33,10 +33,10 @@ export default function HomeEvents() {
 
     // Renderer callback with condition
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
-        if (completed) {
-            // Render a completed state
-            return <Completionist />;
-        } else {
+        // if (completed) {
+        //     // Render a completed state
+        //     return <Completionist />;
+        // } else {
             // Render a countdown
             return <div className='flex space-x-1 items-center'>
                 <p className='bg-themegreen p-2 text-white flex flex-col text-center rounded-md'>
@@ -56,7 +56,7 @@ export default function HomeEvents() {
                     <span className='text-xs'>seconds</span>
                 </p>
             </div>;
-        }
+        // }
     };
 
     return (

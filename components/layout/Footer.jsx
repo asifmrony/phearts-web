@@ -54,7 +54,7 @@ export default function Footer() {
                         </nav>
                     </div>
                     <div className='flex-1'>
-                        <h2 className='font-bold uppercase text-lg text-white'>Notice Board</h2>
+                        <h2 className='font-bold uppercase text-lg text-white'>Latest News</h2>
                         <nav>
                             <ul className='text-blackshadow space-y-2  mt-5'>
                                 <li>Everything happening arround us very cumbersome</li>

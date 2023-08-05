@@ -78,13 +78,12 @@ const data = [
     }
 ]
 
-function causesSlide({ id, image, heading, details }) {
+function causesSlide({ id, image, heading }) {
     return (
         <SwiperSlide key={id}>
-            <div>
+            <div className='w-full'>
                 <Image src={image} alt='Image' />
                 <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
-                <p className='text-blackshadow text-sm mt-2'>{details}</p>
             </div>
         </SwiperSlide>
     )
@@ -109,9 +108,8 @@ export default function HomeCauses() {
                         onSwiper={(swiper) => console.log(swiper)}
                         className='causes-slider'
                     >
-                        {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}
-                        {data.map(({ id, image, heading, details }) => (
-                            causesSlide({id, image, heading, details})
+                        {data.map(({ id, image, heading }) => (
+                            causesSlide({id, image, heading})
                         ))}
                     </Swiper>
                 </div>
