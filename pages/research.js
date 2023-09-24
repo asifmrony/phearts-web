@@ -1,5 +1,5 @@
-import PageHeader from '@/components/reusable/PageHeader'
-import React from 'react'
+import PageHeader from '@/components/reusable/PageHeader';
+import { poppins } from '@/utils/fonts';
 
 export default function research() {
     return (
