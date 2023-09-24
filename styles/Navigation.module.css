@@ -41,11 +41,12 @@
   height: 100%;
   /* background: #1b263b; */
   display: flex;
-  width: 80px;
+  /* width: 80px; */
   justify-content: center;
   column-gap: 5px;
   /* border: solid 1px #CDD1C4; */
   border-bottom: none;
+  padding: 0 6px;
 }
 
 .headerNavDiv span {
