@@ -8,7 +8,7 @@ export default function research() {
             {/* Research Details writeup */}
             <div className='pt-14 pb-14 bg-white'>
                 <div className="hero-width w-full mx-auto text-justify">
-                    <div className='space-y-6'>
+                    <div className={`space-y-6 ${poppins.variable} font-poppins`}>
                         <p>The Population Health, Research and training Society conducts research with the aim of discovering and understanding the health effects from all sorts of environmental and biological exposure among the Bangladeshi people and develop effective strategies for prevention and policy development.
                         </p>
                         <p>

@@ -8,7 +8,7 @@ export default function training() {
             {/* Research Details writeup */}
             <div className='pt-14 pb-14 bg-white'>
                 <div className="hero-width w-full mx-auto text-justify">
-                    <div className='space-y-6'>
+                    <div className={`space-y-6 ${poppins.variable} font-poppins`}>
                         <p>Population Health, Research and Society Training (PHeaRTs) is a national non-profit organization that
                             conducts health research, training and community service activities for the improvement of human
                             health in Bangladesh. It works closely with scientists, health professionals and policy makers in
