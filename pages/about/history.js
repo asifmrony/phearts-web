@@ -33,7 +33,6 @@ export default function about() {
             <div className='bg-white py-14 px-8 flex-1 border-[#aaa] border-4 text-center'>
               <h2 className='font-mdheading uppercase '>Our Mission</h2>
               <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>To enjoy the highest attainable status of health, well-being and quality of life at every age, free   of preventable NCDs, avoidable disability and premature death for all people of Araihazar Upazilla and beyond </p>
-              <button className='mt-6 px-6 py-3 border border-gray-300 text-xs uppercase font-semibold tracking-wide hover:bg-black hover:text-white transition-all'>Get Involved</button>
             </div>
             <div className='flex-1'>
               <Image src={aboutOne} alt='Image' className='h-full object-cover' />
@@ -48,7 +47,6 @@ export default function about() {
               <p className='mt-4 text-sm'>
                 To reduce preventable morbidity, avoidable disability, premature mortality and establish a healthy society in Araihazar and beyond.
               </p>
-              <button className='mt-6 px-6 py-3 border border-gray-300 text-xs uppercase font-semibold tracking-wide hover:bg-black hover:text-white transition-all'>Get Involved</button>
             </div>
           </div>
         </div>
@@ -57,8 +55,7 @@ export default function about() {
       <div className='page-about__story py-24 px-10 lg:px-0'>
         <div className='hero-width w-full mx-auto border-4 border-white py-20 text-white'>
           <div className='max-w-[60%] mx-auto'>
-            <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>Story About Us</span>
-            <h2 className='font-mdheading uppercase'>Objective&apos;s</h2>
+            <h2 className='font-mdheading uppercase'>Objectives</h2>
             <ul className='mt-6 text-sm text-left space-y-2 list-disc'>
               <li>To work in the public and community health sectors with the aim of contributing to the development of this sector.</li>
               <li>To establish, run, and operate health clinics of all types for community health promotion and services, and for that purpose, to obtain the permissions and approvals of all relevant authorities.</li>

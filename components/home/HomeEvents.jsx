@@ -62,7 +62,7 @@ export default function HomeEvents() {
     return (
         <div className='bg-upcoming-events'>
             <div className="hero-width w-full mx-auto text-center py-20">
-                <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>Story About us</span>
+                {/* <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>Story About us</span> */}
                 <h2 className='uppercase font-mdheading text-white'>Upcoming Events</h2>
                 <div className='my-16 flex flex-wrap space-y-4 md:space-y-0 space-x-0 lg:space-x-3 px-6 sm:px-10 lg:px-0'>
                     {events.map(({ id, location, duration, title, timeCount }) => (

@@ -6,26 +6,68 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/navigation";
 import Image from 'next/image';
-import charityOne from '@/data/charity-slider-image-1.jpg';
-import charityTwo from '@/data/charity-slider-image-2.jpg';
-import charityThree from '@/data/charity-slider-image-3.jpg';
+import charityOne from '@/data/slider-image1.jpg';
+import charityTwo from '@/data/slider-image2.jpg';
+import charityThree from '@/data/slider-image3.jpg';
 import { inter, poppins } from '@/utils/fonts';
+import Link from 'next/link';
 
-function SliderContent() {
+const data = [
+    {
+        id: 1,
+        image: charityOne,
+        subheading: 'WE STAND TOGETHER #WITHREFUGEES',
+        heading: '629,000 PEOPLE HAVE PLEDGED THEIR SUPPORT',
+        buttonText: 'Make Donation',
+        buttonlink: '/donation',
+        textVisible: true
+    },
+    {
+        id: 2,
+        image: charityTwo,
+        subheading: 'WE STAND TOGETHER #WITHREFUGEES',
+        heading: '629,000 PEOPLE HAVE PLEDGED THEIR SUPPORT',
+        buttonText: 'Make Donation',
+        buttonlink: '/donation',
+        textVisible: false
+    },
+    {
+        id: 3,
+        image: charityThree,
+        subheading: '',
+        heading: '',
+        buttonText: '',
+        buttonlink: '',
+        textVisible: false
+    }
+];
+
+function sliderContent({ id, image, subheading, heading, buttonText, buttonlink, textVisible }) {
+    let title = heading?.split('HAVE');
+    
     return (
-        <div className='slider-texts hero-width w-full mx-auto flex items-center'>
-            <div className={`slider-texts__content`}>
-                <span className={`bg-themered text-white py-1 px-2 inline-block uppercase font-semibold mb-5 lg:mb-7 ${poppins.variable} font-poppins`}>How you could help</span>
-                <p className={`font-subheading text-white font-medium mb-1 lg:mb-2 tracking-wide`}>WE STAND TOGETHER #WITHREFUGEES</p>
-                <p className={`font-heading text-white font-bold mt-1 mb-5 lg:mb-9 shadow-sm tracking-wide`}>629,000 PEOPLE HAVE <br /> PLEDGED THEIR SUPPORT</p>
-                <div className='flex gap-x-2 lg:gap-x-3'>
-                    <button className=' border border-gray-300 uppercase text-white font-semibold tracking-wide'>Make Donation</button>
-                    <button className=' border border-gray-300 uppercase text-white font-semibold tracking-wide'>View Causes</button>
+        <SwiperSlide key={id} className='hero-slide'>
+            <Image src={image} alt='Image' />
+            {textVisible && <div className='slider-texts hero-width w-full mx-auto flex items-center'>
+                <div className={`slider-texts__content`}>
+                    <p className={`font-subheading text-white font-medium mb-1 lg:mb-2 tracking-wide ${poppins.variable} font-poppins`}>{subheading}</p>
+                    <p className={`font-heading text-white font-bold mt-1 mb-5 lg:mb-9 shadow-sm tracking-wide`}>{title[0]} <br /> {title[1]}</p>
+                    <div className='flex gap-x-2 lg:gap-x-3'>
+                        <Link
+                            className='text-xs py-4 px-8 border border-gray-300 uppercase text-white font-semibold tracking-wide'
+                            href={buttonlink}
+                        >
+                            {buttonText}
+                        </Link>
+                    </div>
                 </div>
             </div>
-        </div>
+            }
+
+        </SwiperSlide>
     )
 }
+
 
 export default function HomeSlider() {
     return (
@@ -36,7 +78,7 @@ export default function HomeSlider() {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
         >
-            <SwiperSlide className='hero-slide'>
+            {/* <SwiperSlide className='hero-slide'>
                 <Image src={charityOne} alt='Image' />
                 <SliderContent />
             </SwiperSlide>
@@ -47,7 +89,10 @@ export default function HomeSlider() {
             <SwiperSlide className='hero-slide'>
                 <Image src={charityThree} alt='Image' />
                 <SliderContent />
-            </SwiperSlide>
+            </SwiperSlide> */}
+            {data?.map(({ id, image, subheading, heading, buttonText, buttonlink, textVisible }) => (
+                sliderContent({ id, image, subheading, heading, buttonText, buttonlink, textVisible })
+            ))}
         </Swiper>
     )
 }
