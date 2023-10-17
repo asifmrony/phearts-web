@@ -32,14 +32,20 @@ export default function Footer() {
                         <nav>
                             <ul className='text-blackshadow space-y-2  mt-5'>
                                 <li>
-                                    <Link href='/blog/entry' className='underline'>Phearts Clinic</Link>
+                                    <Link href='/services/phearts-clinic' className='underline'>Phearts Clinic</Link>
                                 </li>
                                 <li>
-                                    <Link href='/blog/entry' className='underline'>IPD Services</Link>
+                                    <Link href='/services/ipd-services' className='underline'>IPD Services</Link>
                                 </li>
-                                <li>Emergency Services</li>
-                                <li>Diagnostic Services</li>
-                                <li>Pharmacy</li>
+                                <li>
+                                    <Link href='/services/emergency-services' className='underline'>Emergency Services</Link>
+                                </li>
+                                <li>
+                                    <Link href='/services/diagnostic-services' className='underline'>Diagnostic Services</Link>
+                                </li>
+                                <li>
+                                    <Link href='/services/pharmacy' className='underline'>Pharmacy</Link>
+                                </li>
                             </ul>
                         </nav>
                     </div>
