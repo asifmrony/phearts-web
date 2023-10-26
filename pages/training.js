@@ -4,7 +4,7 @@ import { poppins } from '@/utils/fonts';
 export default function training() {
     return (
         <main className='page-research'>
-            <PageHeader title={'Our Trainings'} subtitle={''} background={'blue'} />
+            <PageHeader title={'Trainings'} subtitle={''} background={'blue'} />
             {/* Research Details writeup */}
             <div className='pt-14 pb-14 bg-white'>
                 <div className="hero-width w-full mx-auto text-justify">

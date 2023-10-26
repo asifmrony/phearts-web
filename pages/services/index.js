@@ -10,7 +10,7 @@ import { MdMedicalInformation, MdOutlineBabyChangingStation } from 'react-icons/
 export default function services() {
   return (
     <main className='page-services'>
-      <PageHeader subtitle={'How You could Help'} title={'What We Do'} background={'image'} />
+      <PageHeader subtitle={''} title={'What We Do'} background={'image'} />
       <div className="py-20 lg:pt-28 lg:pb-36">
         <div className="hero-width w-full mx-auto">
           <h2 className={`font-mdheading uppercase text-center mb-16 ${poppinsBold.variable} font-poppins`}>HOW IT works</h2>

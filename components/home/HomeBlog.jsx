@@ -74,7 +74,7 @@ function causesSlide({ id, image, date, title, details }) {
                     <p className='text-blackshadow mt-1 text-xs'>{date}</p>
                     <h4 className={`text-lg text-themeblue leading-snug font-extrabold ${poppinsBold.variable} font-poppins mt-2`}>{title}</h4>
                     <p className='text-blackshadow text-sm mt-2 mb-2'>{details}</p>
-                    <Link href={`/blog/entry`} className='text-sm font-semibold text-themegreen'>Read More</Link>
+                    <Link href={`/news/entry`} className='text-sm font-semibold text-themegreen'>Read More</Link>
                 </div>
             </div>
         </SwiperSlide>
@@ -110,6 +110,7 @@ export default function HomeBlog() {
                         ))}
                     </Swiper>
                 </div>
+                <Link href='/news' className='text-sm font-semibold text-themegreen border-2 border-themegreen py-2 px-4 inline-block mt-6'>View All News</Link>
             </div>
         </div>
     )
