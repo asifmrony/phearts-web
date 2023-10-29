@@ -28,7 +28,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
-                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/">Learn more &rarr;</Link>
+                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                             <div className="flex justify-center space-x-3 text-[#8896A0]">
                                 <Link
                                     href="https://facebook.com"
@@ -47,7 +47,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
-                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/">Learn more &rarr;</Link>
+                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                             <div className="flex justify-center space-x-3 text-[#8896A0]">
                                 <Link
                                     href="https://facebook.com"
@@ -66,7 +66,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
-                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/">Learn more &rarr;</Link>
+                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                             <div className="flex justify-center space-x-3 text-[#8896A0]">
                                 <Link
                                     href="https://facebook.com"
@@ -91,7 +91,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit.</p>
-                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/">Learn more &rarr;</Link>
+                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                         
                         </div>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>

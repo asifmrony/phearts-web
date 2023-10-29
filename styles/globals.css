@@ -149,12 +149,14 @@ h6 {
   background-attachment: fixed;
 }
 .page-about-single .page-header__bg,
-.page-jobs-single .page-header__bg {
+.page-jobs-single .page-header__bg,
+.page-gallery-single .page-header__bg {
   background: white;
   padding-bottom: 3rem;
 }
 .page-about-single .page-header__bg .font-heading,
-.page-jobs-single .page-header__bg .font-heading {
+.page-jobs-single .page-header__bg .font-heading,
+.page-gallery-single .page-header__bg .font-heading {
   color: black;
 }
 
