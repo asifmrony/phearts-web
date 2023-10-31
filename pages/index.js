@@ -22,12 +22,12 @@ export default function Home() {
           <div className='md:basis-[33%] bg-themegreen p-10 pr-16 space-y-5'>
             <h2 className='uppercase font-bold text-[21px]'>Research</h2>
             <p className='text-sm'>Our motto is to develop knowledge behind every causes and provide research based health care services</p>
-            <Link href='/services' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
+            <Link href='/research' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
           </div>
           <div className='md:basis-[33%] bg-themered p-10 pr-16 space-y-5'>
             <h2 className='uppercase font-bold text-[21px] leading-tight'>Training</h2>
             <p className='text-sm'>We build awareness on current issues and continuously providing life skill training for the development of Digital Bangladesh.</p>
-            <Link href='/services' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
+            <Link href='/training' className='inline-block px-6 py-3 border border-gray-300 text-xs uppercase text-white font-semibold tracking-wide'>Read More</Link>
           </div>
         </div>
       </div>
@@ -48,7 +48,8 @@ export default function Home() {
           <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>BECOME A DONOR</span>
           <h2 className='uppercase font-mdheading text-white'>NO ONE HAS EVER BECOME POOR BY GIVING</h2>
           <p className='text-blackshadow w-3/4 mx-auto'>Empower change through small contributions; support our vital initiatives that improve lives and create a lasting impact in communities nationwide.</p>
-          <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</button>
+          <Link href='/donation' className='inline-block mt-2 px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</Link>
+          {/* <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</button> */}
         </div>
       </div>
       <HomeBlog />

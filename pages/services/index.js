@@ -10,7 +10,7 @@ import { MdMedicalInformation, MdOutlineBabyChangingStation } from 'react-icons/
 export default function services() {
   return (
     <main className='page-services'>
-      <PageHeader subtitle={'How You could Help'} title={'What We Do'} background={'image'} />
+      <PageHeader subtitle={''} title={'What We Do'} background={'image'} />
       <div className="py-20 lg:pt-28 lg:pb-36">
         <div className="hero-width w-full mx-auto">
           <h2 className={`font-mdheading uppercase text-center mb-16 ${poppinsBold.variable} font-poppins`}>HOW IT works</h2>
@@ -39,7 +39,7 @@ export default function services() {
               <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Emergency Services</h3>
               <p className='mt-3 text-sm leading-relaxed'>24 hours Emergency services providing for appropriate management of injuries and accident, First Aid,
                 stitching of wounds...</p>
-              <Link href="/about/history" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
+              <Link href="/services/emergency-services" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
             </div>
             <div className='flex-1 lg:basis-[10%] basis-[40%] text-center'></div>
             <div className='mt-10 flex-1 lg:basis-[25%] basis-[40%] text-center shadow-md service-card rounded-md p-4'>
@@ -48,7 +48,7 @@ export default function services() {
               </IconContext.Provider>
               <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Diagnostic Services</h3>
               <p className='mt-3 text-sm leading-relaxed'>24 hours diagnostic services providing for appropriate diagnosis of diseases. In the peak hour of the day the services ongoing total of 7 hours</p>
-              <Link href="/about/history" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
+              <Link href="/services/diagnostic-services" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
             </div>
             <div className='mt-10 flex-1 lg:basis-[25%] basis-[40%] text-center shadow-md service-card rounded-md p-4'>
               <IconContext.Provider value={{ color: '#ED1C24', size: 42 }}>
@@ -57,7 +57,7 @@ export default function services() {
               <h3 className={`font-smheading uppercase mt-5 ${poppins.variable} font-poppins`}>Pharmacy</h3>
               <p className='mt-3 text-sm leading-relaxed'>24 hours pharmacy  will be opened for the patient and community. We procure medicine directly
                 from the top manufacturers</p>
-              <Link href="/about/history" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
+              <Link href="/services/pharmacy" className='inline-block mt-5 uppercase text-xs text-themered font-bold tracking-wide'>Learn More</Link>
             </div>
             <div className='flex-1 lg:basis-[10%] basis-[40%] text-center'></div>
           </div>

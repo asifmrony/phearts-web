@@ -4,7 +4,7 @@ import teamMemberOne from '@/data/about/team-member-1.jpg'
 import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
-// import { poppins, poppinsBold } from '@/utils/fonts';
+import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader';
 
 export default function governance_body() {
@@ -16,7 +16,7 @@ export default function governance_body() {
             {/* Our Board */}
             <div className='pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
-                    <span className='inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2'>Masterminds behind everything</span>
+                    <span className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Masterminds behind everything</span>
                     <h2 className='font-heading text-center uppercase mb-24'>Governance Body</h2>
                     {/* TOp Row */}
                     <div className='flex flex-wrap gap-x-5 gap-y-10'>
@@ -28,6 +28,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
+                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                             <div className="flex justify-center space-x-3 text-[#8896A0]">
                                 <Link
                                     href="https://facebook.com"
@@ -46,6 +47,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
+                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                             <div className="flex justify-center space-x-3 text-[#8896A0]">
                                 <Link
                                     href="https://facebook.com"
@@ -64,6 +66,7 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
+                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
                             <div className="flex justify-center space-x-3 text-[#8896A0]">
                                 <Link
                                     href="https://facebook.com"
@@ -88,6 +91,8 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit.</p>
+                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
+                        
                         </div>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
 

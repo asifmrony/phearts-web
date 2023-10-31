@@ -30,7 +30,7 @@ export default function Header() {
             <div className="w-full c-width mx-auto relative lg:pb-[4.5rem]">
                 <div className="hidden lg:flex justify-between items-center px-4 text-white">
                     <div className="flex text-sm space-x-6">
-                        <p><strong>Location:</strong> Street Name, UK, London</p>
+                        <p><strong>Location:</strong> Araihazar, Narayanganj</p>
                         <p><strong>Phone:</strong> 123- 456-7890</p>
                         <p><strong>Email:</strong> admin@youdomain.com</p>
                     </div>

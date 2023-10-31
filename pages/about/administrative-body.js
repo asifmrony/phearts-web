@@ -3,7 +3,7 @@ import teamMemberOne from '@/data/about/team-member-1.jpg'
 import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import Image from 'next/image'
-// import { poppins, poppinsBold } from '@/utils/fonts';
+import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader'
 
 export default function administrative_body() {
@@ -14,7 +14,7 @@ export default function administrative_body() {
             {/* Our Board of Directors */}
             <div className='pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
-                    <p className='inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2'>Behind our All Success</p>
+                    <p className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Behind our All Success</p>
                     <h2 className='font-mdheading text-center uppercase mb-24'>Board of Directors</h2>
                     <div className='flex justify-between flex-wrap gap-x-5 gap-y-10'>
                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]'>

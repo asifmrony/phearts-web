@@ -24,7 +24,7 @@
           "link": "/about/administrative-body"
         },
         {
-          "name": "Empoyees list",
+          "name": "Employee list",
           "id": 24,
           "link": "/about/employee"
         }
@@ -33,7 +33,23 @@
     {
       "name": "Services",
       "id": 15,
-      "link": "/services"
+      "children": [
+        {
+          "name": "Clinic",
+          "id": 31,
+          "link": "/services"
+        },
+        {
+          "name": "Research",
+          "id": 32,
+          "link": "/research"
+        },
+        {
+          "name": "Training",
+          "id": 33,
+          "link": "/training"
+        }
+      ]
     },
     {
       "name": "Events",
@@ -49,6 +65,16 @@
       "name": "Contact",
       "id": 18,
       "link": "/contact"
+    },
+    {
+      "name": "Jobs",
+      "id": 19,
+      "link": "/jobs"
+    },
+    {
+      "name": "Request for Appointment",
+      "id": 19,
+      "link": "/appointment"
     }
   ]
 

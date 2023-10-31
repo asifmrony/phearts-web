@@ -11,6 +11,7 @@ import causesTwo from '@/data/homeCauses-2.png';
 import causesThree from '@/data/homeCauses-3.png';
 import causesFour from '@/data/homeCauses-4.png';
 import { poppins } from '@/utils/fonts';
+import Link from 'next/link';
 
 const data = [
     {
@@ -48,6 +49,7 @@ const data = [
 function causesSlide({ id, image, heading, category }) {
     return (
         <SwiperSlide key={id}>
+            <Link href='/gallery/entry'>
             <div className='bg-white px-5 py-8'>
                 <Image src={image} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
                 <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
@@ -56,6 +58,7 @@ function causesSlide({ id, image, heading, category }) {
                 </p>
                 <p className='text-themeblue text-xl font-bold mt-3'>{heading}</p>
             </div>
+            </Link>
         </SwiperSlide>
     )
 }
