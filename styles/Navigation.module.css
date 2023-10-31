@@ -19,6 +19,36 @@
   border-radius: 6px;
 }
 
+/* Styles for appointment button */
+li:last-child .headerNavLink {
+  background: #ED1C24;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 250ms;
+}
+
+li:last-child .headerNavLink:hover {
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 22%);
+}
+
+@media screen and (min-width: 1024px) {
+  li:last-child .headerNavLink {
+    width: 210px;
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  li:last-child .headerNavLink {
+    text-align: center;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+  }
+}
+
 .headerNavLink span {
   display: block;
   align-self: center;
@@ -75,7 +105,7 @@
 .subMenuLink {
   display: flex;
   align-items: center;
-  font-size: 14px; 
+  font-size: 14px;
   border: solid 1px #0d1b2a;
   border-bottom: none;
   padding-left: 1rem;
@@ -185,7 +215,7 @@
   .headerNavUl {
     right: 100%;
     top: 0;
-  } 
+  }
   .headerNavOptions {
     justify-content: center;
   }

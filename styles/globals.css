@@ -150,13 +150,23 @@ h6 {
 }
 .page-about-single .page-header__bg,
 .page-jobs-single .page-header__bg,
-.page-gallery-single .page-header__bg {
+.page-gallery-single .page-header__bg,
+.page-appointment-single .page-header__bg {
   background: white;
   padding-bottom: 3rem;
 }
+@media screen and (max-width: 767.99px) {
+  .page-about-single .page-header__bg,
+  .page-jobs-single .page-header__bg,
+  .page-gallery-single .page-header__bg,
+  .page-appointment-single .page-header__bg {
+    padding-top: 3rem;
+  }
+}
 .page-about-single .page-header__bg .font-heading,
 .page-jobs-single .page-header__bg .font-heading,
-.page-gallery-single .page-header__bg .font-heading {
+.page-gallery-single .page-header__bg .font-heading,
+.page-appointment-single .page-header__bg .font-heading{
   color: black;
 }
 
@@ -187,11 +197,11 @@ h6 {
   height: 3px;
   bottom: -3px;
   left: 0;
-  background-color: #2E3192;
+  background-color: #2e3192;
 }
 .single-service__image-box {
   height: 100px;
-  background-image: url('../data/become-volunteer.png');
+  background-image: url("../data/become-volunteer.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
