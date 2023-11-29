@@ -4,8 +4,11 @@ import aboutTwo from '@/data/about/about-2.jpg'
 import { poppins, poppinsBold } from '@/utils/fonts';
 import Link from 'next/link'
 import PageHeader from '@/components/reusable/PageHeader';
+import ReactMarkdown from 'react-markdown';
 
-export default function about() {
+export default function about(historyData) {
+  const { history_description, mission, vision, objective } = historyData.data.attributes;
+
   return (
     <main className='page-about'>
       <PageHeader title={'About Us'} subtitle={'We are Delighted to Share'} background={'blue'} />
@@ -15,6 +18,9 @@ export default function about() {
           <p className='inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2'>Let Us tell you</p>
           <h2 className='font-heading text-center uppercase mb-14'>A Brief History of Us</h2>
           <div className='space-y-6'>
+            <ReactMarkdown>{history_description}</ReactMarkdown>
+          </div>
+          {/* <div className='space-y-6'>
             <p>PHeaRTs was set up in the Araihazar upozila, Narayanganj district of Bangladesh, in 2010 and registered as a joint stock company under Society Act XX1 of 1860, No. S-12551/2017. After its inception, the Population Health Research and Training Society (PHeaRTs) has been significantly playing a vital role in implementing environmental research, improving rural health care services, and providing life skill training for the development of digital Bangladesh.
             </p>
             <p>
@@ -23,7 +29,7 @@ export default function about() {
             <p>
               Despite this challenge, to reduce the burden of diseases and focus on risk factors, Society has started a comprehensive health care program, including a health care clinic and mobile medical team, to provide primary and secondary health care services to the community through a registered non-government organization, Uchicago Research Bangladesh (URB). These clinics often offer services such as general and specialized consultation, hospital admission, all sorts of investigations, and preventive care like health education, health camps, online health care services, etc. This organization also implemented various government and non-government programs, including awareness and training of key community members and community health workers on NCDs, dengue, chikungunya, COVID-19, vaccination awareness, etc.
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Vision and work */}
@@ -32,7 +38,8 @@ export default function about() {
           <div className='flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5'>
             <div className='bg-white py-14 px-8 flex-1 border-[#aaa] border-4 text-center'>
               <h2 className='font-mdheading uppercase '>Our Mission</h2>
-              <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>To enjoy the highest attainable status of health, well-being and quality of life at every age, free   of preventable NCDs, avoidable disability and premature death for all people of Araihazar Upazilla and beyond </p>
+              {/* <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>To enjoy the highest attainable status of health, well-being and quality of life at every age, free   of preventable NCDs, avoidable disability and premature death for all people of Araihazar Upazilla and beyond </p> */}
+              <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>{mission}</p>
             </div>
             <div className='flex-1'>
               <Image src={aboutOne} alt='Image' className='h-full object-cover' />
@@ -44,8 +51,11 @@ export default function about() {
             </div>
             <div className='bg-white py-14 px-8 flex-1 border-[#aaa] border-4 text-center'>
               <h2 className='font-mdheading uppercase '>Our Vision</h2>
-              <p className='mt-4 text-sm'>
+              {/* <p className='mt-4 text-sm'>
                 To reduce preventable morbidity, avoidable disability, premature mortality and establish a healthy society in Araihazar and beyond.
+              </p> */}
+              <p className='mt-4 text-sm'>
+                {vision}
               </p>
             </div>
           </div>
@@ -56,7 +66,10 @@ export default function about() {
         <div className='hero-width w-full mx-auto border-4 border-white py-20 text-white'>
           <div className='max-w-[60%] mx-auto'>
             <h2 className='font-mdheading uppercase'>Objectives</h2>
-            <ul className='mt-6 text-sm text-left space-y-2 list-disc'>
+            <div className='history-objective-ul'>
+              <ReactMarkdown>{objective}</ReactMarkdown>
+            </div>
+            {/* <ul className='mt-6 text-sm text-left space-y-2 list-disc'>
               <li>To work in the public and community health sectors with the aim of contributing to the development of this sector.</li>
               <li>To establish, run, and operate health clinics of all types for community health promotion and services, and for that purpose, to obtain the permissions and approvals of all relevant authorities.</li>
               <li>
@@ -77,10 +90,23 @@ export default function about() {
               <li>
                 To support all types of research for that purpose by liaising, collaborating, and working with other educational and research institutions, universities, organizations, trusts, donors, and governments.
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
     </main>
   )
+}
+
+export const getStaticProps = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/history`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json'
+    }
+  })
+  const historyData = await res.json();
+  return {
+    props: historyData
+  }
 }

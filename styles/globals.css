@@ -170,6 +170,18 @@ h6 {
   color: black;
 }
 
+.page-about .history-objective-ul ul {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: left;
+  list-style-type: disc;
+  margin-top: 1.5rem;
+}
+
+.page-about .history-objective-ul ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
 /* Service Page */
 .page-services__header {
   background-image: url("../data/about/about-3.jpg");

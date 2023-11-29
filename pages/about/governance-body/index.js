@@ -7,7 +7,7 @@ import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/
 import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader';
 
-export default function governance_body() {
+export default function governance_body(governanceBodies) {
     const gravatar = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=identicon&f=y";
     return (
         <main className='page-about'>
@@ -20,7 +20,33 @@ export default function governance_body() {
                     <h2 className='font-heading text-center uppercase mb-24'>Governance Body</h2>
                     {/* TOp Row */}
                     <div className='flex flex-wrap gap-x-5 gap-y-10'>
-                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                        {
+                            governanceBodies?.data.map(item => {
+                                const { name, designation, degrees, bio, photo } = item.attributes
+                                if (designation == 'Chairman' || designation == 'Vice Chairman' || designation == 'General Secretary') {
+                                    return (
+                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
+                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
+                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
+                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 200)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
+                                            <div className="flex justify-center space-x-3 text-[#8896A0]">
+                                                <Link
+                                                    href="https://facebook.com"
+                                                    className=""
+                                                ><FaFacebookF className='footer-icon' /></Link>
+                                                <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
+                                                <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
+                                                <Link href="https://twitter.com" className=""><FaTwitter /></Link>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
+                        {/* <div className='text-center basis-[48%] lg:basis-[31%]'>
                             <Image src={teamMemberOne} alt='Image' className='mx-auto h-[200px] w-[200px] rounded-full' />
                             <p className='text-sm text-blackshadow mt-6'>Chairman</p>
                             <h3 className='font-subheading text-themered font-bold'>Md. Zahangir Alam</h3>
@@ -76,13 +102,40 @@ export default function governance_body() {
                                 <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
                                 <Link href="https://twitter.com" className=""><FaTwitter /></Link>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     {/* Second Row */}
-                    <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
-                        <div className='text-center basis-[48%] lg:basis-[31%]'>
-
-                        </div>
+                    {
+                        governanceBodies?.data.map(item => {
+                            const { name, designation, degrees, bio, photo } = item.attributes
+                            if (designation == 'Treasurer') {
+                                return (
+                                    <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
+                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
+                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
+                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
+                                            <div className="flex justify-center space-x-3 text-[#8896A0]">
+                                                <Link
+                                                    href="https://facebook.com"
+                                                    className=""
+                                                ><FaFacebookF className='footer-icon' /></Link>
+                                                <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
+                                                <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
+                                                <Link href="https://twitter.com" className=""><FaTwitter /></Link>
+                                            </div>
+                                        </div>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                    </div>
+                                )
+                            }
+                        })
+                    }
+                    {/* <div className='text-center basis-[48%] lg:basis-[31%]'></div>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
                             <Image src={teamMemberTwo} alt="Image" className='mx-auto h-[200px] w-[200px] rounded-full' />
                             <p className='text-sm text-blackshadow mt-6'>Treasurer</p>
@@ -92,14 +145,30 @@ export default function governance_body() {
                                 tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
                                 lacinia molestie velit.</p>
                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
-                        
-                        </div>
-                        <div className='text-center basis-[48%] lg:basis-[31%]'>
 
                         </div>
-                    </div>
+                        <div className='text-center basis-[48%] lg:basis-[31%]'></div> */}
+
                     {/* Third row */}
                     <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                        {
+                            governanceBodies?.data.map(item => {
+                                const { name, designation, degrees, bio, photo } = item.attributes
+                                if (designation == 'Executive Member') {
+                                    return (
+                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
+                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
+                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
+                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 100)}</p>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
+                    </div>
+                    {/* <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
                             <Image src={teamMemberThree} alt='Image' className='mx-auto h-[200px] w-[200px] rounded-full' />
                             <p className='text-sm text-blackshadow mt-6'>Executive Member</p>
@@ -124,9 +193,23 @@ export default function governance_body() {
                             <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
                                 tempus leo ac nisi iaculis porta.</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </main>
     )
+}
+
+export const getStaticProps = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/governance-bodies?populate=*`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            // 'Authorization': token
+        }
+    });
+    const governanceBodies = await res.json();
+    return {
+        props: governanceBodies
+    }
 }
