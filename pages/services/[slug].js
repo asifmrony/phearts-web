@@ -5,7 +5,6 @@ import React from 'react'
 export const getStaticPaths = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`);
     const services = await res.json();
-    console.log("Logging all services", services);
 
     const paths = services.data.map((service) => ({
         params: { slug: service.id.toString() }, 
@@ -26,7 +25,6 @@ export const getStaticProps = async ({ params }) => {
         }
     });
     const service = await res.json();
-    console.log("Logging matched params service", service);
     return {
         props: { service }
     }
