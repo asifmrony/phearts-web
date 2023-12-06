@@ -1,14 +1,18 @@
 import PageHeader from '@/components/reusable/PageHeader';
 import { poppins } from '@/utils/fonts';
+import ReactMarkdown from 'react-markdown';
 
-export default function research() {
+export default function research(research) {
+    const { content } = research?.data.attributes;
+    
     return (
         <main className='page-research'>
             <PageHeader title={'Research'} subtitle={''} background={'blue'} />
             {/* Research Details writeup */}
             <div className='pt-14 pb-14 bg-white'>
-                <div className="hero-width w-full mx-auto text-justify">
-                    <div className={`space-y-6 ${poppins.variable} font-poppins`}>
+                <div className={`hero-width w-full mx-auto text-justify ${poppins.variable} font-poppins page-research__body`}>
+                    <ReactMarkdown>{content}</ReactMarkdown>
+                    {/* <div className={`space-y-6 ${poppins.variable} font-poppins`}>
                         <p>The Population Health, Research and training Society conducts research with the aim of discovering and understanding the health effects from all sorts of environmental and biological exposure among the Bangladeshi people and develop effective strategies for prevention and policy development.
                         </p>
                         <p>
@@ -37,9 +41,23 @@ export default function research() {
                             <li>Mrs Alaya Begum</li>
                             <li>Mrs salma akter</li> 
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </main>
     )
+}
+
+export const getStaticProps = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/research`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            // 'Authorization': token
+        }
+    });
+    const research = await res.json();
+    return {
+        props: research
+    }
 }

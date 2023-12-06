@@ -31,7 +31,6 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function entry({ service }) {
-    console.log(service);
     const {title, description, departments} = service.data.attributes;
 
     return (

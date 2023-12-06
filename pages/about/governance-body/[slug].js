@@ -30,7 +30,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function single({ gBody }) {
-    console.log("Logging matched params government body", gBody);
+
     return (
         <main className='page-about-single'>
             <PageHeader title={gBody.data.attributes.name} subtitle={'About / Governance body'} background={'transparent'} />

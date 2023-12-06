@@ -242,6 +242,24 @@ h6 {
   background-size: cover;
 }
 
+/* Research and Training Page */
+.page-research .page-research__body p {
+  margin-bottom: 1rem;
+}
+
+.page-research .page-research__body h1 {
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 2rem;
+}
+
+.page-research .page-research__body ul {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+  margin-top: 0.75rem;
+}
+
 /* Footer */
 .footer-icon path {
   stroke: #76828a;
