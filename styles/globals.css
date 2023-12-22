@@ -264,3 +264,19 @@ h6 {
 .footer-icon path {
   stroke: #76828a;
 }
+
+/* Jobs Page */
+.page-jobs-single .jobs__body h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-jobs-single .jobs__body h1:nth-of-type(2n) {
+  margin-top: 1rem;
+}
+.page-jobs-single .jobs__body ul li {
+  list-style-type: disc;
+  line-height: 1.7;
+  margin-left: 1.2rem;
+}
