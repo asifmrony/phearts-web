@@ -139,6 +139,7 @@ h6 {
 .bg-upcoming-events {
   background-image: url("../data/bg-upcoming-events.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 
