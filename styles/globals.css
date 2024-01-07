@@ -281,3 +281,17 @@ h6 {
   line-height: 1.7;
   margin-left: 1.2rem;
 }
+
+/* News Page */
+.page-news .page-news__description {
+  margin-bottom: 5rem;
+}
+.page-news .page-news__description img,
+.page-news .page-news__description p {
+  margin-top: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+.page-news .page-news__description h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}

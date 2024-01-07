@@ -6,16 +6,48 @@ import homeBlogThree from '@/data/homeblog-3.png';
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function events() {
+export default function events(allNews) {
+  console.log("Unformatted News", allNews);
+  const allFormattedNews = allNews?.data.map((item) => {
+    const newsDate = new Date(item?.attributes.news_date);
+    const monthNames = [
+      "January", "February", "March",
+      "April", "May", "June",
+      "July", "August", "September",
+      "October", "November", "December"
+    ];
+    const month = monthNames[newsDate.getMonth()];
+    const day = newsDate.getDate();
+    const year = newsDate.getFullYear();
+    const formattedDate = `${month} ${day}, ${year}`
+    return { ...item.attributes, id: item.id, news_date: formattedDate }
+  })
+  console.log("All formatted Newses", allFormattedNews);
+
   return (
-    <main className='page-events'>
+    <main className='page-newses'>
       <div className='py-32'>
         <div className="hero-width mx-auto w-full">
           <div>
             <h1 className={`text-3xl font-semibold uppercase ${poppins.variable} font-poppins underline mb-12`}>News</h1>
             {/* All listed events wrapper */}
             <div className='divide-y-2 divide-gray-300'>
-              <div className="flex gap-x-12 py-10">
+              {allFormattedNews?.map((item) => (
+                <div className="flex gap-x-12 py-10" key={item?.id}>
+                  <div className='flex-3'>
+                    <p className='text-blackshadow text-sm'>{item?.news_date}</p>
+                    <Link href={`/news/${item?.id}`}>
+                      <h3 className={`text-2xl font-bold my-2 ${poppins.variable} font-poppins`}>{item?.title}</h3>
+                    </Link>
+                    <p className='mt-7 mb-3 text-sm text-blackshadow'>{item?.summary}</p>
+                    <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/news/${item?.id}`}>Learn more &rarr;</Link>
+                  </div>
+                  <div>
+                    <Image src={item?.preview_img.data.attributes.url} alt='EventPhoto' width={800} height={350} />
+                  </div>
+                </div>
+              ))}
+              {/* <div className="flex gap-x-12 py-10">
                 <div className='flex-3'>
                   <p className='text-blackshadow text-sm'>September 26, 2023</p>
                   <Link href='/news/entry'>
@@ -61,11 +93,25 @@ export default function events() {
                 <div>
                   <Image src={homeBlogThree} alt='EventPhoto' width={800} height={350} />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
     </main>
   )
+}
+
+export const getStaticProps = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/newses?populate=*`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+      // 'Authorization': token
+    }
+  });
+  const allNews = await res.json();
+  return {
+    props: allNews
+  }
 }
