@@ -73,7 +73,7 @@ export default function single(singleEvent) {
             <PageHeader subtitle={`home / Events / ${title}`} title={'Our Events'} background={'blue'} />
             <div className='py-30'>
                 <div className="c-width mx-auto w-full">
-                    <div className="bg-upcoming-events min-h-[400px] relative" style={{backgroundImage: `url(${photo.data.attributes.url})`}}>
+                    <div className="bg-upcoming-events min-h-[400px] relative" style={{backgroundImage: `url(${photo?.data?.attributes.url})`}}>
                         <h1 className={`font-mdheading ${poppinsBold.variable} font-poppins text-white absolute left-12 bottom-12`}>{title}</h1>
                     </div>
                 </div>

@@ -60,7 +60,7 @@ export default function single(singleNews) {
         <main className='page-news'>
             <div className={`text-center py-40 bg-blog-single relative`}>
                 <p className={`text-[28px] text-white Capitalize mb-2 ${poppinsBold.variable} font-poppins`}>{title}</p>
-                <p className={`absolute left-[30%] bottom-5 text-[#e5e5e5] text-sm ${poppins.variable} font-poppins`}>Home / News / {title}</p>
+                <p className={`text-[#e5e5e5] text-sm ${poppins.variable} font-poppins`}>Home / News / {title}</p>
             </div>
             <div className='hero-width w-full mx-auto'>
                 <div className='py-6 text-blackshadow text-sm'>

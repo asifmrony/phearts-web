@@ -35,7 +35,7 @@ export default function events(allEvents) {
     return { ...item.attributes, id: item.id, eventDate: startTimeMS, start_date: formattedEventStart, end_date: formattedEventEnd }
   });
   console.log("Events in Miliseconds", eventsInMS);
-  const upComingEvents = eventsInMS?.filter((item) => item.eventDate > currentTime);
+  const upComingEvents = eventsInMS?.filter((item) => item.eventDate > currentTime).sort((a,b) => a.eventDate - b.eventDate);
   console.log("Logging Upcoming Events", upComingEvents);
   const pastEvents = eventsInMS?.filter((item) => item.eventDate < currentTime)
   console.log("Logging Past Events", pastEvents);
@@ -57,7 +57,7 @@ export default function events(allEvents) {
                   </div> */}
                   <div className='flex-3'>
                     <p className='text-blackshadow text-sm'>{item?.start_date} {item?.end_date ? `- ${item?.end_date}` : null}</p>
-                    <Link href='/events/entry'>
+                    <Link href={`/events/${item?.id}`}>
                       <h3 className={`text-2xl font-bold my-2 ${poppins.variable} font-poppins`}>{item?.title}</h3>
                     </Link>
                     <p className='text-blackshadow text-sm'>{item?.location}</p>
@@ -68,7 +68,7 @@ export default function events(allEvents) {
                     </div>
                   </div>
                   <div>
-                    <Image src={item?.photo?.data.attributes.url} alt='EventPhoto' width={800} height={350} />
+                    <Image src={item?.photo?.data?.attributes.url} alt='EventPhoto' width={800} height={350} />
                   </div>
                 </div>
               ))}
@@ -156,7 +156,7 @@ export default function events(allEvents) {
                   </div> */}
                   <div className='flex-3'>
                     <p className='text-blackshadow text-sm'>{item?.start_date} {item?.end_date ? `- ${item?.end_date}` : null}</p>
-                    <Link href='/events/entry'>
+                    <Link href={`/events/${item?.id}`}>
                       <h3 className={`text-2xl font-bold my-2 ${poppins.variable} font-poppins`}>{item?.title}</h3>
                     </Link>
                     <p className='text-blackshadow text-sm'>{item?.location}</p>

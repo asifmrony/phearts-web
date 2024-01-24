@@ -89,7 +89,7 @@ function causesSlide({ id, image, heading }) {
     )
 }
 
-export default function HomeCauses() {
+export default function FeaturedServices() {
     return (
         <div className='bg-white mt-5 pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>

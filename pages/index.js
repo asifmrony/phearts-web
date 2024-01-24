@@ -1,6 +1,6 @@
 import Stories from '@/components/reusable/Stories'
 import HomeBlog from '@/components/home/HomeBlog'
-import HomeCauses from '@/components/home/HomeCauses'
+import FeaturedServices from '@/components/home/FeaturedServices'
 import HomeEvents from '@/components/home/HomeEvents'
 import HomeSlider from '@/components/home/HomeSlider'
 import Sponsors from '@/components/home/Sponsors'
@@ -8,10 +8,11 @@ import Link from 'next/link'
 import Gallery from '@/components/reusable/Gallery'
 import { poppins } from '@/utils/fonts'
 
-export default function Home() {
+export default function Home(homepageData) {
+  console.log("Homepage Data", homepageData);
   return (
     <main>
-      <HomeSlider />
+      <HomeSlider sliderItems={homepageData?.home?.hero_slider}/>
       <div>
         <div className='flex flex-col md:flex-row text-white hero-width w-full mx-auto relative md:-top-18 lg:-top-36 z-10'>
           <div className='md:basis-[33%] bg-themeblue p-10 pr-16 space-y-5'>
@@ -42,19 +43,19 @@ export default function Home() {
           <Link href="/about/history" className='uppercase text-xs text-themered font-bold tracking-wide'>Learn More...</Link>
         </div>
       </div>
-      <HomeCauses />
+      <FeaturedServices />
       <div className={`bg-become-volunteer`}>
         <div className='hero-width w-full mx-auto text-center py-24 space-y-6'>
-          <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>BECOME A DONOR</span>
-          <h2 className='uppercase font-mdheading text-white'>NO ONE HAS EVER BECOME POOR BY GIVING</h2>
+          {/* <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>BECOME A DONOR</span> */}
+          <h2 className='uppercase font-mdheading text-white'>BECOME A DONOR</h2>
           <p className='text-blackshadow w-3/4 mx-auto'>Empower change through small contributions; support our vital initiatives that improve lives and create a lasting impact in communities nationwide.</p>
           <Link href='/donation' className='inline-block mt-2 px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</Link>
           {/* <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</button> */}
         </div>
       </div>
-      <HomeBlog />
+      <HomeBlog newsItems={homepageData?.news}/>
 
-      <HomeEvents />
+      <HomeEvents eventsData={homepageData?.events} />
       <div className='py-10 bg-themered'>
         <div className="hero-width w-full mx-auto flex flex-col justify-center text-center lg:text-left items-center lg:flex-row lg:justify-between space-y-4 lg:space-y-0">
           <div>
@@ -71,4 +72,24 @@ export default function Home() {
       <Sponsors />
     </main>
   )
+}
+
+export const getStaticProps = async () => {
+  const homeRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home?populate=hero_slider.image&populate=testimonial.client_photo&populate=collaborations.company_photo`);
+  const homeApidata = await homeRes.json();
+  console.log("Home Api Data", homeApidata);
+  const newsRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/newses?sort=news_date:desc&pagination[start]=0&pagination[limit]=5&populate=*`);
+  const newsApidata = await newsRes.json();
+  console.log("News Api Data", newsApidata);
+  const eventRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/events?filters[start_date][$gte]=${new Date().toISOString()}&sort=start_date&pagination[start]=0&pagination[limit]=3`);
+  const eventApidata = await eventRes.json();
+  const homepageData = {
+    home: homeApidata?.data?.attributes,
+    news: newsApidata?.data,
+    events: eventApidata?.data
+  }
+  console.log("Home and news data", homepageData);
+  return {
+    props: homepageData
+  }
 }

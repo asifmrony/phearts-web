@@ -65,24 +65,34 @@ const data = [
     }
 ]
 
-function causesSlide({ id, image, date, title, details }) {
+function causesSlide({ id, image, date, title, summary }) {
+    const newsDate = new Date(date);
+    const monthNames = [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September",
+        "October", "November", "December"
+    ];
+    const month = monthNames[newsDate.getMonth()];
+    const formattedDate = `${month} ${newsDate.getDate()}, ${newsDate.getFullYear()}`;
+
     return (
         <SwiperSlide key={id} className='h-[300px]'>
             <div className='relative bg-[#F8F9F9]'>
-                <Image src={image} alt='Image' />
+                <Image src={image?.data?.attributes.url} alt='Image' width={'365'} height={'265'} style={{minHeight: '165px'}} />
                 <div className='p-3 bg-white w-[95%] mx-auto relative -mt-5'>
-                    <p className='text-blackshadow mt-1 text-xs'>{date}</p>
+                    <p className='text-blackshadow mt-1 text-xs'>{formattedDate}</p>
                     <h4 className={`text-lg text-themeblue leading-snug font-extrabold ${poppinsBold.variable} font-poppins mt-2`}>{title}</h4>
-                    <p className='text-blackshadow text-sm mt-2 mb-2'>{details}</p>
-                    <Link href={`/news/entry`} className='text-sm font-semibold text-themegreen'>Read More</Link>
+                    <p className='text-blackshadow text-sm mt-2 mb-2'>{summary}</p>
+                    <Link href={`/news/${id}`} className='text-sm font-semibold text-themegreen'>Read More</Link>
                 </div>
             </div>
         </SwiperSlide>
     )
 }
 
-export default function HomeBlog({blogData}) {
-    console.log(blogData)
+export default function HomeBlog({ newsItems }) {
+    console.log("all News items", newsItems)
     return (
         <div className='pt-24 pb-32'>
             <div className='hero-width w-full mx-auto text-center'>
@@ -106,9 +116,10 @@ export default function HomeBlog({blogData}) {
                         className='blog-slider'
                     >
                         {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}
-                        {data.map(({ id, image, date, title, details }) => (
-                            causesSlide({ id, image, date, title, details })
-                        ))}
+                        {newsItems.map((item) => {
+                            const { preview_img, news_date, title, summary } = item?.attributes
+                            return causesSlide({ id: item?.id, image: preview_img, date: news_date, title, summary })
+                        })}
                     </Swiper>
                 </div>
                 <Link href='/news' className='text-sm font-semibold text-themegreen border-2 border-themegreen py-2 px-4 inline-block mt-6'>View All News</Link>
@@ -116,18 +127,3 @@ export default function HomeBlog({blogData}) {
         </div>
     )
 }
-
-export const getStaticProps = async () => {
-    const token = `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/notices?populate=*`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': token
-      }
-    });
-    const blogData = await res.json();
-    return {
-      props: {blogData}
-    }
-  }
