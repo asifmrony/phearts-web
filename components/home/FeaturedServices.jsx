@@ -11,6 +11,7 @@ import causesTwo from '@/data/homeCauses-2.png';
 import causesThree from '@/data/homeCauses-3.png';
 import causesFour from '@/data/homeCauses-4.png';
 import { poppins } from '@/utils/fonts';
+import Link from 'next/link';
 
 const data = [
     {
@@ -78,18 +79,22 @@ const data = [
     }
 ]
 
-function causesSlide({ id, image, heading }) {
+function causesSlide({ id, serviceId, photo, heading }) {
     return (
         <SwiperSlide key={id}>
             <div className='w-full'>
-                <Image src={image} alt='Image' />
-                <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
+                <Image src={photo?.data?.attributes?.url} alt='Image' width={261} height={260} style={{minHeight: '235px'}} />
+                <Link href={`/services/${serviceId}`}>                
+                    <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
+                </Link>
             </div>
         </SwiperSlide>
     )
 }
 
-export default function FeaturedServices() {
+export default function FeaturedServices({ serviceItems }) {
+    console.log("All Service Items", serviceItems);
+    const { serviceId, deptData } = serviceItems;
     return (
         <div className='bg-white mt-5 pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>
@@ -108,9 +113,10 @@ export default function FeaturedServices() {
                         onSwiper={(swiper) => console.log(swiper)}
                         className='causes-slider'
                     >
-                        {data.map(({ id, image, heading }) => (
-                            causesSlide({id, image, heading})
-                        ))}
+                        {deptData?.map((item) => {
+                            const {title, photo} = item?.attributes
+                            return causesSlide({id: item?.id, serviceId, photo, heading: title})
+                        })}
                     </Swiper>
                 </div>
             </div>

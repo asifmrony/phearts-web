@@ -49,27 +49,47 @@ const data = [
 function causesSlide({ id, image, heading, category }) {
     return (
         <SwiperSlide key={id}>
-            <Link href='/gallery/entry'>
-            <div className='bg-white px-5 py-8'>
-                <Image src={image} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
-                <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
-                    <span className='text-blackshadow'>in</span>
-                    <span className='text-black ml-1 font-medium'>{category}</span>
-                </p>
-                <p className='text-themeblue text-xl font-bold mt-3'>{heading}</p>
-            </div>
+            <Link href={`/gallery/${id}`}>
+                <div className='bg-white px-5 py-8'>
+                    <Image src={image?.data?.attributes?.url} width={261} height={260} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
+                    <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
+                        <span className='text-blackshadow'>in</span>
+                        <span className='text-black ml-1 font-medium'>{category}</span>
+                    </p>
+                    <p className='text-themeblue text-xl font-bold mt-3'>{heading}</p>
+                </div>
             </Link>
         </SwiperSlide>
     )
 }
 
-export default function Gallery() {
+function galleryItem({ id, image, heading, category }) {
+    return (
+        <div key={id} className='w-[32%]'>
+            <Link href={`/gallery/${id}`}>
+                <div className='bg-white px-5 py-8'>
+                    <Image src={image?.data?.attributes?.url} width={261} height={260} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
+                    <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
+                        <span className='text-blackshadow'>in</span>
+                        <span className='text-black ml-1 font-medium'>{category}</span>
+                    </p>
+                    <p className='text-themeblue text-xl font-bold mt-3'>{heading}</p>
+                </div>
+            </Link>
+        </div>
+    )
+}
+
+export default function Gallery({ albumsData, renderType }) {
+    // renderType possible values would be 'slide || grid'
+    console.log("AlbumsData", albumsData)
     return (
         <div className='pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>
-                <span className='bg-themeblue text-white p-2 uppercase mb-4 inline-block text-xs'>Let us show you</span>
+                {renderType === 'slide' && <span className='bg-themeblue text-white p-2 uppercase mb-4 inline-block text-xs'>Let us show you</span>}
                 <h2 className='uppercase text-[32px] font-black leading-tight mb-20'>Our Gallery & Albums</h2>
-                <div>
+                {/* render this block for renderType slide */}
+                {renderType === 'slide' && (<div>
                     <Swiper
                         modules={[Autoplay]}
                         autoplay={{
@@ -80,14 +100,23 @@ export default function Gallery() {
                         spaceBetween={20}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
-                        
+
                     >
                         {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}
-                        {data.map(({ id, image, heading, category }) => (
-                            causesSlide({id, image, heading, category})
-                        ))}
+                        {albumsData?.map((item) => {
+                            const { title, featured_image, category } = item?.attributes;
+                            return causesSlide({ id: item?.id, image: featured_image, heading: title, category })
+                        })}
                     </Swiper>
-                </div>
+                </div>)}
+
+                {/* render this block for renderType grid */}
+                {renderType !== 'slide' && (<div className='flex flex-wrap gap-4'>
+                    {albumsData?.map((item) => {
+                        const { title, featured_image, category } = item?.attributes;
+                        return galleryItem({ id: item?.id, image: featured_image, heading: title, category })
+                    })}
+                </div>)}
             </div>
         </div>
     )
