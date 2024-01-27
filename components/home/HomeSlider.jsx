@@ -47,7 +47,13 @@ function sliderContent({ id, image, subheading, heading, buttonText, buttonLink,
     
     return (
         <SwiperSlide key={id} className='hero-slide'>
-            <Image src={image?.data.attributes.url} alt='Image' width={1920} height={839} style={{objectFit: 'cover'}} />
+            <Image 
+                src={image?.data.attributes.url} alt='Image' 
+                width={1920} 
+                height={839}
+                style={{objectFit: 'cover'}}
+                priority={true} 
+            />
             {textVisible && <div className='slider-texts hero-width w-full mx-auto flex items-center'>
                 <div className={`slider-texts__content`}>
                     <p className={`font-subheading text-white font-medium mb-1 lg:mb-2 tracking-wide ${poppins.variable} font-poppins`}>{subheading}</p>

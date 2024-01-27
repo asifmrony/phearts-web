@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import teamMemberOne from '@/data/about/team-member-1.jpg'
 import teamMemberTwo from '@/data/about/team-member-2.jpg'
 import teamMemberThree from '@/data/about/team-member-3.jpg'
 import Image from 'next/image'
 import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader'
+import Link from 'next/link'
 
 export default function administrative_body(adminBodies) {
-    console.log(adminBodies);
+    const [deputyBlock, showDeputyBlock] = useState(false);
+
+    useEffect(() => {
+        const deputyDirFlter = adminBodies?.data.filter((item) => item?.association === 'deputy-director');
+        const deputyKey = deputyDirFlter[0]?.item.attributes.association;
+        if(deputyDirFlter[0] !== undefined && deputyKey === 'deputy-director') {
+            showDeputyBlock(true);
+        }
+    }, [adminBodies])
+
     return (
         <main className='page-about'>
             <PageHeader title={'Administrative body'} subtitle={'About / Administration'} background={'blue'} />
@@ -27,6 +37,7 @@ export default function administrative_body(adminBodies) {
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
                                             <h3 className='font-subheading text-themered font-bold mt-4'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
                                         </div>
                                     )
                                 }
@@ -51,7 +62,7 @@ export default function administrative_body(adminBodies) {
             </div>
 
             {/* Deputy Director */}
-            <div className='pt-24 pb-14 bg-white'>
+            {deputyBlock && <div className='pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <h2 className='font-mdheading text-center uppercase mb-16'>Deputy Director</h2>
                     <div className='flex justify-center flex-wrap gap-x-5 gap-y-10'>
@@ -87,10 +98,10 @@ export default function administrative_body(adminBodies) {
 
                     </div>
                 </div>
-            </div>
+            </div>}
 
-            {/* Deputy Director */}
-            <div className='pt-24 pb-14 bg-white'>
+            {/* Manager */}
+            <div className='pt-20 pb-20 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <h2 className='font-mdheading text-center uppercase mb-16'>Manager</h2>
                     <div className='flex justify-center flex-wrap gap-x-5 gap-y-10'>

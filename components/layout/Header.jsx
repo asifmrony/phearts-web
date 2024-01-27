@@ -1,7 +1,7 @@
 import Image from "next/image";
 import pheartsLogo from '@/assets/phearts_logo.png';
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaInstagramSquare, FaLinkedinIn, FaPinterestP, FaTwitter } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import NavigationDesktop from "./NavigationDesktop";
@@ -29,19 +29,25 @@ export default function Header() {
         <div className="lg:bg-themeblue w-full">
             <div className="w-full c-width mx-auto relative lg:pb-[4.5rem]">
                 <div className="hidden lg:flex justify-between items-center px-4 text-white">
-                    <div className="flex text-sm space-x-6">
-                        <p><strong>Location:</strong> Araihazar, Narayanganj</p>
-                        <p><strong>Phone:</strong> 123- 456-7890</p>
-                        <p><strong>Email:</strong> admin@youdomain.com</p>
+                    <div className={`flex text-sm space-x-6 ${poppins.variable} font-poppins`}>
+                        <p><strong>Location:</strong> New Model Town, Araihazar Sadar, Narayanganj.</p>
+                        <p><strong>Phone:</strong> +88 0177-9880862</p>
+                        <p><strong>Email:</strong>phearts.org@gmail.com</p>
                     </div>
                     <div className="flex space-x-1">
                         <a
-                            href="facebook.com"
+                            href="https://www.facebook.com/phearts.arsenic"
                             className="p-3 bg-themegreen"
+                            target="_blank"
                         ><FaFacebookF /></a>
-                        <a href="linkedin.com" className="p-3 bg-themegreen"><FaLinkedinIn /></a>
-                        <a href="pinterest.com" className="p-3 bg-themegreen"><FaPinterestP /></a>
-                        <a href="twitter.com" className="p-3 bg-themegreen"><FaTwitter /></a>
+                        <a href="https://www.linkedin.com/in/phearts-clinic-3356952a3/" 
+                            className="p-3 bg-themegreen"
+                            target="_blank"
+                        ><FaLinkedinIn /></a>
+                        <a href="https://www.instagram.com/phearts.arsenic" 
+                            className="p-3 bg-themegreen"
+                            target="_blank"
+                        ><FaInstagram /></a>
                     </div>
                 </div>
 

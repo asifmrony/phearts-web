@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { FaFacebookF, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
 import { GrLocation, GrMailOption, GrPhone } from 'react-icons/gr'
 
 export default function Footer() {
@@ -11,19 +11,19 @@ export default function Footer() {
                 <div className='c-width w-full mx-auto px-5 lg:px-0 py-12 lg:py-20 flex flex-col lg:flex-row gap-y-6 lg:gap-x-10 text-sm'>
                     <div className='flex-1'>
                         <h2 className='font-bold uppercase text-lg text-white'>About Us</h2>
-                        <p className='text-blackshadow my-5'>committed to improving the lives of people who are less privileged in Bangladesh</p>
+                        <p className='text-blackshadow my-5'>Committed to improving the lives of people who are less privileged in Bangladesh</p>
                         <div className='space-y-2'>
                             <p className='flex space-x-3 items-center'>
                                 <GrLocation className='footer-icon' />
-                                <span className='text-blackshadow'>Araihazar, Narayanganj</span>
+                                <span className='text-blackshadow'>New Model Town, Araihazar Sadar, Araihazar, Narayanganj.</span>
                             </p>
                             <p className='flex space-x-3 items-center'>
                                 <GrMailOption className='footer-icon' />
-                                <span className='text-blackshadow'>example@example.com</span>
+                                <span className='text-blackshadow'>phearts.org@gmail.com</span>
                             </p>
                             <p className='flex space-x-3 items-center'>
                                 <GrPhone className='footer-icon' />
-                                <span className='text-blackshadow'>Call Us: 1-800-123-1234</span>
+                                <span className='text-blackshadow'>+88 0177-9880862</span>
                             </p>
                         </div>
                     </div>
@@ -55,13 +55,13 @@ export default function Footer() {
                         <nav>
                             <ul className='text-blackshadow space-y-2 text-blue-600 mt-5'>
                                 <li>
-                                    <Link href='/blog/entry'>Choosing Among Bad Options in Dadaab Refugee</Link>
+                                    <Link href='/news'>Choosing Among Bad Options in Dadaab Refugee</Link>
                                 </li>
                                 <li>
-                                    <Link href='/blog/entry'>Preparing to help American Refugees</Link>
+                                    <Link href='/news'>Preparing to help American Refugees</Link>
                                 </li>
                                 <li>
-                                    <Link href='/blog/entry'>Burundian Refugees in the DR congo</Link>
+                                    <Link href='/news'>Burundian Refugees in the DR congo</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -70,13 +70,21 @@ export default function Footer() {
             </div>
             <div className='bg-themeblue'>
                 <div className='c-width w-full mx-auto px-5 lg:px-0 py-5 flex flex-col lg:flex-row gap-y-5 justify-between text-sm'>
-                    <p className='text-[#8896A0]'>CodeSmith Tech © 2023 / All Rights Reserved</p>
+                    <Link href='https://codesmithtech.com' target='_blank' className='text-[#8896A0]'>CodeSmith Tech © 2023 / All Rights Reserved</Link>
                     <div className="flex space-x-3 text-[#8896A0]">
                         <Link
-                            href="https://facebook.com"
-                            className=""
+                            href="https://www.facebook.com/phearts.arsenic"
+                            className="transition ease-in-out delay-150 duration-300 hover:scale-150 hover:-translate-y-1"
+                            target="_blank"
                         ><FaFacebookF className='footer-icon' /></Link>
-
+                        <Link href="https://www.linkedin.com/in/phearts-clinic-3356952a3/" 
+                            className="transition ease-in-out delay-150 duration-300 hover:scale-150 hover:-translate-y-1"
+                            target="_blank"
+                        ><FaLinkedinIn /></Link>
+                        <Link href="https://www.instagram.com/phearts.arsenic" 
+                            className="transition ease-in-out delay-150 duration-300 hover:scale-150 hover:-translate-y-1"
+                            target="_blank"
+                        ><FaInstagram /></Link>
                     </div>
                 </div>
             </div>

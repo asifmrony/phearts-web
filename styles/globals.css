@@ -295,3 +295,20 @@ h6 {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+
+/* Appointment page */
+.page-appointment-single .biodata-block h1,
+.page-appointment-single .biodata-block h2,
+.page-appointment-single .biodata-block h3,
+.page-appointment-single .biodata-block h4,
+.page-appointment-single .biodata-block h5,
+.page-appointment-single .biodata-block h6,
+.page-contact .biodata-block h1,
+.page-contact .biodata-block h2,
+.page-contact .biodata-block h3,
+.page-contact .biodata-block h4,
+.page-contact .biodata-block h5,
+.page-contact .biodata-block h6 {
+  font-size: 2rem;
+  font-family: 'poppins, sans-serif';
+}

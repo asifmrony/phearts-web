@@ -1,14 +1,17 @@
 import PageHeader from '@/components/reusable/PageHeader'
 import Image from 'next/image'
 import { poppins, poppinsBold } from '@/utils/fonts'
+import ReactMarkdown from 'react-markdown'
 
-export default function single() {
+export default function single(contactDetails) {
+    console.log("Contact Details", contactDetails?.data.attributes.biodata);
+    const { biodata } = contactDetails?.data.attributes;
     return (
         <main className='page-appointment-single'>
-            <PageHeader title={'Appointment Form'} subtitle={''} background={'transparent'} />
+            <PageHeader title={'Appointment'} subtitle={''} background={'transparent'} />
             <div className='pt-10 pb-48 bg-white px-4 sm:px-0'>
                 <div className='hero-width w-full mx-auto flex justify-center'>
-                    <form>
+                    {/* <form>
                         <div class="space-y-12">
                             <div class="border-b border-gray-900/10 pb-12">
                                 <h2 class="text-base font-semibold leading-7 text-gray-900">Share us your details</h2>
@@ -16,7 +19,7 @@ export default function single() {
 
                                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-                                    {/* First Name and Last Name */}
+                                    
                                     <div class="sm:col-span-3">
                                         <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
                                         <div class="mt-2">
@@ -88,7 +91,7 @@ export default function single() {
                                         </div>
                                     </div>
 
-                                    {/* Patients health status description */}
+                                    
                                     <div class="col-span-full">
                                         <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Briefly discuss your problem</label>
                                         <div class="mt-2">
@@ -106,13 +109,32 @@ export default function single() {
                         </div>
 
                         <div class="mt-6 flex items-center justify-end gap-x-6">
-                            {/* <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button> */}
                             <button type="submit" class="rounded-md bg-indigo-600 px-8 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
                         </div>
-                    </form>
-
+                    </form> */}
+                    <div>
+                        <h3 className='text-lg'>For Appointment, Please contact with below details:</h3>
+                        <div className={`${poppins.variable} font-poppins biodata-block`}>
+                            <ReactMarkdown>{biodata}</ReactMarkdown>
+                            {/* {biodata} */}
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
     )
+}
+
+export const getStaticProps = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/contact-info`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            // 'Authorization': token
+        }
+    });
+    const contactDetails = await res.json();
+    return {
+        props: contactDetails
+    }
 }

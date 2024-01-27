@@ -52,9 +52,25 @@
       ]
     },
     {
-      "name": "Events",
+      "name": "Activities",
       "id": 16,
-      "link": "/events"
+      "children": [
+        {
+          "name": "Events",
+          "id": 41,
+          "link": "/events"
+        },
+        {
+          "name": "News",
+          "id": 42,
+          "link": "/news"
+        },
+        {
+          "name": "Gallery",
+          "id": 43,
+          "link": "/gallery"
+        }
+      ]
     },
     {
       "name": "Donation",

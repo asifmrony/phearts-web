@@ -32,7 +32,7 @@ export default function governance_body(governanceBodies) {
                                             <p className='mt-1 font-bold text-sm'>{degrees}</p>
                                             <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 200)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
-                                            <div className="flex justify-center space-x-3 text-[#8896A0]">
+                                            {/* <div className="flex justify-center space-x-3 text-[#8896A0]">
                                                 <Link
                                                     href="https://facebook.com"
                                                     className=""
@@ -40,7 +40,7 @@ export default function governance_body(governanceBodies) {
                                                 <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
                                                 <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
                                                 <Link href="https://twitter.com" className=""><FaTwitter /></Link>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     )
                                 }
@@ -119,7 +119,7 @@ export default function governance_body(governanceBodies) {
                                             <p className='mt-1 font-bold text-sm'>{degrees}</p>
                                             <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 140)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
-                                            <div className="flex justify-center space-x-3 text-[#8896A0]">
+                                            {/* <div className="flex justify-center space-x-3 text-[#8896A0]">
                                                 <Link
                                                     href="https://facebook.com"
                                                     className=""
@@ -127,7 +127,7 @@ export default function governance_body(governanceBodies) {
                                                 <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
                                                 <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
                                                 <Link href="https://twitter.com" className=""><FaTwitter /></Link>
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <div className='text-center basis-[48%] lg:basis-[31%]'></div>
                                     </div>
