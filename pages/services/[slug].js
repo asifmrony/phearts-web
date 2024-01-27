@@ -32,7 +32,7 @@ export const getStaticProps = async ({ params }) => {
     }
 }
 
-export default function entry({ service }) {
+export default function SingleService({ service }) {
     console.log("Single service infos", service);
     const { title, description, departments } = service.data.attributes;
     const [showDeptDetail, setShowDeptDetails] = useState(false);
@@ -80,8 +80,8 @@ export default function entry({ service }) {
                         <ReactMarkdown>{selectedDeptData?.long_description}</ReactMarkdown>
                     </p>
                     <h3 className={`text-2xl font-semibold uppercase ${poppins.variable} font-poppins mb-8 single-service__heading`}>{selectedDeptData?.doctors.data?.length > 0 ? 'All Doctors' : ''}</h3>
-                    {selectedDeptData?.doctors.data.map((item) => (
-                        <div className='mb-6'>
+                    {selectedDeptData?.doctors.data.map((item, _) => (
+                        <div className='mb-6' key={_}>
                             <h4 className={`text-xl ${poppins.variable} font-poppins`}>{item.attributes.name}</h4>
                             <h5 className={`text-sm ${poppins.variable} font-poppins`}>{item.attributes.degrees}</h5>
                             <p className='text-sm'>{item.attributes.text_line_one}</p>

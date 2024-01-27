@@ -43,7 +43,7 @@ export default function single({ album }) {
                 <div className='hero-width w-full mx-auto text-center flex flex-col space-y-4'>
                     <p className={`${poppins.variable} font-poppins hidden`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore harum at sequi sunt soluta ducimus esse libero dolorum beatae similique vitae consequatur, porro saepe! Consectetur ab vel iusto! Ut, in.</p>
                     {images?.data.map((item) => (
-                        <Image src={item?.attributes?.url} width={item?.attributes?.width} height={item?.attributes?.height} alt='Gallery Image' />
+                        <Image src={item?.attributes?.url} width={item?.attributes?.width} height={item?.attributes?.height} alt='Gallery Image' key={item?.id} />
                     ))}
                     {/* <Image src={glImage1} alt='Gallery Image' />
                     <Image src={glImage2} alt='Gallery Image' />

@@ -7,7 +7,7 @@ import { poppins, poppinsBold } from '@/utils/fonts';
 import PageHeader from '@/components/reusable/PageHeader'
 import Link from 'next/link'
 
-export default function administrative_body(adminBodies) {
+export default function AdministrativeBody(adminBodies) {
     const [deputyBlock, showDeputyBlock] = useState(false);
 
     useEffect(() => {
@@ -71,7 +71,7 @@ export default function administrative_body(adminBodies) {
                                 const { name, bio, association, photo } = item.attributes;
                                 if (association === 'deputy-director') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]'>
+                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
                                             <h3 className='font-subheading text-themered font-bold mt-4'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio}</p>
@@ -110,7 +110,7 @@ export default function administrative_body(adminBodies) {
                                 const { name, bio, association, photo } = item.attributes;
                                 if (association === 'manager') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]'>
+                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
                                             <h3 className='font-subheading text-themered font-bold mt-4'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio}</p>

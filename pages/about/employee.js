@@ -18,7 +18,7 @@ export default function employee(employeeList) {
           <tbody className={`text-left ${poppins.variable} font-poppins`}>
             {
               employeeList?.data.map((item) => (
-                <tr>
+                <tr key={item?.id}>
                   <td className='py-2 pl-9'>{item?.attributes.name}</td>
                   <td className='py-2 pl-9'>{item?.attributes.designation}</td>
                   <td className='py-2 pl-9'>{item?.attributes.department}</td>
