@@ -12,8 +12,8 @@ export default function jobs(alljobs) {
                         <div className='md:max-w-[500px] md:ml-auto py-14 md:py-28 px-10 md:px-20 text-center md:text-right space-y-8'>
                             <h2 className='font-mdheading mb-10 md:mb-14 uppercase'>Current Vacancies</h2>
                             <div className='md:space-y-8 md:block flex flex-wrap gap-x-6 justify-between items-center'>
-                                {alljobs?.data.map((item) => {
-                                    const { job_title, job_summary } = item.attributes;
+                                {alljobs?.data?.map((item) => {
+                                    const { job_title, job_summary } = item?.attributes;
 
                                     return (
                                         <React.Fragment key={item.id}>

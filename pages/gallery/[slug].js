@@ -9,7 +9,7 @@ export const getStaticPaths = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/gallery-albums`);
     const albums = await res.json();
 
-    const paths = albums.data.map((album) => ({
+    const paths = albums?.data?.map((album) => ({
         params: { slug: album.id.toString() },
     }))
 
@@ -35,14 +35,15 @@ export const getStaticProps = async ({ params }) => {
 
 export default function single({ album }) {
     console.log("Album Info", album);
-    const { title, images } = album?.data.attributes;
+    // const { title, images } = album?.data?.attributes;
+    const images = album?.data?.attributes?.images;
     return (
         <main className='page-gallery-single'>
-            <PageHeader title={`${title}`} subtitle={'home/galleries'} background={'transparent'} />
+            <PageHeader title={`${album?.data?.attributes?.title}`} subtitle={'home/galleries'} background={'transparent'} />
             <div className='pb-48 bg-white'>
                 <div className='hero-width w-full mx-auto text-center flex flex-col space-y-4'>
                     <p className={`${poppins.variable} font-poppins hidden`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore harum at sequi sunt soluta ducimus esse libero dolorum beatae similique vitae consequatur, porro saepe! Consectetur ab vel iusto! Ut, in.</p>
-                    {images?.data.map((item) => (
+                    {images?.data?.map((item) => (
                         <Image src={item?.attributes?.url} width={item?.attributes?.width} height={item?.attributes?.height} alt='Gallery Image' key={item?.id} />
                     ))}
                     {/* <Image src={glImage1} alt='Gallery Image' />

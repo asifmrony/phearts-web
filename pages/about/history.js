@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import aboutOne from '@/data/about/about-1.jpg'
-import aboutTwo from '@/data/about/about-2.jpg'
+import missionPic from '@/data/about/Mission-Picture.jpg';
+import visionPic from '@/data/about/Vision-Picture.jpg';
 import { poppins, poppinsBold } from '@/utils/fonts';
 import Link from 'next/link'
 import PageHeader from '@/components/reusable/PageHeader';
@@ -42,12 +42,12 @@ export default function about(historyData) {
               <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>{mission}</p>
             </div>
             <div className='flex-1'>
-              <Image src={aboutOne} alt='Image' className='h-full object-cover' />
+              <Image src={missionPic} alt='Image' className='h-full object-cover' />
             </div>
           </div>
           <div className="flex flex-col-reverse md:flex-row space-y-5 space-y-reverse md:space-y-0 md:space-x-5 mt-5">
             <div className='flex-1'>
-              <Image src={aboutTwo} alt='Image' className='h-full object-cover' />
+              <Image src={visionPic} alt='Image' className='h-full object-cover' />
             </div>
             <div className='bg-white py-14 px-8 flex-1 border-[#aaa] border-4 text-center'>
               <h2 className='font-mdheading uppercase '>Our Vision</h2>

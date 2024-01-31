@@ -6,7 +6,7 @@ export const getStaticPaths = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/jobs`);
   const alljobs = await res.json();
 
-  const paths = alljobs.data.map((body) => ({
+  const paths = alljobs?.data?.map((body) => ({
       params: { entry: body.id.toString() }
   }))
 
@@ -42,11 +42,11 @@ export const getStaticProps = async ({ params }) => {
 
 export default function single({ singleJob }) {
   console.log("Single Job", singleJob);
-  const {job_title, job_description, job_apply_instruction } = singleJob?.data.attributes;
+  // const {job_title, job_description, job_apply_instruction } = singleJob?.data?.attributes;
 
   return (
     <main className='page-jobs-single'>
-      <PageHeader title={`${job_title}`} subtitle={'Jobs / opening jobs'} background={'transparent'} />
+      <PageHeader title={`${singleJob?.data?.attributes?.job_title}`} subtitle={'Jobs / opening jobs'} background={'transparent'} />
       <div className='pb-48 bg-white'>
         <div className='hero-width w-full mx-auto jobs__body'>
           {/* <div>
@@ -73,11 +73,11 @@ export default function single({ singleJob }) {
               <li>Knowledge and a good understanding of Microsoft Office</li>
             </ul>
           </div> */}
-          {<ReactMarkdown>{job_description}</ReactMarkdown>}
+          {<ReactMarkdown>{singleJob?.data?.attributes?.job_description}</ReactMarkdown>}
           <div className='mt-12 text-center'>
             {/* <p>If reading this excites you, Send your CV to info@phearts.com</p>
             <p>Please write subject line as “Communications Officer” and send your updated CV with a portfolio and a cover letter.</p> */}
-            {<ReactMarkdown>{job_apply_instruction}</ReactMarkdown>}
+            {<ReactMarkdown>{singleJob?.data?.attributes?.job_apply_instruction}</ReactMarkdown>}
           </div>
         </div>
       </div>

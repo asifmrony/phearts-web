@@ -4,10 +4,15 @@ import { poppins, poppinsBold } from '@/utils/fonts'
 import Image from 'next/image'
 
 export const getStaticPaths = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/newses`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/newses`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+        }
+    });
     const allNews = await res.json();
 
-    const paths = allNews.data.map((body) => ({
+    const paths = allNews?.data?.map((body) => ({
         params: { slug: body.id.toString() }
     }))
 
@@ -43,8 +48,8 @@ export const getStaticProps = async ({ params }) => {
 
 export default function single(singleNews) {
     console.log("Single Event", singleNews);
-    const { title, news_date, description, preview_img } = singleNews?.data.attributes;
-    const newsDate = new Date(news_date);
+    // const { title, news_date, description, preview_img } = singleNews?.data?.attributes;
+    const newsDate = new Date(singleNews?.data?.attributes?.news_date);
     const monthNames = [
         "January", "February", "March",
         "April", "May", "June",
@@ -59,8 +64,8 @@ export default function single(singleNews) {
     return (
         <main className='page-news'>
             <div className={`text-center py-40 bg-blog-single relative`}>
-                <p className={`text-[28px] text-white Capitalize mb-2 ${poppinsBold.variable} font-poppins`}>{title}</p>
-                <p className={`text-[#e5e5e5] text-sm ${poppins.variable} font-poppins`}>Home / News / {title}</p>
+                <p className={`text-[28px] text-white Capitalize mb-2 ${poppinsBold.variable} font-poppins`}>{singleNews?.data?.attributes?.title}</p>
+                <p className={`text-[#e5e5e5] text-sm ${poppins.variable} font-poppins`}>Home / News / {singleNews?.data?.attributes?.title}</p>
             </div>
             <div className='hero-width w-full mx-auto'>
                 <div className='py-6 text-blackshadow text-sm'>
@@ -69,7 +74,7 @@ export default function single(singleNews) {
                 </div>
                 <div className='text-sm text-justify text-[#4c4848] page-news__description'>
                     {/* <Image src={preview_img?.data.attributes.url} alt='Blog Image' width={400} height={175} /> */}
-                    <ReactMarkdown>{description}</ReactMarkdown>
+                    <ReactMarkdown>{singleNews?.data?.attributes?.description}</ReactMarkdown>
                     {/* <p className='mb-5 mt-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum massa vel enim feugiat gravida.
                         Phasellus velit risus, euismod a lacus et, mattis condimentum augue. Vivamus fermentum ex quis imperdiet sodales.
                         Sed aliquam nibh tellus, a rutrum turpis pellentesque ac. Nulla nibh libero, tincidunt cursus gravida ut, sodales ut magna.

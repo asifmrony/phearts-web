@@ -7,7 +7,7 @@ export const getStaticPaths = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/events`);
     const allEvents = await res.json();
 
-    const paths = allEvents.data.map((body) => ({
+    const paths = allEvents?.data?.map((body) => ({
         params: { slug: body.id.toString() }
     }))
 
@@ -43,9 +43,10 @@ export const getStaticProps = async ({ params }) => {
 
 export default function single(singleEvent) {
     console.log("Single Event", singleEvent);
-    const {title, location, organizer, description, photo} = singleEvent.data.attributes;
-    const convertedEventStart = new Date(singleEvent.data.attributes.start_date);
-    const convertedEventEnd = new Date(singleEvent.data.attributes.end_date);
+    // const {title, location, organizer, description, photo} = singleEvent?.data?.attributes;
+    const photo = singleEvent?.data?.attributes?.photo;
+    const convertedEventStart = new Date(singleEvent?.data?.attributes?.start_date);
+    const convertedEventEnd = new Date(singleEvent?.data?.attributes?.end_date);
     const monthNames = [
         "January", "February", "March",
         "April", "May", "June",
@@ -70,11 +71,11 @@ export default function single(singleEvent) {
 
     return (
         <main className='page-event'>
-            <PageHeader subtitle={`home / Events / ${title}`} title={'Our Events'} background={'blue'} />
+            <PageHeader subtitle={`home / Events / ${singleEvent?.data?.attributes?.title}`} title={'Our Events'} background={'blue'} />
             <div className='py-30'>
                 <div className="c-width mx-auto w-full">
-                    <div className="bg-upcoming-events min-h-[400px] relative" style={{backgroundImage: `url(${photo?.data?.attributes.url})`}}>
-                        <h1 className={`font-mdheading ${poppinsBold.variable} font-poppins text-white absolute left-12 bottom-12`}>{title}</h1>
+                    <div className="bg-upcoming-events min-h-[400px] relative" style={{backgroundImage: `url(${photo?.data?.attributes?.url})`}}>
+                        <h1 className={`font-mdheading ${poppinsBold.variable} font-poppins text-white absolute left-12 bottom-12`}>{singleEvent?.data?.attributes?.title}</h1>
                     </div>
                 </div>
             </div>
@@ -87,11 +88,11 @@ export default function single(singleEvent) {
                             <p>End Date: {formattedEventEnd}</p>
                             <p className='mt-3'>Start Time: {eventStartHours}:{convertedEventStart.getMinutes() < 10 ? '0' : ''}{convertedEventStart.getMinutes()} {eventStartAmOrPm}</p>
                             <p>End Time: {eventEndHours}:{convertedEventEnd.getMinutes() < 10 ? '0' : ''}{convertedEventEnd.getMinutes()}{eventEndAmOrPm}</p>
-                            <p className='mt-3'>Location: {location}</p>
+                            <p className='mt-3'>Location: {singleEvent?.data?.attributes?.location}</p>
                         </div>
                         <div>
                             <h3 className='uppercase text-lg font-semibold'>Organizer</h3>
-                            {organizer}
+                            {singleEvent?.data?.attributes?.organizer}
                             {/* <p className='mt-1'>by: Phearts</p>
                             <p className='mt-1'>Mobile: +09876555345</p>
                             <p className='mt-1'>Email: example@example.com</p>
@@ -100,7 +101,7 @@ export default function single(singleEvent) {
                         </div>
                     </div>
                     <div style={{marginTop: '2rem'}}>
-                        <ReactMarkdown>{description}</ReactMarkdown>
+                        <ReactMarkdown>{singleEvent?.data?.attributes?.description}</ReactMarkdown>
                     </div>
                     {/* <p className='mt-10'>Aorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl turpis, tempus nec egestas ac, molestie vel eros. Vestibulum convallis tincidunt tempus. Orci varius natoque penatibus et magnis dis parturient mon tes, nascetur ridiculus mus. Ut dui libero, bibendum vel risus in, tincidunt accumsan felis. Mauris ullamcorp er est posuere hendrerit consectetur. Donec iaculis tincidunt e nim, sit amet maximus justo. Fusce sollicitud in, justo a bibendum mollis, ipsum nisi porta orci, sit amet.</p>
                     <p className='mt-6'>
