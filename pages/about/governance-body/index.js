@@ -22,8 +22,8 @@ export default function governance_body(governanceBodies) {
                     <div className='flex flex-wrap gap-x-5 gap-y-10'>
                         {
                             governanceBodies?.data.map(item => {
-                                const { name, designation, degrees, bio, photo } = item.attributes
-                                if (designation == 'Chairman' || designation == 'Vice Chairman' || designation == 'General Secretary') {
+                                const { name, designation, association, degrees, bio, photo } = item.attributes
+                                if (association == 'chairman' || designation == 'vice-chairman' || designation == 'general-secretary') {
                                     return (
                                         <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
@@ -107,8 +107,8 @@ export default function governance_body(governanceBodies) {
                     {/* Second Row */}
                     {
                         governanceBodies?.data.map(item => {
-                            const { name, designation, degrees, bio, photo } = item.attributes
-                            if (designation == 'Treasurer') {
+                            const { name, designation, association, degrees, bio, photo } = item.attributes
+                            if (association == 'treasurer') {
                                 return (
                                     <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                                         <div className='text-center basis-[48%] lg:basis-[31%]'></div>
@@ -153,8 +153,8 @@ export default function governance_body(governanceBodies) {
                     <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                         {
                             governanceBodies?.data.map(item => {
-                                const { name, designation, degrees, bio, photo } = item.attributes
-                                if (designation == 'Executive Member') {
+                                const { name, designation, association, degrees, bio, photo } = item.attributes
+                                if (association == 'member' || association == 'executive-member') {
                                     return (
                                         <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />

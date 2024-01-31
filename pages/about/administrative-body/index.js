@@ -30,8 +30,8 @@ export default function AdministrativeBody(adminBodies) {
                     <div className={`flex justify-center flex-wrap gap-x-5 gap-y-10`}>
                         {
                             adminBodies?.data.map((item) => {
-                                const { name, bio, association, photo } = item.attributes;
-                                if (association === 'board-of-directors') {
+                                const { name, bio, association, designation, photo } = item.attributes;
+                                if (association === 'chief-executive-officer' || association === 'director') {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
@@ -108,7 +108,7 @@ export default function AdministrativeBody(adminBodies) {
                         {
                             adminBodies?.data.map((item) => {
                                 const { name, bio, association, photo } = item.attributes;
-                                if (association === 'manager') {
+                                if (association === 'manager' || association === 'admin' || association === 'manager-admin') {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
