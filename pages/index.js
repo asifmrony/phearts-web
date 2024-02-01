@@ -64,12 +64,12 @@ export default function Home(homepageData) {
             <h3 className='font-subheading text-white'>REQUEST FOR APPOINTMENT</h3>
             <p className='text-white text-sm'>Provide us your details to visit a doctor as soon as possible</p>
           </div>
-          <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Book Appointment Today</button>
+          <Link className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide' href='/appointment'>Book Appointment Today</Link>
         </div>
       </div>
       <Gallery albumsData={homepageData?.albums} renderType='slide' />
       {/* Stories Component possible props: "light"/"dark" */}
-      <Stories theme={"dark"} />
+      <Stories theme={"dark"} testimonialData={homepageData?.home?.testimonial} />
 
       <Sponsors />
     </main>
@@ -100,6 +100,7 @@ export const getStaticProps = async () => {
   }
   console.log("Home and news data", homepageData);
   return {
-    props: homepageData
+    props: homepageData,
+    revalidate: 60
   }
 }

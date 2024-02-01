@@ -42,8 +42,8 @@ export default function events(allNews) {
                     <p className='mt-7 mb-3 text-sm text-blackshadow'>{item?.summary}</p>
                     <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/news/${item?.id}`}>Learn more &rarr;</Link>
                   </div>
-                  <div>
-                    <Image src={item?.preview_img.data.attributes.url} alt='EventPhoto' width={800} height={350} />
+                  <div style={{ minWidth: '420px', maxWidth: '440px', maxHeight: '250px'}}>
+                    <Image src={item?.preview_img.data.attributes.url} alt='EventPhoto' width={800} height={350} className='h-full w-full object-cover'/>
                   </div>
                 </div>
               ))}
@@ -112,6 +112,7 @@ export const getStaticProps = async () => {
   });
   const allNews = await res.json();
   return {
-    props: allNews
+    props: allNews,
+    revalidate: 60
   }
 }

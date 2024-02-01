@@ -19,7 +19,8 @@ export const getStaticProps = async () => {
     });
     const allAlbums = await res.json();
     return {
-      props: allAlbums
+      props: allAlbums,
+      revalidate: 60
     }
   }
   

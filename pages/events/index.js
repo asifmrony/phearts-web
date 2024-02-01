@@ -67,8 +67,8 @@ export default function events(allEvents) {
                       <Link className='text-sm text-themeblue font-semibold leading-wider inline-block' href={`/events/${item?.id}`}>Learn more &rarr;</Link>
                     </div>
                   </div>
-                  <div>
-                    <Image src={item?.photo?.data?.attributes.url} alt='EventPhoto' width={800} height={350} />
+                  <div style={{ minWidth: '420px', maxWidth: '440px', maxHeight: '250px'}}>
+                    <Image src={item?.photo?.data?.attributes.url} alt='EventPhoto' width={800} height={350} className='h-full w-full object-cover' />
                   </div>
                 </div>
               ))}
@@ -166,8 +166,8 @@ export default function events(allEvents) {
                       <Link className='text-sm text-themeblue font-semibold leading-wider inline-block' href={`/events/${item?.id}`}>Learn more &rarr;</Link>
                     </div>
                   </div>
-                  <div>
-                    <Image src={item?.photo?.data.attributes.url} alt='EventPhoto' width={800} height={350} />
+                  <div style={{ minWidth: '420px', maxWidth: '440px', maxHeight: '250px'}}>
+                    <Image src={item?.photo?.data.attributes.url} alt='EventPhoto' width={800} height={350} className='w-full h-full object-cover' />
                   </div>
                 </div>
               ))}
@@ -258,6 +258,7 @@ export const getStaticProps = async () => {
   });
   const allEvents = await res.json();
   return {
-    props: allEvents
+    props: allEvents,
+    revalidate: 60
   }
 }
