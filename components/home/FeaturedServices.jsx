@@ -83,7 +83,7 @@ function causesSlide({ id, serviceId, photo, heading }) {
     return (
         <SwiperSlide key={id}>
             <div className='w-full'>
-                <Image src={photo?.data?.attributes?.url} alt='Image' width={261} height={260} style={{minHeight: '235px'}} />
+                <Image src={photo?.data?.attributes?.url} alt='Image' width={261} height={260} style={{height: '235px'}} />
                 <Link href={`/services/${serviceId}`}>                
                     <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
                 </Link>

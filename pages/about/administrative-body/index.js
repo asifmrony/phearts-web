@@ -152,6 +152,7 @@ export const getStaticProps = async () => {
     });
     const adminBodies = await res.json();
     return {
-        props: adminBodies
+        props: adminBodies,
+        revalidate: 60
     }
 }

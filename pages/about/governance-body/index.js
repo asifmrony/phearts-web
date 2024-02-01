@@ -23,7 +23,7 @@ export default function governance_body(governanceBodies) {
                         {
                             governanceBodies?.data.map(item => {
                                 const { name, designation, association, degrees, bio, photo } = item.attributes
-                                if (association == 'chairman' || designation == 'vice-chairman' || designation == 'general-secretary') {
+                                if (association == 'chairman' || association == 'vice-chairman' || association == 'general-secretary') {
                                     return (
                                         <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
@@ -210,6 +210,7 @@ export const getStaticProps = async () => {
     });
     const governanceBodies = await res.json();
     return {
-        props: governanceBodies
+        props: governanceBodies,
+        revalidate: 60
     }
 }
