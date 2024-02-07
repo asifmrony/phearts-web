@@ -35,8 +35,8 @@ export default function AdministrativeBody(adminBodies) {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
-                                            <h3 className='font-subheading text-themered font-bold mt-4'>{name}</h3>
-                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio}</p>
+                                            <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
+                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
                                         </div>
                                     )
@@ -73,8 +73,9 @@ export default function AdministrativeBody(adminBodies) {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
-                                            <h3 className='font-subheading text-themered font-bold mt-4'>{name}</h3>
-                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio}</p>
+                                            <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
+                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
                                         </div>
                                     )
                                 }
@@ -112,8 +113,9 @@ export default function AdministrativeBody(adminBodies) {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
-                                            <h3 className='font-subheading text-themered font-bold mt-4'>{name}</h3>
-                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio}</p>
+                                            <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
+                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
                                         </div>
                                     )
                                 }
