@@ -77,6 +77,7 @@ export const getStaticProps = async () => {
   });
   const employeeList = await res.json();
   return {
-    props: employeeList
+    props: employeeList,
+    revalidate: 60
   }
 }

@@ -87,7 +87,7 @@ export default function Gallery({ albumsData, renderType }) {
         <div className='pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>
                 {renderType === 'slide' && <span className='bg-themeblue text-white p-2 uppercase mb-4 inline-block text-xs'>Let us show you</span>}
-                <h2 className='uppercase text-[32px] font-black leading-tight mb-20'>Our Gallery & Albums</h2>
+                <h2 className='uppercase text-[32px] font-black leading-tight mb-20'>Gallery</h2>
                 {/* render this block for renderType slide */}
                 {renderType === 'slide' && (<div>
                     <Swiper

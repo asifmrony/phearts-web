@@ -161,7 +161,8 @@ export default function governance_body(governanceBodies) {
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
                                             <p className='mt-1 font-bold text-sm'>{degrees}</p>
-                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 100)}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
                                         </div>
                                     )
                                 }

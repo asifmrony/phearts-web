@@ -18,6 +18,7 @@ const singleService = (id, serviceData) => {
 }
 
 export default function services(allServices) {
+  const sortedServices = allServices?.data?.sort((a, b) => a?.id - b?.id);
   
   return (
     <main className='page-services'>
@@ -26,7 +27,7 @@ export default function services(allServices) {
         <div className="hero-width w-full mx-auto">
           <h2 className={`font-mdheading uppercase text-center mb-16 ${poppinsBold.variable} font-poppins`}>HOW IT works</h2>
           <div className='flex gap-x-8 flex-wrap px-6 sm:px-10 lg:px-0'>
-            {allServices?.data.map(service => {
+            {sortedServices?.map(service => {
               const serviceData = service.attributes;
               if (service.id == 3 || service.id == 5) {
                 return (

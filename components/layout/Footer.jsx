@@ -51,26 +51,21 @@ export default function Footer() {
                     </div>
 
                     <div className='flex-1'>
-                        <h2 className='font-bold uppercase text-lg text-white'>Latest News</h2>
-                        <nav>
-                            <ul className='text-blackshadow space-y-2 text-blue-600 mt-5'>
-                                <li>
-                                    <Link href='/news'>Choosing Among Bad Options in Dadaab Refugee</Link>
-                                </li>
-                                <li>
-                                    <Link href='/news'>Preparing to help American Refugees</Link>
-                                </li>
-                                <li>
-                                    <Link href='/news'>Burundian Refugees in the DR congo</Link>
-                                </li>
-                            </ul>
-                        </nav>
+                        {/* <h2 className='font-bold uppercase text-lg text-white'>Find Us</h2> */}
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.79721063551!2d90.65441277362585!3d23.79023458724919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543538ab43cf59%3A0xd95b1f25762596ed!2z4Kaq4Kaq4KeB4Kay4KeH4Ka24KaoIOCmueCnh-CmsuCmpSDgprDgpr_gprjgpr7gprDgp43gppog4KaP4Kao4KeN4KahIOCmn-CnjeCmsOCnh-CmqOCmv-CmgiDgprjgp4vgprjgpr7gpofgpp_gpr8gUG9wdWxhdGlvbiBIZWFsdGggUmVzZWFyY2ggYW5kIFRyYWluaW5nIFNvY2lldHk!5e0!3m2!1sen!2sbd!4v1708337963524!5m2!1sen!2sbd"
+                            width="353"
+                            height="204"
+                            style={{ border: '0' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
             <div className='bg-themeblue'>
                 <div className='c-width w-full mx-auto px-5 lg:px-0 py-5 flex flex-col lg:flex-row gap-y-5 justify-between text-sm'>
-                    <Link href='https://codesmithtech.com' target='_blank' className='text-[#8896A0]'>CodeSmith Tech © 2023 / All Rights Reserved</Link>
+                    <Link href='https://codesmithtech.com' target='_blank' className='text-[#8896A0]'>Developed by CodeSmith Tech © 2024 / All Rights Reserved</Link>
                     <div className="flex space-x-3 text-[#8896A0]">
                         <Link
                             href="https://www.facebook.com/phearts.arsenic"

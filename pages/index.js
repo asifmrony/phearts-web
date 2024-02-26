@@ -46,15 +46,13 @@ export default function Home(homepageData) {
         </div>
       </div>
       <FeaturedServices serviceItems={homepageData?.clinicDepartments} />
-      <div className={`bg-become-volunteer`}>
+      {/* <div className={`bg-become-volunteer`}>
         <div className='hero-width w-full mx-auto text-center py-24 space-y-6'>
-          {/* <span className='inline-block text-xs bg-themered text-white uppercase mb-5 p-2'>BECOME A DONOR</span> */}
           <h2 className='uppercase font-mdheading text-white'>BECOME A DONOR</h2>
           <p className='text-blackshadow w-3/4 mx-auto'>Empower change through small contributions; support our vital initiatives that improve lives and create a lasting impact in communities nationwide.</p>
           <Link href='/donation' className='inline-block mt-2 px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</Link>
-          {/* <button className='px-6 py-3 border text-white border-gray-300 text-xs uppercase font-semibold tracking-wide'>Make Donation Now</button> */}
         </div>
-      </div>
+      </div> */}
       <HomeBlog newsItems={homepageData?.news}/>
 
       <HomeEvents eventsData={homepageData?.events} />

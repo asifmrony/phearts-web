@@ -63,14 +63,14 @@ export default function single(singleNews) {
 
     return (
         <main className='page-news'>
-            <div className={`text-center py-40 bg-blog-single relative`}>
+            <div className={`text-center py-40 bg-blog-single relative`} style={{ backgroundImage: `url(${singleNews?.data?.attributes?.preview_img?.data?.attributes?.url})`}}>
                 <p className={`text-[28px] text-white Capitalize mb-2 ${poppinsBold.variable} font-poppins`}>{singleNews?.data?.attributes?.title}</p>
-                <p className={`text-[#e5e5e5] text-sm ${poppins.variable} font-poppins`}>Home / News / {singleNews?.data?.attributes?.title}</p>
+                {/* <p className={`text-[#e5e5e5] text-sm ${poppins.variable} font-poppins`}>Home / News / {singleNews?.data?.attributes?.title}</p> */}
             </div>
             <div className='hero-width w-full mx-auto'>
                 <div className='py-6 text-blackshadow text-sm'>
                     <p>{formattedDate}</p>
-                    <p>by <span className='text-blue-500'>admin</span> in <span className='text-blue-500'>News, Support</span></p>
+                    {/* <p>by <span className='text-blue-500'>admin</span> in <span className='text-blue-500'>News, Support</span></p> */}
                 </div>
                 <div className='text-sm text-justify text-[#4c4848] page-news__description'>
                     {/* <Image src={preview_img?.data.attributes.url} alt='Blog Image' width={400} height={175} /> */}

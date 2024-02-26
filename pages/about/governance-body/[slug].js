@@ -30,12 +30,16 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export default function single({ gBody }) {
+    console.log("governance body details", gBody);
 
     return (
         <main className='page-about-single'>
-            <PageHeader title={gBody?.data?.attributes?.name} subtitle={'About / Governance body'} background={'transparent'} />
-            <div className='pb-48 bg-white'>
+            {/* <PageHeader title={gBody?.data?.attributes?.name} subtitle={''} background={'transparent'} /> */}
+            <div className='text-center py-32 governance-body__header' style={{ backgroundImage: `url(${gBody?.data?.attributes?.photo?.data?.attributes?.url})` }}>
+            </div>
+            <div className='pb-48 pt-8'>
                 <div className='hero-width w-full mx-auto text-center'>
+                    <h2 className='font-heading uppercase mb-4'>{gBody?.data?.attributes?.name}</h2>
                     <p className={`${poppins.variable} font-poppins`}>{gBody?.data?.attributes?.bio}</p>
                 </div>
             </div>

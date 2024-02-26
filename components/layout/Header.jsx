@@ -11,7 +11,6 @@ import { poppins } from "@/utils/fonts";
 export default function Header() {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(null);
-    console.log(scrollPosition);
 
     useEffect(() => {
         const handlePosition = () => {
@@ -32,7 +31,7 @@ export default function Header() {
                     <div className={`flex text-sm space-x-6 ${poppins.variable} font-poppins`}>
                         <p><strong>Location:</strong> New Model Town, Araihazar Sadar, Narayanganj.</p>
                         <p><strong>Phone:</strong> +88 0177-9880862</p>
-                        <p><strong>Email:</strong>phearts.org@gmail.com</p>
+                        <p><strong>Email:</strong><Link href='mailto:phearts.org@gmail.com'> phearts.org@gmail.com</Link></p>
                     </div>
                     <div className="flex space-x-1">
                         <a

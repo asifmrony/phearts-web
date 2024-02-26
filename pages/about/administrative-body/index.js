@@ -20,7 +20,7 @@ export default function AdministrativeBody(adminBodies) {
 
     return (
         <main className='page-about'>
-            <PageHeader title={'Administrative body'} subtitle={'About / Administration'} background={'blue'} />
+            <PageHeader title={'Administrative body'} subtitle={''} background={'blue'} />
 
             {/* Our Board of Directors */}
             <div className='pt-24 pb-14 bg-white'>
@@ -34,7 +34,7 @@ export default function AdministrativeBody(adminBodies) {
                                 if (association === 'chief-executive-officer' || association === 'director') {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
-                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
+                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
@@ -72,7 +72,7 @@ export default function AdministrativeBody(adminBodies) {
                                 if (association === 'deputy-director') {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
-                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
+                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
@@ -112,7 +112,7 @@ export default function AdministrativeBody(adminBodies) {
                                 if (association === 'manager' || association === 'admin' || association === 'manager-admin') {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
-                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
+                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
