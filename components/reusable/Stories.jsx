@@ -39,7 +39,7 @@ export default function Stories({ theme, testimonialData }) {
             modules={[Autoplay, Navigation]}
             autoplay={{
                 delay: 10000,
-                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
             }}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}

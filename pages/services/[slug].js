@@ -58,7 +58,17 @@ export default function SingleService({ service }) {
     }
 
     useEffect(() => {
-        console.log("Router query", router.query.dept); 
+        console.log("Router query", router.query);
+        if (router.query.cid && router.query.dept) {
+            setShowDeptDetails(true);
+            const filterdDepts = departments?.data?.filter((item) => item.id == router.query.cid);
+            console.log("FilteredDepts", filterdDepts);
+            setSelectedDeptData(filterdDepts[0].attributes);
+            router.replace({
+                pathname: `/services/${router.query.slug}`,
+                query: {dept: filterdDepts[0].attributes.title},
+            })
+        } 
         const handlePopState = () => {
             if(router.query.dept && router.query.dept.length > 0) {
                 console.log("Entered to change pop state value")

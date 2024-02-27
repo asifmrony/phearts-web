@@ -84,7 +84,10 @@ function causesSlide({ id, serviceId, photo, heading }) {
         <SwiperSlide key={id}>
             <div className='w-full'>
                 <Image src={photo?.data?.attributes?.url} alt='Image' width={261} height={260} style={{height: '235px'}} />
-                <Link href={`/services/${serviceId}`}>                
+                <Link href={{
+                    pathname: `/services/${serviceId}`,
+                    query: {dept: heading, cid: id}
+                }}>                
                     <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
                 </Link>
             </div>
@@ -106,6 +109,7 @@ export default function FeaturedServices({ serviceItems }) {
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: true,
+                            pauseOnMouseEnter: true,
                         }}
                         slidesPerView={4}
                         spaceBetween={10}

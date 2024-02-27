@@ -104,6 +104,7 @@ export default function HomeBlog({ newsItems }) {
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: true,
+                            pauseOnMouseEnter: true,
                         }}
                         // pagination={{
                         //     clickable: true

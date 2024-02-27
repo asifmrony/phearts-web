@@ -95,6 +95,7 @@ export default function Gallery({ albumsData, renderType }) {
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: true,
+                            pauseOnMouseEnter: true,
                         }}
                         slidesPerView={3}
                         spaceBetween={20}
