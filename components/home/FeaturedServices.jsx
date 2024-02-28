@@ -83,11 +83,11 @@ function causesSlide({ id, serviceId, photo, heading }) {
     return (
         <SwiperSlide key={id}>
             <div className='w-full'>
-                <Image src={photo?.data?.attributes?.url} alt='Image' width={261} height={260} style={{height: '235px'}} />
+                <Image src={photo?.data?.attributes?.url} alt='Image' width={261} height={260} style={{ height: '235px' }} />
                 <Link href={{
                     pathname: `/services/${serviceId}`,
-                    query: {dept: heading, cid: id}
-                }}>                
+                    query: { dept: heading, cid: id }
+                }}>
                     <h4 className={`text-lg text-themeblue font-bold ${poppins.variable} font-poppins mt-3`}>{heading}</h4>
                 </Link>
             </div>
@@ -116,10 +116,24 @@ export default function FeaturedServices({ serviceItems }) {
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
                         className='causes-slider'
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            400: {
+                                slidesPerView: 2,
+                            },
+                            639: {
+                                slidesPerView: 3,
+                            },
+                            865: {
+                                slidesPerView: 4
+                            },
+                        }}
                     >
                         {deptData?.map((item) => {
-                            const {title, photo} = item?.attributes
-                            return causesSlide({id: item?.id, serviceId, photo, heading: title})
+                            const { title, photo } = item?.attributes
+                            return causesSlide({ id: item?.id, serviceId, photo, heading: title })
                         })}
                     </Swiper>
                 </div>

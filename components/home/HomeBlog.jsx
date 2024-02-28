@@ -115,6 +115,17 @@ export default function HomeBlog({ newsItems }) {
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
                         className='blog-slider'
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            400: {
+                                slidesPerView: 2,
+                            },
+                            639: {
+                                slidesPerView: 3,
+                            }
+                        }}
                     >
                         {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}
                         {newsItems.map((item) => {

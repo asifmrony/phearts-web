@@ -101,6 +101,17 @@ export default function Gallery({ albumsData, renderType }) {
                         spaceBetween={20}
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                            },
+                            400: {
+                                slidesPerView: 2,
+                            },
+                            639: {
+                                slidesPerView: 3,
+                            }
+                        }}
 
                     >
                         {/* {data.map(({ id, image, heading, details }) => (<CausesSlide key={id} image={image} heading={heading} details={details} />))} */}

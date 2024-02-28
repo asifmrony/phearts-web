@@ -61,6 +61,7 @@ const NavigationDesktop = (props) => {
                                                         href={ele.link}
                                                         className={styles.subMenuLink}
                                                         style={{ textDecoration: "none" }}
+                                                        onClick={()=> setMobileMenu(!mobileMenu)}
                                                     >
                                                         <span>{ele.name}</span>
                                                     </Link>
@@ -86,7 +87,9 @@ const NavigationDesktop = (props) => {
                                                         ele.children.map((elem) => {
                                                             return (
                                                                 <li key={elem.id} className={styles.grandChildLink}>
-                                                                    <Link href={elem.link}>
+                                                                    <Link href={elem.link}
+                                                                        onClick={()=> setMobileMenu(!mobileMenu)}
+                                                                    >
                                                                         <span>{elem.name}</span>
                                                                     </Link>
                                                                 </li>

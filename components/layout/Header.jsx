@@ -54,7 +54,7 @@ export default function Header() {
                     <Image src={pheartsLogo} alt="Logo" />
                     {/* Mobile Menu toggle */}
                     <button
-                        className="md:hidden absolute right-16"
+                        className="md:hidden absolute right-16 text-black"
                         onClick={() => setMobileMenu(!mobileMenu)}
                     >
                         <RxHamburgerMenu />

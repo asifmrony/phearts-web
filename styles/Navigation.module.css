@@ -12,6 +12,7 @@
   display: flex;
   width: 80px;
   height: 40px;
+  color: black;
 
   justify-content: center;
   /* border: solid 1px #CDD1C4; */
@@ -77,6 +78,7 @@ li:last-child .headerNavLink:hover {
   /* border: solid 1px #CDD1C4; */
   border-bottom: none;
   padding: 0 6px;
+  color: black;
 }
 
 .headerNavDiv span {
@@ -111,6 +113,7 @@ li:last-child .headerNavLink:hover {
   padding-left: 1rem;
   height: 100%;
   width: 100%;
+  color: black;
 }
 
 .subMenuLi:last-child {

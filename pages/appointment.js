@@ -112,7 +112,7 @@ export default function single(contactDetails) {
                             <button type="submit" class="rounded-md bg-indigo-600 px-8 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
                         </div>
                     </form> */}
-                    <div className='biodata-block'>
+                    <div className='biodata-block text-black'>
                         <p className='text-lg'>For Appointment, Please contact with below details:</p>
                         <div className={`${poppins.variable} font-poppins`}>
                             <ReactMarkdown>{biodata}</ReactMarkdown>
