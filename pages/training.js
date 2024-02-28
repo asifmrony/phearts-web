@@ -48,6 +48,7 @@ export const getStaticProps = async () => {
     });
     const training = await res.json();
     return {
-        props: training
+        props: training,
+        revalidate: 60
     }
 }

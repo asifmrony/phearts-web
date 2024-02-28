@@ -58,6 +58,7 @@ export const getStaticProps = async () => {
     });
     const research = await res.json();
     return {
-        props: research
+        props: research,
+        revalidate: 60
     }
 }

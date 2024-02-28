@@ -79,7 +79,7 @@ function causesSlide({ id, image, date, title, summary }) {
     return (
         <SwiperSlide key={id} className='h-[300px]'>
             <div className='relative bg-[#F8F9F9]'>
-                <Image src={image?.data?.attributes.url} alt='Image' width={'365'} height={'265'} style={{height: '165px'}} />
+                <Image src={image?.data?.attributes.url} alt='Image' width={'365'} height={'265'} style={{height: '165px', objectFit: 'contain'}} />
                 <div className='p-3 bg-white w-[95%] mx-auto relative -mt-5'>
                     <p className='text-blackshadow mt-1 text-xs'>{formattedDate}</p>
                     <h4 className={`text-lg text-themeblue leading-snug font-extrabold ${poppinsBold.variable} font-poppins mt-2`}>{title?.slice(0, 45) + (title?.length > 45 ? "..." : "")}</h4>
