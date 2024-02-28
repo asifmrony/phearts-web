@@ -9,7 +9,7 @@ import navLinksData from '../../data/data.json'
 import { poppins } from "@/utils/fonts";
 
 export default function Header() {
-    const [mobileMenu, setMobileMenu] = useState(false);
+    const [mobileMenu, setMobileMenu] = useState(true);
     const [scrollPosition, setScrollPosition] = useState(null);
 
     useEffect(() => {
@@ -60,7 +60,7 @@ export default function Header() {
                         <RxHamburgerMenu />
                     </button>
                     <div className={`${mobileMenu ? 'hidden' : 'block'} md:block`}>
-                        <NavigationDesktop navLinksData={navLinksData} />
+                        <NavigationDesktop navLinksData={navLinksData} mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
                     </div>
                 </div>
             </div>

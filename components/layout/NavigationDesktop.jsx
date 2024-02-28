@@ -4,7 +4,7 @@ import Link from "next/link";
 import { BsChevronDown, BsChevronRight } from 'react-icons/bs';
 
 const NavigationDesktop = (props) => {
-    const { navLinksData } = props;
+    const { navLinksData, mobileMenu, setMobileMenu } = props;
     const [showSubMenu, setShowSubMenu] = useState([]);
 
     const subMenuOnMouseEnterHandler = (subMenuId) => {
@@ -31,7 +31,7 @@ const NavigationDesktop = (props) => {
                     if (!el.children) {
                         return (
                             <li key={el.id}>
-                                <Link href={el.link} className={styles.headerNavLink}>
+                                <Link href={el.link} onClick={()=> setMobileMenu(!mobileMenu)} className={styles.headerNavLink}>
                                     <span>{el.name}</span>
                                 </Link>
                             </li>
