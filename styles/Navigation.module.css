@@ -115,6 +115,9 @@ li:last-child .headerNavLink:hover {
   width: 100%;
   color: black;
 }
+.subMenuLink:hover {
+  color: #fff;
+}
 
 .subMenuLi:last-child {
   border-bottom: solid 1px #cdd1c4;

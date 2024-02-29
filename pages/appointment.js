@@ -8,7 +8,7 @@ export default function single(contactDetails) {
     const { biodata } = contactDetails?.data.attributes;
     return (
         <main className='page-appointment-single'>
-            <PageHeader title={'Appointment'} subtitle={''} background={'transparent'} />
+            <PageHeader title={'Appointment'} subtitle={''} background={'blue'} />
             <div className='pt-10 pb-48 bg-white px-4 sm:px-0'>
                 <div className='hero-width w-full mx-auto flex justify-center'>
                     {/* <form>

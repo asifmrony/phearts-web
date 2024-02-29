@@ -124,10 +124,22 @@ h6 {
 
 /* Page Headers */
 .page-header__bg {
-  background-image: url("../data/about/about-3.jpg");
+  background-image: url("../data/stories-phearts-bg.jpg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: cover;
+  position: relative;
+  z-index: 3;
+}
+.page-header__bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(31 32 32 / 85%);
+  z-index: -3;
 }
 .page-header__w-image {
   background-image: url("../data/about/about-3.jpg");
@@ -145,10 +157,23 @@ h6 {
   background-size: cover;
 }
 .bg-upcoming-events {
-  background-image: url("../data/bg-upcoming-events.jpg");
+  background-image: url("../data/bg-phearts-upcoming-events.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  z-index: 3;
+}
+.bg-upcoming-events::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(31 32 32 / 85%);
+  z-index: -3;
 }
 
 /* About Page */
@@ -255,14 +280,28 @@ h6 {
   width: 100%;
 }
 .stories-slider-bg {
-  background-image: url("../data/stories-bg.jpg");
+  background-image: url("../data/stories-phearts-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 3;
+}
+.stories-slider-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(31 32 32 / 85%);
+  z-index: -3;
 }
 .page-services__vacancies .bg-right-side {
-  background-image: url("../data/services/services_carrier-photo.jpg");
+  background-image: url("../data/stories-phearts-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .bg-blog-single {
   background-image: url("../data/blog-heading.jpg");
