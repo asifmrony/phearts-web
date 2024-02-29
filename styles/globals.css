@@ -189,6 +189,12 @@ h6 {
   background: white;
   padding-bottom: 3rem;
 }
+.page-about-single .page-header__bg::before,
+.page-jobs-single .page-header__bg:before,
+.page-gallery-single .page-header__bg:before,
+.page-appointment-single .page-header__bg:before {
+  background-color: white;
+}
 @media screen and (max-width: 767.99px) {
   .page-about-single .page-header__bg,
   .page-jobs-single .page-header__bg,
