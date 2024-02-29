@@ -129,6 +129,14 @@ h6 {
   background-position: left center;
   background-size: cover;
 }
+.page-header__w-image {
+  background-image: url("../data/about/about-3.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
 
 /* Homepage */
 .bg-become-volunteer {
@@ -261,6 +269,8 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-top: 18rem;
+  padding-bottom: 18rem;
 }
 
 /* Research and Training Page */

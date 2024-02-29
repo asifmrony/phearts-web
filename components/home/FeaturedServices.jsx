@@ -1,10 +1,10 @@
 // Import Swiper React components
-import { Pagination, Autoplay } from 'swiper';
+import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Image from 'next/image';
 import causesOne from '@/data/homeCauses-1.png';
 import causesTwo from '@/data/homeCauses-2.png';
@@ -105,12 +105,13 @@ export default function FeaturedServices({ serviceItems }) {
                 <h2 className='uppercase text-[32px] font-black leading-tight mb-14'>Our Phearts Clinic</h2>
                 <div>
                     <Swiper
-                        modules={[Autoplay]}
+                        modules={[Navigation, Autoplay]}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: true,
                             pauseOnMouseEnter: true,
                         }}
+                        navigation
                         slidesPerView={4}
                         spaceBetween={10}
                         onSlideChange={() => console.log('slide change')}

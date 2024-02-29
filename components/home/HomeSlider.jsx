@@ -1,5 +1,5 @@
 // Import Swiper React components
-import { Navigation } from 'swiper';
+import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -78,8 +78,11 @@ function sliderContent({ id, image, subheading, heading, buttonText, buttonLink,
 export default function HomeSlider({ sliderItems }) {
     return (
         <Swiper
-            modules={[Navigation]}
-            autoplay={true}
+            modules={[Navigation, Autoplay]}
+            autoplay={{
+                delay: 2500,
+                pauseOnMouseEnter: true,
+            }}
             navigation
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}

@@ -3,14 +3,16 @@ import { poppins } from '@/utils/fonts';
 import ReactMarkdown from 'react-markdown';
 
 export default function training(training) {
-    const { content } = training?.data.attributes;
+    const { content, featured_image } = training?.data.attributes;
+    console.log("Training contents", content);
     
     return (
         <main className='page-training'>
-            <PageHeader title={'Trainings'} subtitle={''} background={'blue'} />
+            <div className={`text-center page-header__w-image relative`} style={{ backgroundImage: `url(${featured_image?.data?.attributes?.url})`}}></div>
             {/* Research Details writeup */}
             <div className='pt-14 pb-14 bg-white'>
                 <div className="hero-width w-full mx-auto text-justify">
+                    <h2 className='font-heading text-black text-center mb-8 uppercase'>Training</h2>
                     <div className={`space-y-6 ${poppins.variable} font-poppins`}>
                         <ReactMarkdown>{content}</ReactMarkdown>
                         {/* <p>Population Health, Research and Society Training (PHeaRTs) is a national non-profit organization that
@@ -39,7 +41,7 @@ export default function training(training) {
 }
 
 export const getStaticProps = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/training`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/training?populate=*`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json',

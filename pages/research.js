@@ -3,14 +3,16 @@ import { poppins } from '@/utils/fonts';
 import ReactMarkdown from 'react-markdown';
 
 export default function research(research) {
-    const { content } = research?.data.attributes;
+    const { content, featured_image } = research?.data.attributes;
+    console.log("Research Content", research);
     
     return (
         <main className='page-research'>
-            <PageHeader title={'Research'} subtitle={''} background={'blue'} />
+            <div className={`text-center page-header__w-image relative`} style={{ backgroundImage: `url(${featured_image?.data?.attributes?.url})`}}></div>
             {/* Research Details writeup */}
             <div className='pt-14 pb-14 bg-white'>
                 <div className={`hero-width w-full mx-auto text-justify ${poppins.variable} font-poppins page-research__body`}>
+                    <h2 className='font-heading text-black text-center mb-8 uppercase'>Research</h2>
                     <ReactMarkdown>{content}</ReactMarkdown>
                     {/* <div className={`space-y-6 ${poppins.variable} font-poppins`}>
                         <p>The Population Health, Research and training Society conducts research with the aim of discovering and understanding the health effects from all sorts of environmental and biological exposure among the Bangladeshi people and develop effective strategies for prevention and policy development.
@@ -49,7 +51,7 @@ export default function research(research) {
 }
 
 export const getStaticProps = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/research`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/research?populate=*`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
