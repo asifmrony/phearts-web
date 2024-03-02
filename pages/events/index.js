@@ -37,7 +37,7 @@ export default function events(allEvents) {
   console.log("Events in Miliseconds", eventsInMS);
   const upComingEvents = eventsInMS?.filter((item) => item.eventDate > currentTime).sort((a,b) => a.eventDate - b.eventDate);
   console.log("Logging Upcoming Events", upComingEvents);
-  const pastEvents = eventsInMS?.filter((item) => item.eventDate < currentTime)
+  const pastEvents = eventsInMS?.filter((item) => item.eventDate < currentTime).sort((a, b) => b.eventDate - a.eventDate);
   console.log("Logging Past Events", pastEvents);
 
   return (
