@@ -41,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
     }
 }
 
-export default function single({ album }) {
+export default function Single({ album }) {
     console.log("Album Info", album);
     // const { title, images } = album?.data?.attributes;
     const images = album?.data?.attributes?.images;
