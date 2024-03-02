@@ -52,10 +52,10 @@ function causesSlide({ id, image, heading, category }) {
             <Link href={`/gallery/${id}`}>
                 <div className='bg-white px-5 py-8'>
                     <Image src={image?.data?.attributes?.url} width={261} height={260} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
-                    <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
+                    {/* <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
                         <span className='text-blackshadow'>in</span>
                         <span className='text-black ml-1 font-medium'>{category}</span>
-                    </p>
+                    </p> */}
                     <p className='text-themeblue text-xl font-bold mt-3'>{heading}</p>
                 </div>
             </Link>
@@ -69,10 +69,10 @@ function galleryItem({ id, image, heading, category }) {
             <Link href={`/gallery/${id}`}>
                 <div className='bg-white px-5 py-8'>
                     <Image src={image?.data?.attributes?.url} width={261} height={260} alt='Image' className='w-[150px] h-[150px] mx-auto rounded-full' />
-                    <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
+                    {/* <p className={`${poppins.variable} font-poppins text-sm mt-5`}>
                         <span className='text-blackshadow'>in</span>
                         <span className='text-black ml-1 font-medium'>{category}</span>
-                    </p>
+                    </p> */}
                     <p className='text-themeblue text-xl font-bold mt-3'>{heading}</p>
                 </div>
             </Link>
