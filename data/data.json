@@ -48,6 +48,16 @@
           "name": "Training",
           "id": 33,
           "link": "/training"
+        },
+        {
+          "name": "MATS",
+          "id": 33,
+          "link": "/mats"
+        },
+        {
+          "name": "Caregiver",
+          "id": 33,
+          "link": "/caregiver"
         }
       ]
     },
