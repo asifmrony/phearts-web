@@ -14,7 +14,7 @@ export default function training(training) {
                 <div className="hero-width w-full mx-auto text-justify">
                     <h2 className='font-heading text-black text-center mb-8 uppercase'>Training</h2>
                     <div className={`space-y-6 ${poppins.variable} font-poppins`}>
-                        <ReactMarkdown>{content}</ReactMarkdown>
+                        <ReactMarkdown className='text-black'>{content}</ReactMarkdown>
                         {/* <p>Population Health, Research and Society Training (PHeaRTs) is a national non-profit organization that
                             conducts health research, training and community service activities for the improvement of human
                             health in Bangladesh. It works closely with scientists, health professionals and policy makers in

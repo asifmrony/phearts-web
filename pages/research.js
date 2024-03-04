@@ -13,7 +13,7 @@ export default function research(research) {
             <div className='pt-14 pb-14 bg-white'>
                 <div className={`hero-width w-full mx-auto text-justify ${poppins.variable} font-poppins page-research__body`}>
                     <h2 className='font-heading text-black text-center mb-8 uppercase'>Research</h2>
-                    <ReactMarkdown>{content}</ReactMarkdown>
+                    <ReactMarkdown className='text-black'>{content}</ReactMarkdown>
                     {/* <div className={`space-y-6 ${poppins.variable} font-poppins`}>
                         <p>The Population Health, Research and training Society conducts research with the aim of discovering and understanding the health effects from all sorts of environmental and biological exposure among the Bangladeshi people and develop effective strategies for prevention and policy development.
                         </p>
