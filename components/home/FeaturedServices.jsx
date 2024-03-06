@@ -102,7 +102,7 @@ export default function FeaturedServices({ serviceItems }) {
         <div className='bg-white mt-5 pt-20 pb-28'>
             <div className='hero-width w-full mx-auto text-center'>
                 <span className='bg-themeblue text-white p-2 uppercase mb-4 inline-block text-xs'>Glimpse of what consists of</span>
-                <h2 className='uppercase text-[32px] font-black leading-tight mb-14'>Our Phearts Clinic</h2>
+                <h2 className='uppercase text-[32px] font-black leading-tight mb-14 text-black'>Our Phearts Clinic</h2>
                 <div>
                     <Swiper
                         modules={[Navigation, Autoplay]}

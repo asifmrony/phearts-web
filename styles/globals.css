@@ -401,6 +401,24 @@ h6 {
   font-family: 'poppins', sans-serif;
 }
 
+@media screen and (max-width: 767.99px) {
+  .page-appointment-single .biodata-block h1,
+  .page-appointment-single .biodata-block h2,
+  .page-appointment-single .biodata-block h3,
+  .page-appointment-single .biodata-block h4,
+  .page-appointment-single .biodata-block h5,
+  .page-appointment-single .biodata-block h6,
+  .page-contact .biodata-block h1,
+  .page-contact .biodata-block h2,
+  .page-contact .biodata-block h3,
+  .page-contact .biodata-block h4,
+  .page-contact .biodata-block h5,
+  .page-contact .biodata-block h6 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+}
+
 .page-appointment-single .biodata-block p,
 .page-contact .biodata-block p {
   font-size: 0.94rem;
