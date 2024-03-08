@@ -457,3 +457,11 @@ h6 {
   object-fit: cover;
   border: 2px solid rgb(206, 206, 206);
 }
+.grid5-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 10px;
+  align-items: center;
+}
