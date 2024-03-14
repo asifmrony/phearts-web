@@ -24,9 +24,9 @@ export default function governance_body(governanceBodies) {
                             const { name, designation, association, degrees, bio, photo } = item.attributes
                             if (association == 'chairman') {
                                 return (
-                                    <div className='flex flex-wrap gap-x-5 gap-y-10'>
+                                    <div key={item.id} className='flex flex-wrap gap-x-5 gap-y-10'>
                                         <div className='text-center basis-[48%] lg:basis-[31%]'></div>
-                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
@@ -55,9 +55,9 @@ export default function governance_body(governanceBodies) {
                             const { name, designation, association, degrees, bio, photo } = item.attributes
                             if (association == 'vice-chairman') {
                                 return (
-                                    <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                    <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                                         <div className='text-center basis-[48%] lg:basis-[31%]'></div>
-                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
