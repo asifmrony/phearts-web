@@ -19,18 +19,92 @@ export default function governance_body(governanceBodies) {
                     <span className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Masterminds behind everything</span>
                     <h2 className='font-heading text-center uppercase mb-24'>Governance Body</h2>
                     {/* TOp Row */}
-                    <div className='flex flex-wrap gap-x-5 gap-y-10'>
-                        {
-                            governanceBodies?.data.map(item => {
-                                const { name, designation, association, degrees, bio, photo } = item.attributes
-                                if (association == 'chairman' || association == 'vice-chairman' || association == 'general-secretary') {
-                                    return (
+                    {
+                        governanceBodies?.data.map(item => {
+                            const { name, designation, association, degrees, bio, photo } = item.attributes
+                            if (association == 'chairman') {
+                                return (
+                                    <div className='flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
                                         <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
                                             <p className='mt-1 font-bold text-sm'>{degrees}</p>
                                             <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 200)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
+                                            {/* <div className="flex justify-center space-x-3 text-[#8896A0]">
+                                                    <Link
+                                                        href="https://facebook.com"
+                                                        className=""
+                                                    ><FaFacebookF className='footer-icon' /></Link>
+                                                    <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
+                                                    <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
+                                                    <Link href="https://twitter.com" className=""><FaTwitter /></Link>
+                                                </div> */}
+                                        </div>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                    </div>
+                                )
+                            }
+                        })
+                    }
+                    {/* Second Row */}
+                    {
+                        governanceBodies?.data.map(item => {
+                            const { name, designation, association, degrees, bio, photo } = item.attributes
+                            if (association == 'vice-chairman') {
+                                return (
+                                    <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
+                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
+                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
+                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 200)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
+                                        </div>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                    </div>
+                                )
+                            }
+                        })
+                    }
+                    {/* Third row */}
+                    <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                        {
+                            governanceBodies?.data.map(item => {
+                                const { name, designation, association, degrees, bio, photo } = item.attributes
+                                if (association == 'member' || association == 'executive-member') {
+                                    return (
+                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
+                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
+                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
+                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
+                    </div>
+                    {/* Fourth Row */}
+                    {
+                        governanceBodies?.data.map(item => {
+                            const { name, designation, association, degrees, bio, photo } = item.attributes
+                            if (association == 'treasurer') {
+                                return (
+                                    <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
+                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
+                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
+                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
+                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 140)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
                                             {/* <div className="flex justify-center space-x-3 text-[#8896A0]">
                                                 <Link
@@ -42,73 +116,18 @@ export default function governance_body(governanceBodies) {
                                                 <Link href="https://twitter.com" className=""><FaTwitter /></Link>
                                             </div> */}
                                         </div>
-                                    )
-                                }
-                            })
-                        }
-                        {/* <div className='text-center basis-[48%] lg:basis-[31%]'>
-                            <Image src={teamMemberOne} alt='Image' className='mx-auto h-[200px] w-[200px] rounded-full' />
-                            <p className='text-sm text-blackshadow mt-6'>Chairman</p>
-                            <h3 className='font-subheading text-themered font-bold'>Md. Zahangir Alam</h3>
-                            <p className='mt-1 font-bold text-sm'>MBBS, MPH</p>
-                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
-                                tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
-                                lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
-                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
-                            <div className="flex justify-center space-x-3 text-[#8896A0]">
-                                <Link
-                                    href="https://facebook.com"
-                                    className=""
-                                ><FaFacebookF className='footer-icon' /></Link>
-                                <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
-                                <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
-                                <Link href="https://twitter.com" className=""><FaTwitter /></Link>
-                            </div>
-                        </div>
-                        <div className='text-center basis-[48%] lg:basis-[31%]'>
-                            <Image src={teamMemberTwo} alt="Image" className='mx-auto h-[200px] w-[200px] rounded-full' />
-                            <p className='text-sm text-blackshadow mt-6'>Vice Chairman</p>
-                            <h3 className='font-subheading text-themered font-bold'>Md. Zakir Hussain</h3>
-                            <p className='mt-1 font-bold text-sm'>MBBS, Ph.D</p>
-                            <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
-                                tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
-                                lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
-                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
-                            <div className="flex justify-center space-x-3 text-[#8896A0]">
-                                <Link
-                                    href="https://facebook.com"
-                                    className=""
-                                ><FaFacebookF className='footer-icon' /></Link>
-                                <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
-                                <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
-                                <Link href="https://twitter.com" className=""><FaTwitter /></Link>
-                            </div>
-                        </div>
-                        <div className='text-center basis-[48%] lg:basis-[31%]'>
-                            <Image src={teamMemberOne} alt='Image' className='mx-auto h-[200px] w-[200px] rounded-full' />
-                            <p className='text-sm text-blackshadow mt-6'>General Secretary</p>
-                            <h3 className='font-subheading text-themered font-bold'>Alauddin Ahmed</h3>
-                            <p className='mt-1 font-bold text-sm'>MBBS, MPH</p>
-                            <p className='text-sm text-blackshadow mt-5 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
-                                tempus leo ac nisi iaculis porta. Sed sapien tortor, aliquet a velit ut,
-                                lacinia molestie velit. Maecenas ornare consequat massa ullamcorper dapibus</p>
-                            <Link className='text-sm font-semibold text-themeblue leading-wider inline-block mb-6' href="/about/governance-body/single">Learn more &rarr;</Link>
-                            <div className="flex justify-center space-x-3 text-[#8896A0]">
-                                <Link
-                                    href="https://facebook.com"
-                                    className=""
-                                ><FaFacebookF className='footer-icon' /></Link>
-                                <Link href="https://linkedin.com" className=""><FaLinkedinIn /></Link>
-                                <Link href="https://pinterest.com" className=""><FaPinterestP /></Link>
-                                <Link href="https://twitter.com" className=""><FaTwitter /></Link>
-                            </div>
-                        </div> */}
-                    </div>
-                    {/* Second Row */}
+                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                    </div>
+                                )
+                            }
+                        })
+                    }
+
+                    {/* Fifth Row */}
                     {
                         governanceBodies?.data.map(item => {
                             const { name, designation, association, degrees, bio, photo } = item.attributes
-                            if (association == 'treasurer') {
+                            if (association == 'general-secretary') { 
                                 return (
                                     <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                                         <div className='text-center basis-[48%] lg:basis-[31%]'></div>
@@ -148,27 +167,6 @@ export default function governance_body(governanceBodies) {
 
                         </div>
                         <div className='text-center basis-[48%] lg:basis-[31%]'></div> */}
-
-                    {/* Third row */}
-                    <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
-                        {
-                            governanceBodies?.data.map(item => {
-                                const { name, designation, association, degrees, bio, photo } = item.attributes
-                                if (association == 'member' || association == 'executive-member') {
-                                    return (
-                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
-                                            <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
-                                            <p className='text-sm text-blackshadow mt-6'>{designation}</p>
-                                            <h3 className='font-subheading text-themered font-bold'>{name}</h3>
-                                            <p className='mt-1 font-bold text-sm'>{degrees}</p>
-                                            <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 140)}</p>
-                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
-                                        </div>
-                                    )
-                                }
-                            })
-                        }
-                    </div>
                     {/* <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
                         <div className='text-center basis-[48%] lg:basis-[31%]'>
                             <Image src={teamMemberThree} alt='Image' className='mx-auto h-[200px] w-[200px] rounded-full' />

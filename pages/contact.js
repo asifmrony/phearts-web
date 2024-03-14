@@ -4,7 +4,6 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
 export default function contact(contactDetails) {
-  console.log("Contact Details", contactDetails?.data?.attributes?.biodata);
   const biodata = contactDetails?.data?.attributes?.biodata;
 
   return (

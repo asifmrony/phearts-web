@@ -31,7 +31,7 @@ export default function AdministrativeBody(adminBodies) {
                         {
                             adminBodies?.data.map((item) => {
                                 const { name, bio, association, designation, photo } = item.attributes;
-                                if (association === 'chief-executive-officer' || association === 'director') {
+                                if (association === 'chief-executive-officer') {
                                     return (
                                         <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
@@ -43,20 +43,54 @@ export default function AdministrativeBody(adminBodies) {
                                 }
                             })
                         }
-                        {/* <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]'>
-                            <Image src={teamMemberOne} alt='Image' className='mx-auto h-[125px] w-[125px] rounded-full' />
-                            <h3 className='font-subheading text-themered font-bold mt-4'>Dr. Alauddin Ahmed</h3>
-                            <p className='text-sm text-blackshadow mt-3 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
-                                tempus leo ac nisi iaculis porta.</p>
-                        </div>
-                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]'>
-                            <Image src={teamMemberTwo} alt="Image" className='mx-auto h-[125px] w-[125px] rounded-full' />
-                            <h3 className='font-subheading text-themered font-bold mt-4'>A KM Rabiul Islam</h3>
-                            <p className='text-sm text-blackshadow mt-3 mb-6'>Etiam eu molestie eros, commodo hendrerit sapien. Maecenas
-                                tempus leo ac nisi iaculis porta.</p>
-                        </div>
-                         */}
-
+                        {
+                            adminBodies?.data.map((item) => {
+                                const { name, bio, association, designation, photo } = item.attributes;
+                                
+                                if (association === 'director-admin') {
+                                    return (
+                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
+                                            <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
+                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
+                        {
+                            adminBodies?.data.map((item) => {
+                                const { name, bio, association, designation, photo } = item.attributes;
+                                
+                                if (association === 'director-finance') {
+                                    return (
+                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
+                                            <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
+                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
+                                        </div>
+                                    )
+                                }
+                                
+                            })
+                        }
+                        {
+                            adminBodies?.data.map((item) => {
+                                const { name, bio, association, designation, photo } = item.attributes;
+                                if (association === 'director-research') {
+                                    return (
+                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                            <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
+                                            <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
+                                            <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
+                                            <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/administrative-body/${item.id}`}>Learn more &rarr;</Link>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
                     </div>
                 </div>
             </div>
