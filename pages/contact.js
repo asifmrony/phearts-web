@@ -32,7 +32,7 @@ export default function Contact(contactDetails) {
                 referrerPolicy="no-referrer-when-downgrade"></iframe>
             : <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.79721063551!2d90.65441277362585!3d23.79023458724919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543538ab43cf59%3A0xd95b1f25762596ed!2z4Kaq4Kaq4KeB4Kay4KeH4Ka24KaoIOCmueCnh-CmsuCmpSDgprDgpr_gprjgpr7gprDgp43gppog4KaP4Kao4KeN4KahIOCmn-CnjeCmsOCnh-CmqOCmv-CmgiDgprjgp4vgprjgpr7gpofgpp_gpr8gUG9wdWxhdGlvbiBIZWFsdGggUmVzZWFyY2ggYW5kIFRyYWluaW5nIFNvY2lldHk!5e0!3m2!1sen!2sbd!4v1708337963524!5m2!1sen!2sbd"
-                width={width}
+                width={width - 30}
                 height={width / 2}
                 style={{ border: '0' }}
                 allowFullScreen=""
