@@ -4,7 +4,7 @@ import { poppins } from '@/utils/fonts'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-export default function contact(contactDetails) {
+export default function Contact(contactDetails) {
   const biodata = contactDetails?.data?.attributes?.biodata;
   const [width, height] = useDeviceSize();
 
