@@ -1,10 +1,12 @@
 import PageHeader from '@/components/reusable/PageHeader'
+import useDeviceSize from '@/hooks/useDeviceSize';
 import { poppins } from '@/utils/fonts'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
 export default function contact(contactDetails) {
   const biodata = contactDetails?.data?.attributes?.biodata;
+  const [width, height] = useDeviceSize();
 
   return (
     <main className='page-contact'>
@@ -13,20 +15,30 @@ export default function contact(contactDetails) {
         <div className='hero-width w-full mx-auto flex'>
           <div>
             <div className={`${poppins.variable} font-poppins biodata-block`}>
-              <ReactMarkdown>{biodata}</ReactMarkdown>
+              <ReactMarkdown className='text-black'>{biodata}</ReactMarkdown>
               {/* {biodata} */}
             </div>
           </div>
         </div>
         <div className='hero-width w-full mx-auto mt-10'>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.79721063551!2d90.65441277362585!3d23.79023458724919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543538ab43cf59%3A0xd95b1f25762596ed!2z4Kaq4Kaq4KeB4Kay4KeH4Ka24KaoIOCmueCnh-CmsuCmpSDgprDgpr_gprjgpr7gprDgp43gppog4KaP4Kao4KeN4KahIOCmn-CnjeCmsOCnh-CmqOCmv-CmgiDgprjgp4vgprjgpr7gpofgpp_gpr8gUG9wdWxhdGlvbiBIZWFsdGggUmVzZWFyY2ggYW5kIFRyYWluaW5nIFNvY2lldHk!5e0!3m2!1sen!2sbd!4v1708337963524!5m2!1sen!2sbd"
-            width="900"
-            height="450"
-            style={{ border: '0' }}
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          {width > 900 
+            ? <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.79721063551!2d90.65441277362585!3d23.79023458724919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543538ab43cf59%3A0xd95b1f25762596ed!2z4Kaq4Kaq4KeB4Kay4KeH4Ka24KaoIOCmueCnh-CmsuCmpSDgprDgpr_gprjgpr7gprDgp43gppog4KaP4Kao4KeN4KahIOCmn-CnjeCmsOCnh-CmqOCmv-CmgiDgprjgp4vgprjgpr7gpofgpp_gpr8gUG9wdWxhdGlvbiBIZWFsdGggUmVzZWFyY2ggYW5kIFRyYWluaW5nIFNvY2lldHk!5e0!3m2!1sen!2sbd!4v1708337963524!5m2!1sen!2sbd"
+                width="900"
+                height="450"
+                style={{ border: '0' }}
+                allowfullscreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
+            : <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.79721063551!2d90.65441277362585!3d23.79023458724919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543538ab43cf59%3A0xd95b1f25762596ed!2z4Kaq4Kaq4KeB4Kay4KeH4Ka24KaoIOCmueCnh-CmsuCmpSDgprDgpr_gprjgpr7gprDgp43gppog4KaP4Kao4KeN4KahIOCmn-CnjeCmsOCnh-CmqOCmv-CmgiDgprjgp4vgprjgpr7gpofgpp_gpr8gUG9wdWxhdGlvbiBIZWFsdGggUmVzZWFyY2ggYW5kIFRyYWluaW5nIFNvY2lldHk!5e0!3m2!1sen!2sbd!4v1708337963524!5m2!1sen!2sbd"
+                width={width}
+                height={width / 2}
+                style={{ border: '0' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
+          }
         </div>
       </div>
     </main>
