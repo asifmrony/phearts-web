@@ -59,6 +59,7 @@ export const getStaticProps = async () => {
   });
   const allServices = await res.json();
   return {
-    props: allServices
+    props: allServices,
+    revalidate: 60
   }
 }

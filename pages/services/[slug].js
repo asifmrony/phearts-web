@@ -34,7 +34,8 @@ export const getStaticProps = async ({ params }) => {
     });
     const service = await res.json();
     return {
-        props: { service }
+        props: { service },
+        revalidate: 60
     }
 }
 
