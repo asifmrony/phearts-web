@@ -26,7 +26,7 @@ export default function AdministrativeBody(adminBodies) {
             <div className='pt-12 md:pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <p className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Behind our All Success</p>
-                    <h2 className='font-mdheading text-center uppercase mb-12 md:mb-24'>Board of Directors</h2>
+                    <h2 className='font-mdheading text-center text-black uppercase mb-12 md:mb-24'>Board of Directors</h2>
                     <div className={`flex justify-center flex-wrap gap-x-5 gap-y-10`}>
                         {
                             adminBodies?.data.map((item) => {
@@ -98,7 +98,7 @@ export default function AdministrativeBody(adminBodies) {
             {/* Deputy Director */}
             {deputyBlock && <div className='pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
-                    <h2 className='font-mdheading text-center uppercase mb-16'>Deputy Director</h2>
+                    <h2 className='font-mdheading text-center text-black uppercase mb-16'>Deputy Director</h2>
                     <div className='flex justify-center flex-wrap gap-x-5 gap-y-10'>
                         {
                             adminBodies?.data.map((item) => {
@@ -138,7 +138,7 @@ export default function AdministrativeBody(adminBodies) {
             {/* Manager */}
             <div className='pt-8 md:pt-12 lg:pt-20 pb-20 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
-                    <h2 className='font-mdheading text-center uppercase mb-8 md:mb-16'>Manager</h2>
+                    <h2 className='font-mdheading text-center text-black uppercase mb-8 md:mb-16'>Manager</h2>
                     <div className='flex justify-center flex-wrap gap-x-5 gap-y-10'>
                         {
                             adminBodies?.data.map((item) => {

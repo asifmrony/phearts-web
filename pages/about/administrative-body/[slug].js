@@ -34,7 +34,7 @@ export default function single({ adminBody }) {
     return (
         <main className='page-about-single'>
             <PageHeader title={adminBody?.data?.attributes?.name} subtitle={'About / Administrative body'} background={'transparent'} />
-            <div className='pb-48 bg-white'>
+            <div className='pb-48 bg-white text-black'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <p className={`${poppins.variable} font-poppins`}>{adminBody?.data?.attributes?.bio}</p>
                 </div>
