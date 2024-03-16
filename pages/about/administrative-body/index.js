@@ -23,17 +23,17 @@ export default function AdministrativeBody(adminBodies) {
             <PageHeader title={'Administrative body'} subtitle={''} background={'blue'} />
 
             {/* Our Board of Directors */}
-            <div className='pt-24 pb-14 bg-white'>
+            <div className='pt-12 md:pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <p className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Behind our All Success</p>
-                    <h2 className='font-mdheading text-center uppercase mb-24'>Board of Directors</h2>
+                    <h2 className='font-mdheading text-center uppercase mb-12 md:mb-24'>Board of Directors</h2>
                     <div className={`flex justify-center flex-wrap gap-x-5 gap-y-10`}>
                         {
                             adminBodies?.data.map((item) => {
                                 const { name, bio, association, designation, photo } = item.attributes;
                                 if (association === 'chief-executive-officer') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                        <div className='text-center basis-[40%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
@@ -49,7 +49,7 @@ export default function AdministrativeBody(adminBodies) {
                                 
                                 if (association === 'director-admin') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                        <div className='text-center basis-[40%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
@@ -65,7 +65,7 @@ export default function AdministrativeBody(adminBodies) {
                                 
                                 if (association === 'director-finance') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                        <div className='text-center basis-[40%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
@@ -81,7 +81,7 @@ export default function AdministrativeBody(adminBodies) {
                                 const { name, bio, association, designation, photo } = item.attributes;
                                 if (association === 'director-research') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                        <div className='text-center basis-[40%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>
@@ -136,16 +136,16 @@ export default function AdministrativeBody(adminBodies) {
             </div>}
 
             {/* Manager */}
-            <div className='pt-20 pb-20 bg-white'>
+            <div className='pt-8 md:pt-12 lg:pt-20 pb-20 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
-                    <h2 className='font-mdheading text-center uppercase mb-16'>Manager</h2>
+                    <h2 className='font-mdheading text-center uppercase mb-8 md:mb-16'>Manager</h2>
                     <div className='flex justify-center flex-wrap gap-x-5 gap-y-10'>
                         {
                             adminBodies?.data.map((item) => {
                                 const { name, bio, association, photo } = item.attributes;
                                 if (association === 'manager' || association === 'admin' || association === 'manager-admin') {
                                     return (
-                                        <div className='text-center basis-[30%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
+                                        <div className='text-center basis-[40%] md:basis-[23%] lg:basis-[18%]' key={item.id}>
                                             <Image src={photo?.data.attributes.url} height={125} width={125} alt='Image' className='mx-auto h-[125px] w-[125px]' />
                                             <h3 className='font-subheading text-themered font-bold mt-4 leading-6'>{name}</h3>
                                             <p className='text-sm text-blackshadow mt-3 mb-6'>{bio.substring(0, 140)}</p>

@@ -465,3 +465,12 @@ h6 {
   grid-row-gap: 10px;
   align-items: center;
 }
+@media screen and (max-width: 767.99px) {
+  .grid5-5 {
+    display: block;
+  }
+  .grid5-5 img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

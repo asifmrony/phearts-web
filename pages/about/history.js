@@ -17,7 +17,7 @@ export default function about(historyData) {
         <div className="hero-width w-full mx-auto text-center">
           <p className='inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2'>Let Us tell you</p>
           <h2 className='font-heading text-center uppercase mb-14'>A Brief History of Us</h2>
-          <div className='space-y-6'>
+          <div className='space-y-6 px-4 md:px-0'>
             <ReactMarkdown>{history_description}</ReactMarkdown>
           </div>
           {/* <div className='space-y-6'>

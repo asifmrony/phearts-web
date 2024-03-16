@@ -10,7 +10,7 @@ export default function Sponsors() {
         <div className='py-20'>
             <div className="hero-width w-full mx-auto text-center">
                 <span className='inline-block text-xs bg-themeblue text-white uppercase mb-5 p-2'>OUR COLLABORATIVE PARTNERS</span>
-                <div className="grid5-5 mt-10">
+                <div className="grid5-5 space-y-5 md:space-y-0 md:mt-10">
                   <Image src={sponsorOne} alt="Sponsor Image"  />
                   <Image src={sponsorTwo} alt="Sponsor Image"  /> 
                   <Image src={sponsorThree} alt="Sponsor Image"  />

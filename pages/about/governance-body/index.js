@@ -14,10 +14,10 @@ export default function governance_body(governanceBodies) {
             <PageHeader title={'About Us'} subtitle={'We are Delighted to Share'} background={'blue'} />
 
             {/* Our Board */}
-            <div className='pt-24 pb-14 bg-white'>
+            <div className='pt-12 md:pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <span className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Masterminds behind everything</span>
-                    <h2 className='font-heading text-center uppercase mb-24'>Governance Body</h2>
+                    <h2 className='font-heading text-center uppercase mb-12 md:mb-24'>Governance Body</h2>
                     {/* TOp Row */}
                     {
                         governanceBodies?.data.map(item => {
@@ -25,8 +25,8 @@ export default function governance_body(governanceBodies) {
                             if (association == 'chairman') {
                                 return (
                                     <div key={item.id} className='flex flex-wrap gap-x-5 gap-y-10'>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[60%] lg:basis-[31%] px-4 md:px-0'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
@@ -43,7 +43,7 @@ export default function governance_body(governanceBodies) {
                                                     <Link href="https://twitter.com" className=""><FaTwitter /></Link>
                                                 </div> */}
                                         </div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
                                     </div>
                                 )
                             }
@@ -55,9 +55,9 @@ export default function governance_body(governanceBodies) {
                             const { name, designation, association, degrees, bio, photo } = item.attributes
                             if (association == 'vice-chairman') {
                                 return (
-                                    <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                                    <div key={item.id} className='md:mt-10 lg:mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[60%] lg:basis-[31%] px-4 md:px-0'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
@@ -65,20 +65,20 @@ export default function governance_body(governanceBodies) {
                                             <p className='text-sm text-blackshadow leading-wider mt-5 mb-6'>{bio.substring(0, 200)}</p>
                                             <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/about/governance-body/${item.id}`}>Learn more &rarr;</Link>
                                         </div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
                                     </div>
                                 )
                             }
                         })
                     }
                     {/* Third row */}
-                    <div className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                    <div className='md:mt-10 lg:mt-20 flex flex-wrap md:justify-center lg:justify-normal gap-x-5 gap-y-10'>
                         {
                             governanceBodies?.data.map(item => {
                                 const { name, designation, association, degrees, bio, photo } = item.attributes
                                 if (association == 'member' || association == 'executive-member') {
                                     return (
-                                        <div key={item.id} className='text-center basis-[48%] lg:basis-[31%]'>
+                                        <div key={item.id} className='text-center basis-[100%] md:basis-[60%] lg:basis-[31%] px-4 md:px-0'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
@@ -97,9 +97,9 @@ export default function governance_body(governanceBodies) {
                             const { name, designation, association, degrees, bio, photo } = item.attributes
                             if (association == 'treasurer') {
                                 return (
-                                    <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                                    <div key={item.id} className='md:mt-10 lg:mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[60%] lg:basis-[31%] px-4 md:px-0'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
@@ -116,7 +116,7 @@ export default function governance_body(governanceBodies) {
                                                 <Link href="https://twitter.com" className=""><FaTwitter /></Link>
                                             </div> */}
                                         </div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
                                     </div>
                                 )
                             }
@@ -129,9 +129,9 @@ export default function governance_body(governanceBodies) {
                             const { name, designation, association, degrees, bio, photo } = item.attributes
                             if (association == 'general-secretary') { 
                                 return (
-                                    <div key={item.id} className='mt-20 flex flex-wrap gap-x-5 gap-y-10'>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'>
+                                    <div key={item.id} className='md:mt-10 lg:mt-20 flex flex-wrap gap-x-5 gap-y-10'>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[60%] lg:basis-[31%] px-4 md:px-0'>
                                             <Image src={photo.data.attributes.url} alt='Image' width={200} height={200} className='mx-auto h-[200px] w-[200px] rounded-full' />
                                             <p className='text-sm text-blackshadow mt-6'>{designation}</p>
                                             <h3 className='font-subheading text-themered font-bold'>{name}</h3>
@@ -148,7 +148,7 @@ export default function governance_body(governanceBodies) {
                                                 <Link href="https://twitter.com" className=""><FaTwitter /></Link>
                                             </div> */}
                                         </div>
-                                        <div className='text-center basis-[48%] lg:basis-[31%]'></div>
+                                        <div className='text-center basis-[100%] md:basis-[15%] lg:basis-[31%]'></div>
                                     </div>
                                 )
                             }
