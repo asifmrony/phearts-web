@@ -16,9 +16,9 @@ export default function about(historyData) {
       <div className='pt-24 pb-14 bg-white'>
         <div className="hero-width w-full mx-auto text-center">
           <p className='inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2'>Let Us tell you</p>
-          <h2 className='font-heading text-center uppercase mb-14'>A Brief History of Us</h2>
+          <h2 className='font-heading text-center text-black uppercase mb-14'>A Brief History of Us</h2>
           <div className='space-y-6 px-4 md:px-0'>
-            <ReactMarkdown>{history_description}</ReactMarkdown>
+            <ReactMarkdown className='text-black'>{history_description}</ReactMarkdown>
           </div>
           {/* <div className='space-y-6'>
             <p>PHeaRTs was set up in the Araihazar upozila, Narayanganj district of Bangladesh, in 2010 and registered as a joint stock company under Society Act XX1 of 1860, No. S-12551/2017. After its inception, the Population Health Research and Training Society (PHeaRTs) has been significantly playing a vital role in implementing environmental research, improving rural health care services, and providing life skill training for the development of digital Bangladesh.
@@ -37,9 +37,9 @@ export default function about(historyData) {
         <div className='hero-width mx-auto w-full'>
           <div className='flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5'>
             <div className='bg-white py-14 px-8 flex-1 border-[#aaa] border-4 text-center'>
-              <h2 className='font-mdheading uppercase '>Our Mission</h2>
+              <h2 className='font-mdheading uppercase text-black'>Our Mission</h2>
               {/* <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>To enjoy the highest attainable status of health, well-being and quality of life at every age, free   of preventable NCDs, avoidable disability and premature death for all people of Araihazar Upazilla and beyond </p> */}
-              <p className={`mt-4 ${poppins.variable} font-poppins text-sm`}>{mission}</p>
+              <p className={`mt-4 ${poppins.variable} font-poppins text-sm text-black`}>{mission}</p>
             </div>
             <div className='flex-1'>
               <Image src={missionPic} alt='Image' className='h-full object-cover' />
@@ -50,11 +50,11 @@ export default function about(historyData) {
               <Image src={visionPic} alt='Image' className='h-full object-cover' />
             </div>
             <div className='bg-white py-14 px-8 flex-1 border-[#aaa] border-4 text-center'>
-              <h2 className='font-mdheading uppercase '>Our Vision</h2>
+              <h2 className='font-mdheading uppercase text-black'>Our Vision</h2>
               {/* <p className='mt-4 text-sm'>
                 To reduce preventable morbidity, avoidable disability, premature mortality and establish a healthy society in Araihazar and beyond.
               </p> */}
-              <p className='mt-4 text-sm'>
+              <p className='mt-4 text-sm text-black'>
                 {vision}
               </p>
             </div>
