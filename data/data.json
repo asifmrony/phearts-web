@@ -51,13 +51,13 @@
         },
         {
           "name": "MATS",
-          "id": 33,
+          "id": 34,
           "link": "/mats"
         },
         {
-          "name": "Caregiver",
-          "id": 33,
-          "link": "/caregiver"
+          "name": "PTI",
+          "id": 35,
+          "link": "/pti"
         }
       ]
     },
