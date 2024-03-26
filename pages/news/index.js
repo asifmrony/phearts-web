@@ -7,8 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function events(allNews) {
-  console.log("Unformatted News", allNews);
   const allFormattedNews = allNews?.data.map((item) => {
+    const sortKey = Date.parse(item?.attributes?.news_date);
     const newsDate = new Date(item?.attributes.news_date);
     const monthNames = [
       "January", "February", "March",
@@ -20,9 +20,9 @@ export default function events(allNews) {
     const day = newsDate.getDate();
     const year = newsDate.getFullYear();
     const formattedDate = `${month} ${day}, ${year}`
-    return { ...item.attributes, id: item.id, news_date: formattedDate }
+    return { ...item.attributes, id: item.id, sort_key: sortKey, news_date: formattedDate }
   })
-  console.log("All formatted Newses", allFormattedNews);
+  const descendingSortedNews = allFormattedNews?.sort((a, b) => b.sort_key - a.sort_key);
 
   return (
     <main className='page-newses'>
@@ -32,9 +32,9 @@ export default function events(allNews) {
             <h1 className={`text-3xl font-semibold uppercase ${poppins.variable} font-poppins underline mb-12`}>News</h1>
             {/* All listed events wrapper */}
             <div className='divide-y-2 divide-gray-300'>
-              {allFormattedNews?.map((item) => (
+              {descendingSortedNews?.map((item) => (
                 <div className="flex gap-x-12 py-10" key={item?.id}>
-                  <div className='flex-3'>
+                  <div className='w-1/2'>
                     <p className='text-blackshadow text-sm'>{item?.news_date}</p>
                     <Link href={`/news/${item?.id}`}>
                       <h3 className={`text-2xl font-bold my-2 ${poppins.variable} font-poppins`}>{item?.title}</h3>
@@ -42,7 +42,7 @@ export default function events(allNews) {
                     <p className='mt-7 mb-3 text-sm text-blackshadow'>{item?.summary}</p>
                     <Link className='text-sm text-themeblue font-semibold leading-wider inline-block mb-6' href={`/news/${item?.id}`}>Learn more &rarr;</Link>
                   </div>
-                  <div style={{ minWidth: '420px', maxWidth: '440px', maxHeight: '250px'}}>
+                  <div className='w-1/2' style={{ maxHeight: '250px'}}>
                     <Image src={item?.preview_img.data.attributes.url} alt='EventPhoto' width={800} height={350} className='h-full w-full object-cover'/>
                   </div>
                 </div>

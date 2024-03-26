@@ -11,13 +11,13 @@ export default function governance_body(governanceBodies) {
     const gravatar = "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=identicon&f=y";
     return (
         <main className='page-about'>
-            <PageHeader title={'About Us'} subtitle={'We are Delighted to Share'} background={'blue'} />
+            <PageHeader title={'Governance Body'} subtitle={''} background={'blue'} />
 
             {/* Our Board */}
             <div className='pt-12 md:pt-24 pb-14 bg-white'>
                 <div className='hero-width w-full mx-auto text-center'>
                     <span className={`inline-block text-xs bg-themegreen text-white uppercase mb-5 p-2 ${poppins.variable} font-poppins`}>Masterminds behind everything</span>
-                    <h2 className='font-heading text-center uppercase mb-12 md:mb-24'>Governance Body</h2>
+                    {/* <h2 className='font-heading text-center uppercase mb-12 md:mb-24'>Governance Body</h2> */}
                     {/* TOp Row */}
                     {
                         governanceBodies?.data.map(item => {

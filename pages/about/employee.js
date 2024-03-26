@@ -4,7 +4,7 @@ import { poppins } from '@/utils/fonts'
 export default function employee(employeeList) {
   return (
     <main className='page-about'>
-      <PageHeader title={'Our Employees'} subtitle={'We are Delighted to Share'} background={'blue'} />
+      <PageHeader title={'Our Employees'} subtitle={''} background={'blue'} />
       {/* Employees Table with Name, Designation */}
       <div className='pt-20 pb-32 bg-white'>
         <table className={`w-2/3 mx-auto`}>

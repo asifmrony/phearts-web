@@ -2,9 +2,10 @@ import Gallery from '@/components/reusable/Gallery'
 import React from 'react'
 
 export default function galleries(allAlbums) {
+  const descendingSortAlbums = allAlbums?.data?.sort((a, b) => b.id - a.id);;
   return (
     <div>
-        <Gallery albumsData={allAlbums?.data} renderType='grid' />
+        <Gallery albumsData={descendingSortAlbums} renderType='grid' />
     </div>
   )
 }

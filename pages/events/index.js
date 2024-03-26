@@ -55,7 +55,7 @@ export default function events(allEvents) {
                     <p className='uppercase text-sm'>TUE</p>
                     <p className='text-lg font-bold'>26</p>
                   </div> */}
-                  <div className='flex-3'>
+                  <div className='w-1/2'>
                     <p className='text-blackshadow text-sm'>{item?.start_date} {item?.end_date ? `- ${item?.end_date}` : null}</p>
                     <Link href={`/events/${item?.id}`}>
                       <h3 className={`text-2xl font-bold my-2 ${poppins.variable} font-poppins`}>{item?.title}</h3>
@@ -67,7 +67,7 @@ export default function events(allEvents) {
                       <Link className='text-sm text-themeblue font-semibold leading-wider inline-block' href={`/events/${item?.id}`}>Learn more &rarr;</Link>
                     </div>
                   </div>
-                  <div style={{ minWidth: '420px', maxWidth: '440px', maxHeight: '250px'}}>
+                  <div className='w-1/2' style={{ maxHeight: '250px'}}>
                     <Image src={item?.photo?.data?.attributes.url} alt='EventPhoto' width={800} height={350} className='h-full w-full object-cover' />
                   </div>
                 </div>

@@ -71,7 +71,7 @@ export default function single(singleEvent) {
 
     return (
         <main className='page-event'>
-            <PageHeader subtitle={`home / Events / ${singleEvent?.data?.attributes?.title}`} title={'Our Events'} background={'blue'} />
+            {/* <PageHeader subtitle={`home / Events / ${singleEvent?.data?.attributes?.title}`} title={'Our Events'} background={'blue'} /> */}
             <div className='py-30'>
                 <div className="c-width mx-auto w-full">
                     <div className="bg-upcoming-events min-h-[400px] relative" style={{backgroundImage: `url(${photo?.data?.attributes?.url})`}}>
