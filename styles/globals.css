@@ -353,6 +353,9 @@ h6 {
 .footer-icon path {
   stroke: #76828a;
 }
+.footer-text {
+  font-size: 13px;
+}
 
 /* Jobs Page */
 .page-jobs-single .jobs__body h1 {
@@ -431,6 +434,11 @@ h6 {
   background-position: center;
   /* background-color: white; */
   margin-top: 5rem;
+}
+
+/* Contact Page */
+.page-contact .page-header__bg {
+  background-image: url("../data/contact-us.jpg");
 }
 
 /*******************************

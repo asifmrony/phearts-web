@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
-import { GrLocation, GrMailOption, GrPhone } from 'react-icons/gr'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { GrLocation, GrMailOption, GrPhone, GrLocationPin } from 'react-icons/gr'
 
 export default function Footer() {
 
@@ -15,15 +15,19 @@ export default function Footer() {
                         <div className='space-y-2'>
                             <p className='flex space-x-3 items-center'>
                                 <GrLocation className='footer-icon' />
-                                <span className='text-blackshadow'>New Model Town, Araihazar Sadar, Araihazar, Narayanganj.</span>
+                                <span className='text-blackshadow footer-text'>Address: New Model Town, Araihazar Sadar, Araihazar, Narayanganj.</span>
+                            </p>
+                            <p className='flex space-x-3 items-center'>
+                                <GrLocationPin className='footer-icon' />
+                                <span className='text-blackshadow footer-text'>Dhaka Office : House # 12, Road # 2, Sector # 9, Uttara, Dhaka</span>
                             </p>
                             <p className='flex space-x-3 items-center'>
                                 <GrMailOption className='footer-icon' />
-                                <span className='text-blackshadow'>phearts.org@gmail.com</span>
+                                <span className='text-blackshadow footer-text'>phearts.org@gmail.com</span>
                             </p>
                             <p className='flex space-x-3 items-center'>
                                 <GrPhone className='footer-icon' />
-                                <span className='text-blackshadow'>+88 0177-9880862</span>
+                                <span className='text-blackshadow footer-text'>+88 0177-9880862</span>
                             </p>
                         </div>
                     </div>
@@ -32,19 +36,19 @@ export default function Footer() {
                         <nav>
                             <ul className='text-blackshadow space-y-2  mt-5'>
                                 <li>
-                                    <Link href='/services/phearts-clinic' className='underline'>Phearts Clinic</Link>
+                                    <Link href='/services/1' className='underline'>Phearts Clinic</Link>
                                 </li>
                                 <li>
-                                    <Link href='/services/ipd-services' className='underline'>IPD Services</Link>
+                                    <Link href='/services/2' className='underline'>IPD Services</Link>
                                 </li>
                                 <li>
-                                    <Link href='/services/emergency-services' className='underline'>Emergency Services</Link>
+                                    <Link href='/services/3' className='underline'>Emergency Services</Link>
                                 </li>
                                 <li>
-                                    <Link href='/services/diagnostic-services' className='underline'>Diagnostic Services</Link>
+                                    <Link href='/services/4' className='underline'>Diagnostic Services</Link>
                                 </li>
                                 <li>
-                                    <Link href='/services/pharmacy' className='underline'>Pharmacy</Link>
+                                    <Link href='/services/5' className='underline'>Pharmacy</Link>
                                 </li>
                             </ul>
                         </nav>
