@@ -10,18 +10,18 @@ export default function employee(employeeList) {
         <table className={`w-2/3 mx-auto`}>
           <thead className='text-left bg-themegreen text-white'>
             <tr>
-              <th className='w-[30%] py-4 pl-4 md:pl-9 text-sm md:text-lg font-bold'>Employee Name</th>
-              <th className='w-[40%] py-4 pl-4 md:pl-9 text-sm md:text-lg font-bold'>Designation</th>
-              <th className='w-[30%] py-4 pl-4 md:pl-9 text-sm md:text-lg font-bold'>Department</th>
+              <th className='w-[30%] py-4 pl-4 md:pl-9 text-sm md:text-lg font-bold'>Sl. No</th>
+              <th className='w-[40%] py-4 pl-4 md:pl-9 text-sm md:text-lg font-bold'>Employee Name</th>
+              <th className='w-[30%] py-4 pl-4 md:pl-9 text-sm md:text-lg font-bold'>Designation</th>
             </tr>
           </thead>
           <tbody className={`text-left ${poppins.variable} font-poppins text-black`}>
             {
-              employeeList?.data.map((item) => (
+              employeeList?.data.map((item, idx) => (
                 <tr key={item?.id}>
-                  <td className='py-2 pl-4 md:pl-9'>{item?.attributes.name}</td>
-                  <td className='py-2 pl-4 md:pl-9'>{item?.attributes.designation}</td>
-                  <td className='py-2 pl-4 md:pl-9'>{item?.attributes.department}</td>
+                  <td className='py-2 pl-4 md:pl-9'>{idx + 1}</td>
+                  <td className='py-2 pl-4 md:pl-9'>{item?.attributes?.name}</td>
+                  <td className='py-2 pl-4 md:pl-9'>{item?.attributes?.designation}</td>
                 </tr>
               ))
             }
@@ -68,7 +68,7 @@ export default function employee(employeeList) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/employee-lists`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/employee-lists?sort=id:asc&pagination[page]=1&pagination[pageSize]=70`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
