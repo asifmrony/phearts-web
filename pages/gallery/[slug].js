@@ -37,7 +37,8 @@ export const getStaticProps = async ({ params }) => {
     });
     const album = await res.json();
     return {
-        props: { album }
+        props: { album },
+        revalidate: 60
     }
 }
 

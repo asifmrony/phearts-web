@@ -41,7 +41,8 @@ export const getStaticProps = async ({ params }) => {
     });
     const singleNews = await res.json();
     return {
-        props: singleNews
+        props: singleNews,
+        revalidate: 60
     }
 }
 

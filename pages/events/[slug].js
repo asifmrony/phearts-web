@@ -36,7 +36,8 @@ export const getStaticProps = async ({ params }) => {
     });
     const singleEvent = await res.json();
     return {
-        props: singleEvent
+        props: singleEvent,
+        revalidate: 60
     }
 }
 
