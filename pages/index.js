@@ -9,7 +9,6 @@ import Gallery from '@/components/reusable/Gallery'
 import { poppins } from '@/utils/fonts'
 import ReactMarkdown from 'react-markdown'
 
-
 export default function Home(homepageData) {
   console.log("Homepage Data", homepageData);
   return (
