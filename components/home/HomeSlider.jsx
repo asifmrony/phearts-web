@@ -48,7 +48,7 @@ function sliderContent({ id, image, subheading, heading, buttonText, buttonLink,
     return (
         <SwiperSlide key={id} className='hero-slide'>
             <Image 
-                src={image?.data.attributes.url} alt='Image' 
+                src={image?.data?.attributes?.url} alt='Image' 
                 width={1920} 
                 height={839}
                 style={{objectFit: 'cover'}}
